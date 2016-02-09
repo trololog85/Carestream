@@ -1,0 +1,102 @@
+﻿<Window x:Class="Carestream.AdmTramasPLE.Mantenimientos.Estructuras"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Estructuras" Height="689" Width="700">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <GroupBox Header="Datos Estructura" HorizontalAlignment="Left" Margin="10,10,5,0" VerticalAlignment="Top" Height="120" Width="300">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Name="LblNombre" Grid.Row="0" Grid.Column="0" Content="Nombre:" Margin="5,5,5,2" Padding="5,5,5,2"/>
+                        <TextBox Name="TxTNombre" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Width="150" Height="23" Margin="5,5,5,2" MaxLines="1" MaxLength="50"/>
+                        <Label Name="LblVersion" Grid.Row="1" Grid.Column="0" Content="Versión:" Margin="5,5,5,2" Padding="5,5,5,2"/>
+                        <ComboBox Name="CmbVersion" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" Height="23" Margin="5,2" Width="80"/>
+                        <Button Name="BtnGuardar" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                        Width="90" Height ="27" Margin="5,5,5,5" HorizontalAlignment="Left">
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Guardar" Margin="3,3,3,3"/>
+                                    <Image Source="/Recursos/Iconos/save.png"></Image>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Estructuras" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="260" Width="300">
+                    <Grid>
+                        <DataGrid AutoGenerateColumns="false" Name="GridLibros" Margin="5,5,5,5" 
+                              CanUserAddRows="false" 
+                              CanUserResizeColumns="false"
+                              SelectionMode="Single"
+                              IsReadOnly="True">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding id}" Visibility="Hidden"></DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding nombre}" Visibility="Hidden"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Nombre" Width="180" Binding="{Binding version}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Version" Width="50" Binding="{Binding version}" Visibility="Visible"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+            <StackPanel>
+                <GroupBox Header="Campos Estructura" HorizontalAlignment="Left" Margin="10,10,5,0" VerticalAlignment="Top" Height="390" Width="350">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Name="BtnAdd" Grid.Row="0" Grid.Column="0"
+                        Width="30" Height ="27" Margin="5,5,5,5" HorizontalAlignment="Right">
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/Recursos/Iconos/plus_64.png" Height="18" Width="18"></Image>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Button Name="BtnDelete" Grid.Row="0" Grid.Column="1"
+                        Width="30" Height ="27" Margin="5,5,5,5" HorizontalAlignment="Left">
+                            <Button.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/Recursos/Iconos/Delete.png" Height="18" Width="18"></Image>
+                                </StackPanel>
+                            </Button.Content>
+                        </Button>
+                        <Label Name="LblNumCampo" Grid.Row="1" Grid.Column="0" Content="Nombre:" Margin="5,5,5,2" Padding="5,5,5,2" HorizontalAlignment="Right"/>
+                        <TextBox Name="TxTNumCampo" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" Width="150" Height="23" Margin="5,5,5,2" MaxLines="1" MaxLength="50"/>
+                        <Label Name="LblTipoDato" Grid.Row="2" Grid.Column="0" Content="Tipo:" Margin="5,5,5,2" Padding="5,5,5,2" HorizontalAlignment="Right"/>
+                        <ComboBox Name="CmbTipoDato" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" Height="23" Margin="5,2" Width="150"/>
+                        <Label Name="LblInicio" Grid.Row="3" Grid.Column="0" Content="Inicio:" Margin="5,5,5,2" Padding="5,5,5,2" HorizontalAlignment="Right"/>
+                        <TextBox Name="TxtInicio" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1" Width="50" Height="23" Margin="5,5,5,2" MaxLines="1" MaxLength="50"/>
+                        <Label Name="LblFin" Grid.Row="4" Grid.Column="0" Content="Fin:" Margin="5,5,5,2" Padding="5,5,5,2" HorizontalAlignment="Right"/>
+                        <TextBox Name="TxtFin" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="1" Width="50" Height="23" Margin="5,5,5,2" MaxLines="1" MaxLength="50"/>
+                        <Label Name="LblObligatorio" Grid.Row="5" Grid.Column="0" Content="Obligatorio:" Margin="5,5,5,2" Padding="5,5,5,2" HorizontalAlignment="Right"/>
+                        <CheckBox Name="ChkObligatorioBox" Grid.Row="5" Grid.Column="1" Width="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,5,2"></CheckBox>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,195 @@
+C:\Diego\MyWork\Administrador%20de%20Tramas%20PLE%20-%20Sunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.csprojResolveAssemblyReference.cache
+C:\Diego\MyWork\Administrador%20de%20Tramas%20PLE%20-%20Sunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.g.resources
+C:\Diego\MyWork\Administrador%20de%20Tramas%20PLE%20-%20Sunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe.config
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe.config
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Common.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Converter.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Facade.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Generator.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Mocks.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Model.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Utils.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.DataAccess.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\nunit.framework.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Common.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Converter.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Facade.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Generator.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Mocks.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Model.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Utils.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.xml
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.DataAccess.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\nunit.framework.xml
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.csprojResolveAssemblyReference.cache
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\MainWindow.baml
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Estructuras.baml
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Libros.baml
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Export.baml
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Import.baml
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Resumen.baml
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\MainWindow.g.cs
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Estructuras.g.cs
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Libros.g.cs
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Export.g.cs
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Import.g.cs
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Resumen.g.cs
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\App.g.cs
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE_MarkupCompile.cache
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.g.resources
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.Properties.Resources.resources
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.csproj.GenerateResource.Cache
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.exe
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe.config
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Common.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Converter.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Facade.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Generator.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Mocks.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Model.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Utils.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.DataAccess.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\nunit.framework.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Common.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Converter.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Facade.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Generator.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Mocks.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Model.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Utils.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.xml
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.DataAccess.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\nunit.framework.xml
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.csprojResolveAssemblyReference.cache
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\MainWindow.baml
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Estructuras.baml
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Libros.baml
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Export.baml
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Import.baml
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Resumen.baml
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\MainWindow.g.cs
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Estructuras.g.cs
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Libros.g.cs
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Export.g.cs
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Import.g.cs
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Resumen.g.cs
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\App.g.cs
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE_MarkupCompile.cache
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.g.resources
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.Properties.Resources.resources
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.csproj.GenerateResource.Cache
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.exe
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe.config
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.exe
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Common.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Converter.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Facade.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Generator.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Mocks.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Model.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Utils.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.SqlServer.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.DataAccess.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\nunit.framework.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Common.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Converter.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Facade.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Generator.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Mocks.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Model.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Utils.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.xml
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.SqlServer.xml
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.DataAccess.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\nunit.framework.xml
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.csprojResolveAssemblyReference.cache
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\MainWindow.baml
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Estructuras.baml
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Libros.baml
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Export.baml
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Import.baml
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Resumen.baml
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\MainWindow.g.cs
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Estructuras.g.cs
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Libros.g.cs
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Export.g.cs
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Import.g.cs
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Resumen.g.cs
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\App.g.cs
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE_MarkupCompile.cache
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.g.resources
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.Properties.Resources.resources
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.csproj.GenerateResource.Cache
+J:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe.config
+J:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.exe
+J:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.pdb
+D:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe.config
+D:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.exe
+D:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.pdb
+E:\Repo\Freelances\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe.config
+E:\Repo\Freelances\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.exe
+E:\Repo\Freelances\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.pdb
+E:\Repo\Freelances\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe.config
+E:\Repo\Freelances\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.exe
+E:\Repo\Freelances\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe.config
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.exe
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.exe
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramasPLE.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Common.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Converter.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Facade.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Generator.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Mocks.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Model.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Utils.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.DataAccess.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\nunit.framework.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Common.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Converter.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Facade.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Generator.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Mocks.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Model.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.Utils.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.xml
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\Carestream.AdmTramas.DataAccess.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\bin\Debug\nunit.framework.xml
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.csprojResolveAssemblyReference.cache
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\MainWindow.baml
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Estructuras.baml
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Libros.baml
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Export.baml
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Import.baml
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Resumen.baml
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\MainWindow.g.cs
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Estructuras.g.cs
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Mantenimientos\Libros.g.cs
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Export.g.cs
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Import.g.cs
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Procesos\Resumen.g.cs
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\App.g.cs
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE_MarkupCompile.cache
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.g.resources
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.Properties.Resources.resources
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\Carestream.AdmTramasPLE.csproj.GenerateResource.Cache

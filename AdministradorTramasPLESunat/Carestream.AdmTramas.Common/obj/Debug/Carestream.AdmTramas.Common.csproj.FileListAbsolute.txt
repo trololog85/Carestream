@@ -1,0 +1,29 @@
+C:\Diego\MyWork\Administrador%20de%20Tramas%20PLE%20-%20Sunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.csprojResolveAssemblyReference.cache
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Common.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Common.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Model.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Model.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.csprojResolveAssemblyReference.cache
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Common.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Common.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Model.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Model.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.csprojResolveAssemblyReference.cache
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Common.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Common.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Model.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Model.pdb
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.csprojResolveAssemblyReference.cache
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.dll
+H:\Proyectos\Carestream\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Common.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Common.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Model.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Debug\Carestream.AdmTramas.Model.pdb
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.csprojResolveAssemblyReference.cache
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.dll
+C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Debug\Carestream.AdmTramas.Common.pdb

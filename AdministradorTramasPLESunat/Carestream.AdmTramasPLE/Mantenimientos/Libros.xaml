@@ -1,0 +1,53 @@
+﻿<Window x:Class="Carestream.AdmTramasPLE.Mantenimientos.Libros"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Libros" Height="440" Width="520" Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel>
+            <GroupBox Header="Datos Libro" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="150" Width="492">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Name="LblNombre" Grid.Row="0" Grid.Column="0" Content="Nombre:" Margin="5,5,5,2" Padding="5,5,5,2"></Label>
+                    <TextBox Name="TxTNombre" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Width="150" Height="23" Margin="5,5,5,2" MaxLines="1" MaxLength="50"></TextBox>
+                    <Label Name="LblCodigo" Grid.Row="1" Grid.Column="0" Content="Código:" Margin="5,2,5,5" Padding="5,2"></Label>
+                    <TextBox HorizontalAlignment="Left" Name="TxTCodigo" Grid.Row="1" Grid.Column="1" Width="100" Height="23" Margin="5,2"></TextBox>
+                    <Label Name="LblEstructura" Grid.Row="2" Grid.Column="0" Content="Estructura:" Margin="5,2,5,5" Padding="5,2,5,5"></Label>
+                    <ComboBox Name="CmbEstructura" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1" Height="23" Margin="5,2" Width="150"></ComboBox>
+                    <Button Name="BtnGuardar" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                        Width="90" Height ="27" Margin="5,5,5,5" HorizontalAlignment="Left">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Guardar" Margin="3,3,3,3"/>
+                                <Image Source="/Recursos/Iconos/save.png"></Image>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Libros" Height="auto"  Width="492">
+                <Grid>
+                    <DataGrid AutoGenerateColumns="false" Name="GridLibros" Margin="5,5,5,5" 
+                              CanUserAddRows="false" 
+                              CanUserResizeColumns="false"
+                              SelectionMode="Single"
+                              IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding id}" Visibility="Hidden"/>                            
+                            <DataGridTextColumn Header="Nombre" Width="200" Binding="{Binding nombre}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Código" Width="150" Binding="{Binding codigo}" Visibility="Visible"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
