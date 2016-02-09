@@ -38,8 +38,8 @@ namespace Carestream.AdmTramas.Model.Entities
         public string OportunidadUnicaAnotacion { get; set; }
         public string Estado { get; set; }
         public string CodigoUnicoOperacion { get; set; }
-
         public long IdLibroLog { get; set; }
         public string Ticket { get; set; }
+        public string Moneda { get; set; }
     }
 }

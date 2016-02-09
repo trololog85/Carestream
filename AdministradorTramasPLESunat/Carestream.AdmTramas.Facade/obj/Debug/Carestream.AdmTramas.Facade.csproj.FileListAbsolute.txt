@@ -79,3 +79,23 @@ C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Co
 C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\obj\Debug\Carestream.AdmTramas.Facade.csprojResolveAssemblyReference.cache
 C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\obj\Debug\Carestream.AdmTramas.Facade.dll
 C:\Users\Diego\Documents\Repository\Carestream\AdmTramas\MigraPLE\Version 4.0\Codigo\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\obj\Debug\Carestream.AdmTramas.Facade.pdb
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Facade.dll.config
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Facade.dll
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Facade.pdb
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Converter.dll
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.DataAccess.dll
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Generator.dll
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Model.dll
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Utils.dll
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\EntityFramework.dll
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Common.dll
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Converter.pdb
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.DataAccess.pdb
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Generator.pdb
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Model.pdb
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Utils.pdb
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\EntityFramework.xml
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\bin\Debug\Carestream.AdmTramas.Common.pdb
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\obj\Debug\Carestream.AdmTramas.Facade.csprojResolveAssemblyReference.cache
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\obj\Debug\Carestream.AdmTramas.Facade.dll
+C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Facade\obj\Debug\Carestream.AdmTramas.Facade.pdb

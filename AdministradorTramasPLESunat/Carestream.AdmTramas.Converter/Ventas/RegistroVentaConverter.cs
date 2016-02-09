@@ -59,7 +59,8 @@ namespace Carestream.AdmTramas.Converter.Ventas
                 OtrosCargos = Decimal.Parse("0.00"),
                 ImpuestoIVAP = Decimal.Parse("0.00"),
                 IdLibroLog = registroVenta.IdLibroLog,
-                NumLinea = registroVenta.Linea
+                NumLinea = registroVenta.Linea,
+                Moneda = MonedaConverter(registroVenta.TipoCambio)
             };
         }
 
@@ -138,6 +139,14 @@ namespace Carestream.AdmTramas.Converter.Ventas
             return nombreRazonSocial == constAnulado
                 ? cuoAnulado
                 : codigoUnico;
+        }
+
+        private static string MonedaConverter(decimal tipoCambio)
+        {
+            if (tipoCambio > 0)
+                return ConfigurationManager.AppSettings["monedaUSD"];
+
+            return ConfigurationManager.AppSettings["monedaPEN"];
         }
     }
 }

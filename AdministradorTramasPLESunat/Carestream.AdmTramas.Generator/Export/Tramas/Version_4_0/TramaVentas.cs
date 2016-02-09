@@ -62,7 +62,13 @@ namespace Carestream.AdmTramas.Generator.Export.Tramas.Version_4_0
             var tipoComprobanteMod = registroVenta.TipoComprobanteModificado;
             var numeroCorrelativo = registroVenta.NumeroCorrelativo;
             var ticket = ConfigurationManager.AppSettings["numDefault"];
-            var campo15 = 
+            var campo15 = ConfigurationManager.AppSettings["campoDefault"];
+            var campo17 = ConfigurationManager.AppSettings["campoDefault"];
+            var moneda = registroVenta.Moneda;
+            var campo31 = ConfigurationManager.AppSettings["campoDefault"];
+            var campo32 = ConfigurationManager.AppSettings["campo32"];
+            var campo33 = ConfigurationManager.AppSettings["campo33"];
+
 
             trama.Append(fechaPeriodo);
             trama.Append(separador);
@@ -92,13 +98,17 @@ namespace Carestream.AdmTramas.Generator.Export.Tramas.Version_4_0
             trama.Append(separador);
             trama.Append(baseImponible);
             trama.Append(separador);
+            trama.Append(campo15);
+            trama.Append(separador);
+            trama.Append(igv);
+            trama.Append(separador);
+            trama.Append(campo17);
+            trama.Append(separador);
             trama.Append(importeTotalExonerado);
             trama.Append(separador);
             trama.Append(importeTotalInafecto);
             trama.Append(separador);
             trama.Append(isc);
-            trama.Append(separador);
-            trama.Append(igv);
             trama.Append(separador);
             trama.Append(ivap);
             trama.Append(separador);
@@ -107,6 +117,8 @@ namespace Carestream.AdmTramas.Generator.Export.Tramas.Version_4_0
             trama.Append(otrosCargos);
             trama.Append(separador);
             trama.Append(importeTotal);
+            trama.Append(separador);
+            trama.Append(moneda);
             trama.Append(separador);
             trama.Append(tipoCambio);
             trama.Append(separador);
@@ -118,7 +130,11 @@ namespace Carestream.AdmTramas.Generator.Export.Tramas.Version_4_0
             trama.Append(separador);
             trama.Append(numeroComprobanteMod);
             trama.Append(separador);
-            trama.Append(valorEmbarcado);
+            trama.Append(campo31);
+            trama.Append(separador);
+            trama.Append(campo32);
+            trama.Append(separador);
+            trama.Append(campo33);
             trama.Append(separador);
             trama.Append(estado);
             trama.Append(separador);
