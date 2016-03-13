@@ -13,6 +13,7 @@
     <EntitySetMapping Name="LibroLogs">
       <EntityTypeMapping TypeName="IsTypeOf(Database.LibroLog)">
         <MappingFragment StoreEntitySet="LibroLogs">
+          <ScalarProperty Name="FechaPeriodo" ColumnName="FechaPeriodo" />
           <ScalarProperty Name="Errores" ColumnName="Errores" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdLibro" ColumnName="IdLibro" />
@@ -126,6 +127,7 @@
     <EntitySetMapping Name="RegistroCompras">
       <EntityTypeMapping TypeName="IsTypeOf(Database.RegistroCompra)">
         <MappingFragment StoreEntitySet="RegistroCompras">
+          <ScalarProperty Name="ClasificacionBien" ColumnName="ClasificacionBien" />
           <ScalarProperty Name="DUA" ColumnName="DUA" />
           <ScalarProperty Name="numerocorrelativo" ColumnName="numerocorrelativo" />
           <ScalarProperty Name="codigounicooperacion" ColumnName="codigounicooperacion" />
@@ -386,5 +388,50 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="ConsultaErroresPorLog" FunctionName="Database.Store.Errores_ListarLineas" />
+    <EntitySetMapping Name="RegistroNoDomiciliadoes">
+      <EntityTypeMapping TypeName="Database.RegistroNoDomiciliado">
+        <MappingFragment StoreEntitySet="RegistroNoDomiciliado">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Campo35" ColumnName="Campo35" />
+          <ScalarProperty Name="ServicioPrestado" ColumnName="ServicioPrestado" />
+          <ScalarProperty Name="TipoRenta" ColumnName="TipoRenta" />
+          <ScalarProperty Name="ExoneracionAplicada" ColumnName="ExoneracionAplicada" />
+          <ScalarProperty Name="Convenio" ColumnName="Convenio" />
+          <ScalarProperty Name="ImpuestoRetenido" ColumnName="ImpuestoRetenido" />
+          <ScalarProperty Name="TasaRetencion" ColumnName="TasaRetencion" />
+          <ScalarProperty Name="RentaNeta" ColumnName="RentaNeta" />
+          <ScalarProperty Name="Deduccion" ColumnName="Deduccion" />
+          <ScalarProperty Name="RentaBruta" ColumnName="RentaBruta" />
+          <ScalarProperty Name="Vinculo" ColumnName="Vinculo" />
+          <ScalarProperty Name="PaisBeneficiario" ColumnName="PaisBeneficiario" />
+          <ScalarProperty Name="RazonSocialBeneficiario" ColumnName="RazonSocialBeneficiario" />
+          <ScalarProperty Name="NumeroIdentificacionFiscal" ColumnName="NumeroIdentificacionFiscal" />
+          <ScalarProperty Name="NumeroIdentificacionSujeto" ColumnName="NumeroIdentificacionSujeto" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="TipoCambio" ColumnName="TipoCambio" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="IGV" ColumnName="IGV" />
+          <ScalarProperty Name="NumeroComprobanteDUA" ColumnName="NumeroComprobanteDUA" />
+          <ScalarProperty Name="AnioEmisionDUA" ColumnName="AnioEmisionDUA" />
+          <ScalarProperty Name="NumeroSerieComprobanteFiscal" ColumnName="NumeroSerieComprobanteFiscal" />
+          <ScalarProperty Name="TipoComprobanteFiscal" ColumnName="TipoComprobanteFiscal" />
+          <ScalarProperty Name="ImporteTotalAdquisicion" ColumnName="ImporteTotalAdquisicion" />
+          <ScalarProperty Name="OtrosConceptos" ColumnName="OtrosConceptos" />
+          <ScalarProperty Name="ValorAdquisicion" ColumnName="ValorAdquisicion" />
+          <ScalarProperty Name="NumeroComprobante" ColumnName="NumeroComprobante" />
+          <ScalarProperty Name="NumeroSerieComprobante" ColumnName="NumeroSerieComprobante" />
+          <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
+          <ScalarProperty Name="FechaEmision" ColumnName="FechaEmision" />
+          <ScalarProperty Name="NumeroCorrelativo" ColumnName="NumeroCorrelativo" />
+          <ScalarProperty Name="CUO" ColumnName="CUO" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="IdLibro" ColumnName="IdLibro" />
+          <ScalarProperty Name="Linea" ColumnName="Linea" />
+          <ScalarProperty Name="IdLibroLog" ColumnName="IdLibroLog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

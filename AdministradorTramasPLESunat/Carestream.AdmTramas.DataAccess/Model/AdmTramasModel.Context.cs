@@ -39,6 +39,7 @@ namespace Carestream.AdmTramas.DataAccess.Model
         public virtual DbSet<LibroMayor> LibroMayors { get; set; }
         public virtual DbSet<LibroDiarioAgrupado> LibroDiarioAgrupados { get; set; }
         public virtual DbSet<LibroDiarioDetalle> LibroDiarioDetalles { get; set; }
+        public virtual DbSet<RegistroNoDomiciliado> RegistroNoDomiciliadoes { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

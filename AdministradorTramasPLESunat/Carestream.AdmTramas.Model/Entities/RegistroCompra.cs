@@ -41,5 +41,7 @@ namespace Carestream.AdmTramas.Model.Entities
         public int NumLinea { get; set; }
         public decimal Total { get; set; }
         public long IdLibroLog { get; set; }
+        public string Moneda { get; set; }
+        public string ClasificacionBien { get; set; }
     }
 }

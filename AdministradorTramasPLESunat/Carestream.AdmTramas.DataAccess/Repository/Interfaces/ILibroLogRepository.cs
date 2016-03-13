@@ -19,6 +19,6 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Interfaces
         void GuardarDetalleImportDiario(List<LibroDiario> lstLibroDiarios);
         void GuardarDetalleImportMayor(List<LibroMayor> lstLibroMayor);
         void GuardarDetalleImportDiarioDetalle(List<LibroDiarioDetalle> detalle4);
-        
+        void GuardarDetalleNoDomicialado(List<RegistroNoDomiciliado> detalle5);
     }
 }

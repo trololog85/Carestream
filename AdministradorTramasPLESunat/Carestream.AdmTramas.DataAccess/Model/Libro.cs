@@ -18,6 +18,7 @@ namespace Carestream.AdmTramas.DataAccess.Model
         {
             this.LibroLogs = new HashSet<LibroLog>();
             this.Estructuras = new HashSet<Estructura>();
+            this.RegistroNoDomiciliadoes = new HashSet<RegistroNoDomiciliado>();
         }
     
         public short Id { get; set; }
@@ -26,5 +27,6 @@ namespace Carestream.AdmTramas.DataAccess.Model
     
         public virtual ICollection<LibroLog> LibroLogs { get; set; }
         public virtual ICollection<Estructura> Estructuras { get; set; }
+        public virtual ICollection<RegistroNoDomiciliado> RegistroNoDomiciliadoes { get; set; }
     }
 }

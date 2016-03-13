@@ -11,12 +11,16 @@ namespace Carestream.AdmTramas.Common
         public static List<CodigoDetalle> LstTipoDocumento { get; set; }
         public static List<CodigoDetalle> LstComprobante { get; set; }
         public static List<CodigoDetalle> LstCodigoAduana { get; set; }
+        public static List<CodigoDetalle> LstCodigoMoneda { get; set; }
+        public static List<CodigoDetalle> LstCodigoBienes { get; set; }
+        public static List<CodigoDetalle> LstExoneraciones { get; set; }
 
         public static string queryVentas { get; set; }
         public static string queryCompras { get; set; }
         public static string queryLibroDiario { get; set; }
         public static string queryLibroMayor { get; set; }
         public static string queryDiarioDetalle { get; set; }
+        public static string queryNoDomiciliado { get; set; }
 
 
         public static List<string> Alfanumerico = new List<string>
@@ -40,6 +44,7 @@ namespace Carestream.AdmTramas.Common
             "9"
         };
 
+        
 
 
         //TODO Completar listas auxiliares

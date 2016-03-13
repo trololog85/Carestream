@@ -74,6 +74,7 @@ namespace Carestream.AdmTramas.DataAccess.Model
         public string codigounicooperacion { get; set; }
         public string numerocorrelativo { get; set; }
         public string DUA { get; set; }
+        public string ClasificacionBien { get; set; }
     
         public virtual LibroLog LibroLog { get; set; }
     }

@@ -17,7 +17,7 @@ namespace Carestream.AdmTramas.DataAccess.Model
         public int IdLibroLog { get; set; }
         public int Linea { get; set; }
         public short IdLibro { get; set; }
-        public System.DateTime FechaComprobante { get; set; }
+        public Nullable<System.DateTime> FechaComprobante { get; set; }
         public string TipoComprobante { get; set; }
         public string SerieComprobante { get; set; }
         public string NumeroComprobante { get; set; }

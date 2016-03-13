@@ -69,18 +69,23 @@ namespace Carestream.AdmTramasPLE
                 Globals.LstTipoDocumento = fCodigoDetalle.Listar(3).ToList();
                 Globals.LstComprobante = fCodigoDetalle.Listar(2).ToList();
                 Globals.LstCodigoAduana = fCodigoDetalle.Listar(4).ToList();
+                Globals.LstCodigoMoneda = fCodigoDetalle.Listar(5).ToList();
+                Globals.LstCodigoBienes = fCodigoDetalle.Listar(6).ToList();
+                Globals.LstExoneraciones = fCodigoDetalle.Listar(7).ToList();
 
                 var qVentas = querys.FirstOrDefault(x => x.Codigo == "QueryVentas").Descripcion;
                 var qLibroDiario = querys.FirstOrDefault(x => x.Codigo == "QueryLibroDiario").Descripcion;
                 var qLibroMayor = querys.FirstOrDefault(x => x.Codigo == "QueryLibroMayor").Descripcion;
                 var qCompras = querys.FirstOrDefault(x => x.Codigo == "QueryCompras").Descripcion;
                 var qLibroDiaroDetalle = querys.FirstOrDefault(x => x.Codigo == "DiarioDetalle").Descripcion;
+                var qNoDomiciliado = querys.FirstOrDefault(x => x.Codigo == "QueryNoDomiciliado").Descripcion;
 
                 Globals.queryVentas = qVentas;
                 Globals.queryLibroDiario = qLibroDiario;
                 Globals.queryLibroMayor = qLibroMayor;
                 Globals.queryCompras = qCompras;
                 Globals.queryDiarioDetalle = qLibroDiaroDetalle;
+                Globals.queryNoDomiciliado = qNoDomiciliado;
 
             }
             catch (Exception ex)

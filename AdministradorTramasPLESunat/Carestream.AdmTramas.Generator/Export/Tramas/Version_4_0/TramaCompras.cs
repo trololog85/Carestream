@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Text;
 using Carestream.AdmTramas.Generator.Export.Tramas.Interface;
@@ -62,7 +63,14 @@ namespace Carestream.AdmTramas.Generator.Export.Tramas.Version_4_0
             var codigoDUA = registoCompra.CodigoDUA;
             var comprobanteMod = registoCompra.NumeroComprobanteModificado;
             var comprobanteNoDomicialido = registoCompra.NumeroComprobanteNoDomiciliado;
-
+            var moneda = registoCompra.Moneda;
+            var clasificacionBienes = registoCompra.ClasificacionBien;
+            var identificacionContrato = String.Empty;
+            var tipoCambioFechaEmision = String.Empty;
+            var campo37 = String.Empty;
+            var campo38 = String.Empty;
+            var campo39 = String.Empty;
+            var indicadorComprobante = "1";
 
             trama.Append(fechaPeriodo);
             trama.Append(separador);
@@ -110,6 +118,8 @@ namespace Carestream.AdmTramas.Generator.Export.Tramas.Version_4_0
             trama.Append(separador);
             trama.Append(importeTotal);
             trama.Append(separador);
+            trama.Append(moneda);
+            trama.Append(separador);
             trama.Append(tipoCambio);
             trama.Append(separador);
             trama.Append(fechaEmisionComprobante);
@@ -122,13 +132,25 @@ namespace Carestream.AdmTramas.Generator.Export.Tramas.Version_4_0
             trama.Append(separador);
             trama.Append(comprobanteMod);
             trama.Append(separador);
-            trama.Append(comprobanteNoDomicialido);
-            trama.Append(separador);
             trama.Append(fechaEmisionConstancia);
             trama.Append(separador);
             trama.Append(numeroDeConstancia);
             trama.Append(separador);
             trama.Append(marcaComprobante);
+            trama.Append(separador);
+            trama.Append(clasificacionBienes);
+            trama.Append(separador);
+            trama.Append(identificacionContrato);
+            trama.Append(separador);
+            trama.Append(tipoCambioFechaEmision);
+            trama.Append(separador);
+            trama.Append(campo37);
+            trama.Append(separador);
+            trama.Append(campo38);
+            trama.Append(separador);
+            trama.Append(campo39);
+            trama.Append(separador);
+            trama.Append(indicadorComprobante);
             trama.Append(separador);
             trama.Append(estadoAnotacion);
             trama.Append(separador);

@@ -16,7 +16,6 @@ namespace Carestream.AdmTramas.Generator.Export.Validador.Interface
         Tuple<bool, string> ValidaNumeroDocumentoCliente(string tipoComprobante,string numeroDocumentoCliente, TipoDocumento tipoDocumento, string tipoComprobanteModificado);
         Tuple<bool, string> ValidaNombreApellido(string tipoComprobante, string nombreApellido,string tipoComprobanteModificado);
         Tuple<bool, string> ValidaTipodeCambio(decimal tipoDeCambio);
-
         Tuple<bool, string> ValidaFechaEmisionModificada(string tipoComprobante, DateTime fechaMod);
         Tuple<bool, string> ValidaTipoComprobanteModificada(string tipoComprobante, string tipoComprobanteModificado);
         Tuple<bool, string> ValidaNumeroSerieComprobanteModificado(string tipoComprobante, string numSerieComprobanteModificado);
@@ -24,5 +23,10 @@ namespace Carestream.AdmTramas.Generator.Export.Validador.Interface
         Tuple<bool, string> ValidaNumeroComprobanteModificado(string tipoComprobante, string numeroComprobanteModificado);
         Tuple<bool, string> ValidaNumeroComprobanteNoDomiciliado(string tipoComprobante, string numeroComprobanteNoDomic);
         Tuple<bool, string> ValidaFechaEmisionConstancia(DateTime fechaPeriodo, DateTime fechaEmision);
+        Tuple<bool, string> ValidaTipoDocumentoIdentidad(string tipoComprobante,
+            string tipoDocumentoCliente, string tipoComprobanteModificado);
+        Tuple<bool, string> ValidaIGV(decimal igv, decimal baseImponible);
+        Tuple<bool, string> ValidaImporteTotal(decimal importeTotal, decimal igv, decimal baseImponible, decimal igv2, decimal baseImponible2, decimal igv3, decimal baseImponible3, decimal valorAdquisicionNoGravada, decimal otrosTributos);
+        Tuple<bool, string> ValidaClasificacionBienes(string clasificacionBienes);
     }
 }

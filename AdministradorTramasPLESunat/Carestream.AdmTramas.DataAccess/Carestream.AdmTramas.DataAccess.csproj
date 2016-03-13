@@ -133,6 +133,9 @@
     <Compile Include="Model\RegistroCompra.cs">
       <DependentUpon>AdmTramasModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\RegistroNoDomiciliado.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\RegistroVenta.cs">
       <DependentUpon>AdmTramasModel.tt</DependentUpon>
     </Compile>

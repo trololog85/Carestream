@@ -23,14 +23,16 @@ namespace Carestream.AdmTramas.Facade.Generator.Import
         private readonly IImportLibroDiario _objImportLibroDiario;
         private readonly ILibroLogRepository _daLibroLog;
         private readonly IImportLibroDiarioDetalle _objImportLibroDiarioDetalle;
+        private readonly IImportLibroNoDomiciliado _objImportLibroNoDomiciliado;
 
         public FCargaLibro(IImportLibroRegistroVentas objImportVentas, IImportLibroRegistroCompras objImportCompras,
-            IImportLibroMayor objImportLibroMayor, IImportLibroDiario objImportLibroDiario, IImportLibroDiarioDetalle objImportLibroDiarioDetalle)
+            IImportLibroMayor objImportLibroMayor, IImportLibroDiario objImportLibroDiario, IImportLibroDiarioDetalle objImportLibroDiarioDetalle, IImportLibroNoDomiciliado objImportLibroNoDomiciliado)
         {
             _objImportVentas = objImportVentas;
             _objImportCompras = objImportCompras;
             _objImportLibroDiario = objImportLibroDiario;
             _objImportLibroDiarioDetalle = objImportLibroDiarioDetalle;
+            _objImportLibroNoDomiciliado = objImportLibroNoDomiciliado;
             _objImportLibroMayor = objImportLibroMayor;
             _daLibroLog = new DALibroLog(new AdmTramasContainer());
         }
@@ -57,6 +59,9 @@ namespace Carestream.AdmTramas.Facade.Generator.Import
                     break;
                 case TipoLibro.LibroDiarioDetalle:
                     result = Task.Run(() => GuardarImport<LibroDiarioDetalle>(import));
+                    break;
+                case TipoLibro.NoDomiciliado:
+                    result = Task.Run(() => GuardarImport<RegistroNoDomiciliado>(import));
                     break;
             }
 
@@ -266,6 +271,9 @@ namespace Carestream.AdmTramas.Facade.Generator.Import
                         lstImport = _objImportLibroMayor.LeeRegistro(import).Cast<T>().ToList();
                         break;
                     case TipoLibro.LibroDiarioDetalle:
+                        lstImport = _objImportLibroDiarioDetalle.LeeRegistro(import).Cast<T>().ToList();
+                        break;
+                    case TipoLibro.NoDomiciliado:
                         lstImport = _objImportLibroDiarioDetalle.LeeRegistro(import).Cast<T>().ToList();
                         break;
                 }

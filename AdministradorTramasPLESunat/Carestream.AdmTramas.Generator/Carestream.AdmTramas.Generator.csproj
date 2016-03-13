@@ -82,11 +82,13 @@
     <Compile Include="Export\Validador\Version_4_0\RegistroCompra.cs" />
     <Compile Include="Export\Validador\Version_4_0\RegistroVenta.cs" />
     <Compile Include="Export\Tramas\Interface\ITramaVentas.cs" />
+    <Compile Include="Import\Interface\IImportLibroNoDomiciliado.cs" />
     <Compile Include="Import\Interface\IImportLibroRegistroCompras.cs" />
     <Compile Include="Import\Interface\IImportLibroRegistroVentas.cs" />
     <Compile Include="Import\Interface\IImportLibroDiario.cs" />
     <Compile Include="Import\Interface\IImportLibroMayor.cs" />
     <Compile Include="Import\Interface\IImportLibroDiarioDetalle.cs" />
+    <Compile Include="Import\Version_4_0\ImportLibroNoDomiciliado.cs" />
     <Compile Include="Import\Version_4_0\ImportLibroDiarioDetalle.cs" />
     <Compile Include="Import\Version_3_0\ImportLibroDiario.cs" />
     <Compile Include="Import\Version_3_0\ImportLibroMayor.cs" />

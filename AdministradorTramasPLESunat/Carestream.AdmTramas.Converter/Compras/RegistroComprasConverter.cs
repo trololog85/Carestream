@@ -13,6 +13,8 @@ namespace Carestream.AdmTramas.Converter.Compras
         private static readonly string defaultString = ConfigurationManager.AppSettings["DefaultString"];
         private static readonly string tipoCompDefault = ConfigurationManager.AppSettings["tipoCompDefault"];
         private static readonly string anioDefault = ConfigurationManager.AppSettings["anioDefault"];
+        private static readonly string monedaPEN = ConfigurationManager.AppSettings["monedaPEN"];
+        private static readonly string monedaUSD = ConfigurationManager.AppSettings["monedaUSD"];
 
         public static List<RegistroCompra> ConvertList(
             IEnumerable<DataAccess.Model.RegistroCompra> registroCompra)
@@ -63,8 +65,19 @@ namespace Carestream.AdmTramas.Converter.Compras
                        EstadoAnotacion = EstadoConverter(registroCompra.Estado, registroCompra.FechaEmision),                       
                        NumLinea = registroCompra.Linea,
                        IdLibroLog = registroCompra.IdLibroLog,
-                       FlagOperacionesDiarias = "0"
+                       FlagOperacionesDiarias = "0",
+                       Moneda = MonedaConverter(registroCompra.TipoCambio),
+                       ClasificacionBien = registroCompra.ClasificacionBien,
+
                    };
+        }
+
+        private static string MonedaConverter(decimal tipoCambio)
+        {
+            if (tipoCambio == 0)
+                return monedaPEN;
+
+            return monedaUSD;
         }
 
         private static string AnioEmisionConverter(string anioEmisionComprobante)

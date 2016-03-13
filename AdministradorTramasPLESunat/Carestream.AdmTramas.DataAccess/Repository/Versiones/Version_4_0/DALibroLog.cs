@@ -1191,5 +1191,139 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0
                 }
             }
         }
+
+        public void GuardarDetalleNoDomicialado(List<RegistroNoDomiciliado> detalle5)
+        {
+            var dt = new DataTable();
+
+            var dc1 = new DataColumn("IdLibroLog");
+            var dc2 = new DataColumn("Linea");
+            var dc3 = new DataColumn("IdLibro");
+            var dc4 = new DataColumn("Periodo");
+            var dc5 = new DataColumn("CUO");
+            var dc6 = new DataColumn("NumeroCorrelativo");
+            var dc7 = new DataColumn("FechaEmision");
+            var dc8 = new DataColumn("TipoComprobante");
+            var dc9 = new DataColumn("NumeroSerieComprobante");
+            var dc10 = new DataColumn("NumeroComprobante");
+            var dc11 = new DataColumn("ValorAdquisicion");
+            var dc12 = new DataColumn("OtrosConceptos");
+            var dc13 = new DataColumn("ImporteTotalAdquisicion");
+            var dc14 = new DataColumn("TipoComprobanteFiscal");
+            var dc15 = new DataColumn("NumeroSerieComprobanteFiscal");
+            var dc16 = new DataColumn("AnioEmisionDUA");
+            var dc17 = new DataColumn("NumeroComprobanteDUA");
+            var dc18 = new DataColumn("IGV");
+            var dc19 = new DataColumn("Moneda");
+            var dc20 = new DataColumn("TipoCambio");
+            var dc21 = new DataColumn("Pais");
+            var dc22 = new DataColumn("RazonSocial");
+            var dc23 = new DataColumn("Domicilio");
+            var dc24 = new DataColumn("NumeroIdentificacionSujeto");
+            var dc25 = new DataColumn("NumeroIdentificacionFiscal");
+            var dc26 = new DataColumn("RazonSocialBeneficiario");
+            var dc27 = new DataColumn("PaisBeneficiario");
+            var dc28 = new DataColumn("Vinculo");
+            var dc29 = new DataColumn("RentaBruta");
+            var dc30 = new DataColumn("Deduccion");
+            var dc31 = new DataColumn("RentaNeta");
+            var dc32 = new DataColumn("TasaRetencion");
+            var dc33 = new DataColumn("ImpuestoRetenido");
+            var dc34 = new DataColumn("Convenio");
+            var dc35 = new DataColumn("ExoneracionAplicada");
+            var dc36 = new DataColumn("TipoRenta");
+            var dc37 = new DataColumn("ServicioPrestado");
+            var dc38 = new DataColumn("Campo35");
+            var dc39 = new DataColumn("Estado");
+
+            dt.Columns.Add(dc1);
+            dt.Columns.Add(dc2);
+            dt.Columns.Add(dc3);
+            dt.Columns.Add(dc4);
+            dt.Columns.Add(dc5);
+            dt.Columns.Add(dc6);
+            dt.Columns.Add(dc7);
+            dt.Columns.Add(dc8);
+            dt.Columns.Add(dc9);
+            dt.Columns.Add(dc10);
+            dt.Columns.Add(dc11);
+            dt.Columns.Add(dc12);
+            dt.Columns.Add(dc13);
+            dt.Columns.Add(dc14);
+            dt.Columns.Add(dc15);
+            dt.Columns.Add(dc16);
+            dt.Columns.Add(dc17);
+            dt.Columns.Add(dc18);
+            dt.Columns.Add(dc19);
+            dt.Columns.Add(dc20);
+            dt.Columns.Add(dc21);
+            dt.Columns.Add(dc22);
+            dt.Columns.Add(dc23);
+            dt.Columns.Add(dc24);
+            dt.Columns.Add(dc25);
+            dt.Columns.Add(dc26);
+            dt.Columns.Add(dc27);
+            dt.Columns.Add(dc28);
+            dt.Columns.Add(dc29);
+            dt.Columns.Add(dc30);
+            dt.Columns.Add(dc29);
+            dt.Columns.Add(dc31);
+            dt.Columns.Add(dc32);
+            dt.Columns.Add(dc33);
+            dt.Columns.Add(dc34);
+            dt.Columns.Add(dc35);
+            dt.Columns.Add(dc36);
+            dt.Columns.Add(dc37);
+            dt.Columns.Add(dc38);
+            dt.Columns.Add(dc39);
+
+            var dr = dt.NewRow();
+
+            foreach (var obj in detalle5)
+            {
+                dr = dt.NewRow();
+
+                dr["IdLibroLog"] = obj.IdLibroLog;
+                dr["Linea"] = obj.Linea;
+                dr["IdLibro"] = obj.IdLibro;
+                dr["Periodo"] = obj.Periodo;
+                dr["CUO"] = obj.CUO;
+                dr["NumeroCorrelativo"] = obj.NumeroCorrelativo;
+                dr["FechaEmision"] = obj.FechaEmision;
+                dr["TipoComprobante"] = obj.TipoComprobante;
+                dr["NumeroSerieComprobante"] = obj.NumeroSerieComprobante;
+                dr["NumeroComprobante"] = obj.NumeroComprobante;
+                dr["ValorAdquisicion"] = obj.ValorAdquisicion;
+                dr["OtrosConceptos"] = obj.OtrosConceptos;
+                dr["ImporteTotalAdquisicion"] = obj.ImporteTotalAdquisicion;
+                dr["TipoComprobanteFiscal"] = obj.TipoComprobanteFiscal;
+                dr["NumeroSerieComprobanteFiscal"] = obj.NumeroSerieComprobante;
+                dr["AnioEmisionDUA"] = obj.AnioEmisionDUA;
+                dr["NumeroComprobanteDUA"] = obj.NumeroComprobanteDUA;
+                dr["IGV"] = obj.IGV;
+                dr["Moneda"] = obj.Moneda;
+                dr["TipoCambio"] = obj.TipoCambio;
+                dr["Pais"] = obj.Pais;
+                dr["RazonSocial"] = obj.RazonSocial;
+                dr["Domicilio"] = obj.Domicilio;
+                dr["NumeroIdentificacionSujeto"] = obj.NumeroIdentificacionSujeto;
+                dr["NumeroIdentificacionFiscal"] = obj.NumeroIdentificacionFiscal;
+                dr["RazonSocialBeneficiario"] = obj.RazonSocialBeneficiario;
+                dr["PaisBeneficiario"] = obj.PaisBeneficiario;
+                dr["Vinculo"] = obj.Vinculo;
+                dr["RentaBruta"] = obj.RentaBruta;
+                dr["RentaNeta"] = obj.RentaNeta;
+                dr["TasaRetencion"] = obj.TasaRetencion;
+                dr["ImpuestoRetenido"] = obj.ImpuestoRetenido;
+                dr["Convenio"] = obj.Convenio;
+                dr["ExoneracionAplicada"] = obj.ExoneracionAplicada;
+                dr["TipoRenta"] = obj.TipoRenta;
+                dr["ServicioPrestado"] = obj.ServicioPrestado;
+                dr["Campo35"] = obj.Campo35;
+                dr["Estado"] = obj.Estado;
+
+                dt.Rows.Add(dr);
+            }
+        }
     }
 }

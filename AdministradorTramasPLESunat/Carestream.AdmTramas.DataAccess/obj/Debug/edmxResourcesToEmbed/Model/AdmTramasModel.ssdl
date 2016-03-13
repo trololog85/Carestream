@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Database.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Database.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="CodigoDetalles">
     <Key>
       <PropertyRef Name="Id" />
@@ -116,6 +116,7 @@
     <Property Name="IndicadorLibro" Type="nvarchar" MaxLength="1" />
     <Property Name="TipoLog" Type="nvarchar" MaxLength="1" Nullable="false" />
     <Property Name="Errores" Type="int" />
+    <Property Name="FechaPeriodo" Type="datetime2" Precision="7" />
   </EntityType>
   <EntityType Name="LibroMayors">
     <Key>
@@ -212,6 +213,52 @@
     <Property Name="codigounicooperacion" Type="nvarchar" MaxLength="40" Nullable="false" />
     <Property Name="numerocorrelativo" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="DUA" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="ClasificacionBien" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="RegistroNoDomiciliado">
+    <Key>
+      <PropertyRef Name="IdLibroLog" />
+      <PropertyRef Name="Linea" />
+    </Key>
+    <Property Name="IdLibroLog" Type="int" Nullable="false" />
+    <Property Name="Linea" Type="int" Nullable="false" />
+    <Property Name="IdLibro" Type="smallint" Nullable="false" />
+    <Property Name="Periodo" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="CUO" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="NumeroCorrelativo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FechaEmision" Type="datetime" Nullable="false" />
+    <Property Name="TipoComprobante" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="NumeroSerieComprobante" Type="varchar" MaxLength="20" />
+    <Property Name="NumeroComprobante" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="ValorAdquisicion" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="OtrosConceptos" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="ImporteTotalAdquisicion" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="TipoComprobanteFiscal" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="NumeroSerieComprobanteFiscal" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="AnioEmisionDUA" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="NumeroComprobanteDUA" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="IGV" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Moneda" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="TipoCambio" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Pais" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="RazonSocial" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Domicilio" Type="varchar" MaxLength="100" />
+    <Property Name="NumeroIdentificacionSujeto" Type="varchar" MaxLength="15" />
+    <Property Name="NumeroIdentificacionFiscal" Type="varchar" MaxLength="15" />
+    <Property Name="RazonSocialBeneficiario" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PaisBeneficiario" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Vinculo" Type="varchar" MaxLength="2" />
+    <Property Name="RentaBruta" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Deduccion" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="RentaNeta" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="TasaRetencion" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="ImpuestoRetenido" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Convenio" Type="varchar" MaxLength="2" />
+    <Property Name="ExoneracionAplicada" Type="char" MaxLength="1" />
+    <Property Name="TipoRenta" Type="char" MaxLength="2" />
+    <Property Name="ServicioPrestado" Type="char" MaxLength="1" />
+    <Property Name="Campo35" Type="char" MaxLength="1" />
+    <Property Name="Estado" Type="char" MaxLength="1" />
   </EntityType>
   <EntityType Name="RegistroVentas">
     <Key>
@@ -222,7 +269,7 @@
     <Property Name="Linea" Type="int" Nullable="false" />
     <Property Name="IdLibro" Type="smallint" Nullable="false" />
     <Property Name="Numero" Type="nvarchar" MaxLength="40" />
-    <Property Name="FechaComprobante" Type="datetime" Nullable="false" />
+    <Property Name="FechaComprobante" Type="datetime2" Precision="7" />
     <Property Name="TipoComprobante" Type="nvarchar" MaxLength="2" Nullable="false" />
     <Property Name="SerieComprobante" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="NumeroComprobante" Type="nvarchar" MaxLength="20" Nullable="false" />
@@ -236,7 +283,7 @@
     <Property Name="VV" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="IGV" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="PV" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-    <Property Name="FechaModificada" Type="datetime" />
+    <Property Name="FechaModificada" Type="datetime2" Precision="7" />
     <Property Name="TipoComprobanteModificado" Type="nvarchar" MaxLength="2" />
     <Property Name="NumeroSerieModificado" Type="nvarchar" MaxLength="20" />
     <Property Name="NumeroComprobanteModificado" Type="nvarchar" MaxLength="20" />
@@ -246,7 +293,7 @@
     <Property Name="NumeroUnicoOperacion" Type="nvarchar" MaxLength="40" Nullable="false" />
     <Property Name="OperacionNoGravada" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="estado" Type="char" MaxLength="1" Nullable="false" />
-    <Property Name="FechaVencimiento" Type="datetime" />
+    <Property Name="FechaVencimiento" Type="datetime2" Precision="7" />
     <Property Name="ValorEmbarcadoExportacion" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="OperacionGravada" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="NumeroCorrelativo" Type="nvarchar" MaxLength="10" />
@@ -373,6 +420,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_RegistroNoDomiciliado_Libros">
+    <End Role="Libros" Type="Self.Libros" Multiplicity="1" />
+    <End Role="RegistroNoDomiciliado" Type="Self.RegistroNoDomiciliado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Libros">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RegistroNoDomiciliado">
+        <PropertyRef Name="IdLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Function Name="CodigoDetalle_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="tipo" Type="smallint" Mode="In" />
   </Function>
@@ -424,6 +483,7 @@
     <EntitySet Name="LibroMayors" EntityType="Self.LibroMayors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Libros" EntityType="Self.Libros" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RegistroCompras" EntityType="Self.RegistroCompras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegistroNoDomiciliado" EntityType="Self.RegistroNoDomiciliado" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RegistroVentas" EntityType="Self.RegistroVentas" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_LibroDiarioDetalles_LibroLogs" Association="Self.FK_LibroDiarioDetalles_LibroLogs">
       <End Role="LibroLogs" EntitySet="LibroLogs" />
@@ -460,6 +520,10 @@
     <AssociationSet Name="FK_LibroLogRegistroVenta" Association="Self.FK_LibroLogRegistroVenta">
       <End Role="LibroLogs" EntitySet="LibroLogs" />
       <End Role="RegistroVentas" EntitySet="RegistroVentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistroNoDomiciliado_Libros" Association="Self.FK_RegistroNoDomiciliado_Libros">
+      <End Role="Libros" EntitySet="Libros" />
+      <End Role="RegistroNoDomiciliado" EntitySet="RegistroNoDomiciliado" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

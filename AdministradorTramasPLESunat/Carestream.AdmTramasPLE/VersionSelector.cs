@@ -22,7 +22,8 @@ namespace Carestream.AdmTramasPLE
                         new V40.ImportRegistroCompras(),
                         new V40.ImportLibroMayor(),
                         new V40.ImportLibroDiario(),
-                        new V40.ImportLibroDiarioDetalle());
+                        new V40.ImportLibroDiarioDetalle(),
+                        new V40.ImportLibroNoDomiciliado());
                 default:
                     throw new ArgumentOutOfRangeException("version");
             }

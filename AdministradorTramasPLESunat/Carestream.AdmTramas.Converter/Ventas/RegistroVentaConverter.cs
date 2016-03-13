@@ -31,7 +31,7 @@ namespace Carestream.AdmTramas.Converter.Ventas
             {
                 FechaPeriodo = Globals.PeriodoInformado,
                 NumeroCorrelativo = registroVenta.NumeroCorrelativo,
-                FechaEmisionComprobante = registroVenta.FechaComprobante,
+                FechaEmisionComprobante = (DateTime)registroVenta.FechaComprobante,
                 TipoComprobante = TipoComprobanteConverter(registroVenta.TipoComprobante),
                 NumeroSerieComprobante = NumeroSerieConverter(registroVenta.SerieComprobante, registroVenta.TipoComprobante),
                 NumeroComprobante = registroVenta.NumeroComprobante,

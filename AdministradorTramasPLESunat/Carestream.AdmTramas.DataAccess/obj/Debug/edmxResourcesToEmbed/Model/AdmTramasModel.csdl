@@ -136,6 +136,11 @@
     <FunctionImport Name="ConsultaErroresPorLog" EntitySet="ErrorLineas" ReturnType="Collection(Database.ErrorLinea)">
       <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="RegistroNoDomiciliadoes" EntityType="Database.RegistroNoDomiciliado" />
+    <AssociationSet Name="FK_RegistroNoDomiciliado_Libros" Association="Database.FK_RegistroNoDomiciliado_Libros">
+      <End Role="Libro" EntitySet="Libros" />
+      <End Role="RegistroNoDomiciliado" EntitySet="RegistroNoDomiciliadoes" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Libro">
     <Key>
@@ -146,6 +151,7 @@
     <Property Name="Codigo" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="LibroLogs" Relationship="Database.LibroLibroLog" FromRole="Libro" ToRole="LibroLog" />
     <NavigationProperty Name="Estructuras" Relationship="Database.FK_LibroEstructura" FromRole="Libro" ToRole="Estructura" />
+    <NavigationProperty Name="RegistroNoDomiciliadoes" Relationship="Database.FK_RegistroNoDomiciliado_Libros" FromRole="Libro" ToRole="RegistroNoDomiciliado" />
   </EntityType>
   <EntityType Name="LibroLog">
     <Key>
@@ -172,6 +178,7 @@
     <NavigationProperty Name="LibroDiarioAgrupados" Relationship="Database.FK_LibroDiarioDetalles_LibroLogs1" FromRole="LibroLog" ToRole="LibroDiarioAgrupado" />
     <NavigationProperty Name="LibroDiarioDetalles" Relationship="Database.FK_LibroDiarioDetalles_LibroLogs11" FromRole="LibroLog" ToRole="LibroDiarioDetalle" />
     <Property Name="Errores" Type="Int32" />
+    <Property Name="FechaPeriodo" Type="DateTime" Precision="7" />
   </EntityType>
   <EntityType Name="LibroLogExportDetalle">
     <Key>
@@ -294,7 +301,7 @@
     <Property Name="IdLibroLog" Type="Int32" Nullable="false" />
     <Property Name="Linea" Type="Int32" Nullable="false" />
     <Property Name="IdLibro" Type="Int16" Nullable="false" />
-    <Property Name="FechaComprobante" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaComprobante" Type="DateTime" Precision="7" />
     <Property Name="TipoComprobante" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
     <Property Name="SerieComprobante" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
     <Property Name="NumeroComprobante" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
@@ -308,7 +315,7 @@
     <Property Name="VV" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="IGV" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="PV" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-    <Property Name="FechaModificada" Type="DateTime" Precision="3" />
+    <Property Name="FechaModificada" Type="DateTime" Precision="7" />
     <Property Name="TipoComprobanteModificado" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
     <Property Name="NumeroSerieModificado" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
     <Property Name="NumeroComprobanteModificado" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
@@ -319,7 +326,7 @@
     <Property Name="OperacionNoGravada" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <NavigationProperty Name="LibroLog" Relationship="Database.LibroLogRegistroVenta" FromRole="RegistroVenta" ToRole="LibroLog" />
     <Property Name="estado" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="FechaVencimiento" Type="DateTime" Precision="3" />
+    <Property Name="FechaVencimiento" Type="DateTime" Precision="7" />
     <Property Name="ValorEmbarcadoExportacion" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="OperacionGravada" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Numero" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
@@ -405,6 +412,7 @@
     <Property Name="codigounicooperacion" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
     <Property Name="numerocorrelativo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="DUA" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="ClasificacionBien" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
   </EntityType>
   <Association Name="LibroLogRegistroCompra">
     <End Type="Database.LibroLog" Role="LibroLog" Multiplicity="1" />
@@ -764,4 +772,62 @@
     <Property Type="String" Name="Campo" Nullable="false" />
     <Property Type="String" Name="Descripcion" Nullable="false" />
   </ComplexType>
+  <EntityType Name="RegistroNoDomiciliado">
+    <Key>
+      <PropertyRef Name="IdLibroLog" />
+      <PropertyRef Name="Linea" />
+    </Key>
+    <Property Name="IdLibroLog" Type="Int32" Nullable="false" />
+    <Property Name="Linea" Type="Int32" Nullable="false" />
+    <Property Name="IdLibro" Type="Int16" Nullable="false" />
+    <Property Name="Periodo" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="CUO" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroCorrelativo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FechaEmision" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TipoComprobante" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSerieComprobante" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroComprobante" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+    <Property Name="ValorAdquisicion" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="OtrosConceptos" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="ImporteTotalAdquisicion" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="TipoComprobanteFiscal" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSerieComprobanteFiscal" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AnioEmisionDUA" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="NumeroComprobanteDUA" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+    <Property Name="IGV" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Moneda" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="TipoCambio" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Pais" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="RazonSocial" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Domicilio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroIdentificacionSujeto" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroIdentificacionFiscal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="RazonSocialBeneficiario" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PaisBeneficiario" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Vinculo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="RentaBruta" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Deduccion" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="RentaNeta" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="TasaRetencion" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="ImpuestoRetenido" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Convenio" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ExoneracionAplicada" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TipoRenta" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="ServicioPrestado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Campo35" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Libro" Relationship="Database.FK_RegistroNoDomiciliado_Libros" FromRole="RegistroNoDomiciliado" ToRole="Libro" />
+  </EntityType>
+  <Association Name="FK_RegistroNoDomiciliado_Libros">
+    <End Type="Database.Libro" Role="Libro" Multiplicity="1" />
+    <End Type="Database.RegistroNoDomiciliado" Role="RegistroNoDomiciliado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Libro">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RegistroNoDomiciliado">
+        <PropertyRef Name="IdLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

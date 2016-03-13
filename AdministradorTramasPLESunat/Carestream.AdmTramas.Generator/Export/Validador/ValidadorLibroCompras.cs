@@ -53,6 +53,16 @@ namespace Carestream.AdmTramas.Generator.Export.Validador
             var numeroComprobante = registroCompra.NumeroComprobante;
             var numeroComprobanteNoDomiciliado = registroCompra.NumeroComprobanteNoDomiciliado;
             var fechaEmisionConstancia = registroCompra.FechaEmisionConstancia;
+            var igv = registroCompra.IGV1;
+            var igv2 = registroCompra.IGV2;
+            var baseImponible = registroCompra.BaseImponible1;
+            var baseImponible2 = registroCompra.BaseImponible2;
+            var igv3 = registroCompra.IGV3;
+            var baseImponible3 = registroCompra.BaseImponible3;
+            var importeTotal = registroCompra.ImporteTotal;
+            var valorAdquisicionNoGravada = registroCompra.AdquisicionNoGravada;
+            var otrosTributos = registroCompra.OtrosTributos;
+            var clasificacionBienes = registroCompra.ClasificacionBien;
 
             _idLibroLog = registroCompra.IdLibroLog;
 
@@ -101,6 +111,49 @@ namespace Carestream.AdmTramas.Generator.Export.Validador
             result = _registroCompra.ValidaFechaEmisionConstancia(fechaPeriodo, fechaEmisionConstancia);
 
             RegistraError(errorDetalle, Compras.FechaEmision, result, registroCompra.NumLinea);
+
+            error.Detalles = errorDetalle;
+
+            //11. Valida Tipo Documento Cliente
+            result = _registroCompra.ValidaTipoDocumentoIdentidad(tipoComprobante, tipoDocumento, tipoComprobanteMod);
+
+            RegistraError(errorDetalle, Compras.TipoComprobante, result, registroCompra.NumLinea);
+
+            error.Detalles = errorDetalle;
+
+            //12. Valida IGV
+            result = _registroCompra.ValidaIGV(igv,baseImponible);
+
+            RegistraError(errorDetalle, Compras.IGV, result, registroCompra.NumLinea);
+
+            error.Detalles = errorDetalle;
+
+            //13. Valida IGV2
+            result = _registroCompra.ValidaIGV(igv2, baseImponible2);
+
+            RegistraError(errorDetalle, Compras.IGV, result, registroCompra.NumLinea);
+
+            error.Detalles = errorDetalle;
+
+            //14. Valida IGV3
+            result = _registroCompra.ValidaIGV(igv3, baseImponible3);
+
+            RegistraError(errorDetalle, Compras.IGV, result, registroCompra.NumLinea);
+
+            error.Detalles = errorDetalle;
+
+            //15.Valida Importe Total
+            result = _registroCompra.ValidaImporteTotal(importeTotal, igv, baseImponible, igv2, baseImponible2,
+                igv3, baseImponible3, valorAdquisicionNoGravada, otrosTributos);
+
+            RegistraError(errorDetalle, Compras.ImporteTotal, result, registroCompra.NumLinea);
+
+            error.Detalles = errorDetalle;
+
+            //16.Valida Clasificacion Bienes
+            result = _registroCompra.ValidaClasificacionBienes(clasificacionBienes);
+
+            RegistraError(errorDetalle, Compras.ClasificacionBienes, result, registroCompra.NumLinea);
 
             error.Detalles = errorDetalle;
 

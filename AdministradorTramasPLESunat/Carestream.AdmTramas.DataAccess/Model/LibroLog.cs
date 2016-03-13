@@ -37,6 +37,7 @@ namespace Carestream.AdmTramas.DataAccess.Model
         public string IndicadorLibro { get; set; }
         public string TipoLog { get; set; }
         public Nullable<int> Errores { get; set; }
+        public Nullable<System.DateTime> FechaPeriodo { get; set; }
     
         public virtual Libro Libro { get; set; }
         public virtual ICollection<LibroLogExportDetalle> LibroLogExportDetalles { get; set; }

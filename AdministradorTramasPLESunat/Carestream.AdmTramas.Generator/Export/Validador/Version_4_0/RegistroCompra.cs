@@ -250,5 +250,76 @@ namespace Carestream.AdmTramas.Generator.Export.Validador.Version_4_0
 
             return new Tuple<bool, string>(true, String.Empty);
         }
+
+        public Tuple<bool, string> ValidaTipoDocumentoIdentidad(string tipoComprobante,
+            string tipoDocumentoCliente, string tipoComprobanteModificado)
+        {
+            var regla1 = ConfigurationManager.AppSettings["reglaNombreyApellidoCompras1"];
+            var regla2 = ConfigurationManager.AppSettings["ReglaTipoDocIdentidad"];
+            var regla3 = ConfigurationManager.AppSettings["reglaNombreyApellido4"];
+            var regla4 = ConfigurationManager.AppSettings["TipoDocAnulado"];
+
+            var tipoComprobanteValidos = regla1.Split(',');
+            var tipoComprobanteValidos1 = regla2.Split(',');
+            var tipoComprobanteValidos2 = regla3.Split(',');
+
+            var obligatorio = !(tipoComprobanteValidos.Any(x => x == Formato.RellenaCodigo(tipoComprobante))) ||
+                                (tipoComprobanteValidos1.Any(x => x == Formato.RellenaCodigo(tipoComprobante))
+                                 && tipoComprobanteValidos2.Any(x => x == tipoComprobanteModificado));
+
+            if (obligatorio && tipoDocumentoCliente.Trim() == String.Empty)
+                return new Tuple<bool, string>(false, Errores.CampoObligatorio("Tipo de Documento del Cliente"));
+
+            if (tipoDocumentoCliente.Trim() == regla4)
+                return new Tuple<bool, string>(false, Errores.CampoInvalido("Tipo de Documento del Cliente", tipoDocumentoCliente));
+            
+
+            if (tipoDocumentoCliente.Trim() != String.Empty)
+            {
+                if (Globals.LstTipoDocumento.All(x => x.Codigo != tipoDocumentoCliente))
+                    return new Tuple<bool, string>(false, Errores.CampoInvalido("Tipo de Documento del Cliente", tipoDocumentoCliente));
+            }
+
+            return new Tuple<bool, string>(true, "");
+        }
+
+        public Tuple<bool, string> ValidaIGV(decimal igv, decimal baseImponible)
+        {
+            if (baseImponible < 0)
+            {
+                if(igv>=0)
+                    return new Tuple<bool, string>(false, Errores.CampoInvalido("IGV", igv.ToString()));
+            }
+
+            if (baseImponible >= 0)
+            {
+                if(igv<0)
+                    return new Tuple<bool, string>(false, Errores.CampoInvalido("IGV", igv.ToString()));
+            }
+
+            return new Tuple<bool, string>(true, "");
+        }
+
+        public Tuple<bool, string> ValidaImporteTotal(decimal importeTotal, decimal igv, decimal baseImponible, decimal igv2, decimal baseImponible2,
+            decimal igv3, decimal baseImponible3, decimal valorAdquisicionNoGravada, decimal otrosTributos)
+        {
+            var suma = igv + baseImponible + igv2 + baseImponible2 + igv3 + baseImponible3 + valorAdquisicionNoGravada +
+                       otrosTributos;
+
+            if(suma != importeTotal)
+                return new Tuple<bool, string>(false, Errores.CampoInvalido("Importe Total", igv.ToString()));
+
+            return new Tuple<bool, string>(true, "");
+        }
+
+        public Tuple<bool, string> ValidaClasificacionBienes(string clasificacionBienes)
+        {
+            var codigos = Globals.LstCodigoBienes;
+
+            if(codigos.All(c=>c.Codigo == clasificacionBienes))
+                return new Tuple<bool, string>(false, Errores.CampoInvalido("Clasificacion Bienes", clasificacionBienes));
+
+            return new Tuple<bool, string>(true, "");
+        }
     }
 }
