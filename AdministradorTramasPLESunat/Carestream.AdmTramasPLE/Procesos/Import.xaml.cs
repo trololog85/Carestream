@@ -63,6 +63,8 @@ namespace Carestream.AdmTramasPLE.Procesos
         private AdmTramas.Model.Entities.Import GeneraLibro()
         {
             var item = (Libro)CmbArchivo.SelectedItem;
+            string mes = this.CmbMes.SelectedValue.ToString();
+            string text = this.TxtAnio.Text;
 
             var import = new AdmTramas.Model.Entities.Import
             {
@@ -75,7 +77,7 @@ namespace Carestream.AdmTramasPLE.Procesos
                 Tipo = Formato.EligeTipoLibro(item.Id),
                 ProgressBar = PrgBarImport,
                 LblMessage = LblMsgProgress,
-                Periodo = DateTime.Now.AddMonths(-1)
+                Periodo = Formato.GeneraFecha(text, mes)
             };
 
             return import;
@@ -148,6 +150,12 @@ namespace Carestream.AdmTramasPLE.Procesos
             //Version
             CmbVersion.ItemsSource = Combo.VersionPLE();
             CmbVersion.SelectedValue = "4.0";
+
+            this.CmbMes.ItemsSource = Combo.ListaMeses();
+
+            DateTime dateTime = DateTime.Now.AddMonths(-1);
+            this.TxtAnio.Text = dateTime.Year.ToString(CultureInfo.InvariantCulture);
+            this.CmbMes.SelectedValue = dateTime.Month.ToString(CultureInfo.InvariantCulture);
 
             //LibroLog
             CargarGrilla();

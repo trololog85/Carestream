@@ -1,0 +1,97 @@
+﻿<Window x:Class="Carestream.AdmTramasPLE.Procesos.UpdateCUO" Title="Actualizar CUO" Height="414.925" Width="860" Loaded="Window_Loaded" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <StackPanel>
+            <GroupBox Header="Búsqueda de CUO" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="830">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Grid.Row="0" Grid.Column="0" GroupName="Tipo" Content="Ventas" IsChecked="True" Margin="3,3,8,3" />
+                    <RadioButton Grid.Row="0" Grid.Column="1" GroupName="Tipo" Content="Compras" IsChecked="False" Margin="3,3,8,3" Visibility="Hidden" />
+                    <Label Name="LblBusqueda" Grid.Row="1" Grid.Column="0" Margin="5,2,5,5" Padding="5,2,5,5">
+                        <Label.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Width="20" Height="20" Source="/Recursos/Iconos/search.png" />
+                                <TextBlock Text="Ingresar CUO: " Margin="3,3,8,3" />
+                            </StackPanel>
+                        </Label.Content>
+                    </Label>
+                    <TextBox Name="TxtCUO" Grid.Row="1" Grid.Column="1" Width="80" Height="23" Background="#FFF6FB90" KeyUp="TxtCUO_KeyUp" KeyDown="TxtCUO_KeyDown" />
+                    <Label Name="LblAnio" Grid.Row="1" Grid.Column="2" Content="Año:" Margin="5,2,5,5" Padding="5,2,5,5" />
+                    <TextBox Name="TxtAnio" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="3" Width="80" Height="23" Margin="5,5,5,2" KeyDown="TxtAnio_KeyDown" />
+                    <Label Name="LblMes" Grid.Row="1" Grid.Column="4" Content="Mes:" Margin="5,2,5,5" Padding="5,2,5,5" />
+                    <ComboBox Name="CmbMes" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="5" Height="23" Margin="5,2" Width="150" DisplayMemberPath="Nombre" SelectedValuePath="sCod" ItemsSource="{Binding}" />
+                    <Label Name="lblCiclo" Grid.Row="1" Grid.Column="6" Content="Ciclo:" Margin="5,2,5,5" Padding="5,2,5,5" />
+                    <RadioButton Name="rbApertura" Grid.Row="1" Grid.Column="7" GroupName="Ciclo" Content="Apertura" IsChecked="True" Margin="3,3,8,3" />
+                    <RadioButton Name="rbMensual" Grid.Row="1" Grid.Column="8" GroupName="Ciclo" Content="Mensual" IsChecked="false" Margin="3,3,8,3" />
+                    <RadioButton Name="rbCierre" Grid.Row="1" Grid.Column="9" GroupName="Ciclo" Content="Cierre" IsChecked="false" Margin="3,3,8,3" />
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Resultado" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="830">
+                <DataGrid Name="GridCuoVentas" Margin="5,5,5,5" CanUserAddRows="False" CanUserResizeColumns="False" SelectionMode="Single" VerticalScrollBarVisibility="Visible" Height="240" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=Linea}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=IdLibroLog}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=IdLibro}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=FechaComprobante}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=TipoComprobante}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=SerieComprobante}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=TipoDocumento}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=CodigoDocumento}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=ValorVentaOriginal}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=Moneda}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=TipoCambio}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=VV}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=IGV}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=PV}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=FechaModificada}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=TipoComprobanteModificado}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=NumeroSerieModificado}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=NumeroComprobanteModificado}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=VVModificado}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=IGVModificado}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=PVModificado}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=NumeroUnicoOperacion}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=OperacionNoGravada}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=estado}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=FechaVencimiento}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=ValorEmbarcadoExportacion}" />
+                        <DataGridTextColumn Visibility="Hidden" Binding="{Binding Path=operaciongravada}" />
+                        <DataGridTextColumn IsReadOnly="True" Header="Secuencia" Width="80" Visibility="Visible" Binding="{Binding Path=Numero}" />
+                        <DataGridTextColumn IsReadOnly="True" Header="Comprobante" Width="100" Visibility="Visible" Binding="{Binding Path=NumeroComprobante}" />
+                        <DataGridTextColumn IsReadOnly="True" Header="Documento" Width="100" Visibility="Visible" Binding="{Binding Path=NumeroDocumento}" />
+                        <DataGridTextColumn IsReadOnly="True" Header="Razon Social" Width="220" Visibility="Visible" Binding="{Binding Path=NombreRazonSocial}" />
+                        <DataGridTextColumn IsReadOnly="True" Header="CUO" Width="100" Visibility="Visible" Binding="{Binding Path=CodigoUnicoOperacion}" />
+                        <DataGridTextColumn Header="Correlativo" Width="100" Visibility="Visible" Binding="{Binding Path=NumeroCorrelativo}" />
+                        <DataGridTemplateColumn Header="Guardar" Width="70" Visibility="Visible">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Click="GuardarRegistro">
+                                        <Button.Content>
+                                            <StackPanel>
+                                                <Image Width="20" Height="20" Source="/Recursos/Iconos/save.png" />
+                                            </StackPanel>
+                                        </Button.Content>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>

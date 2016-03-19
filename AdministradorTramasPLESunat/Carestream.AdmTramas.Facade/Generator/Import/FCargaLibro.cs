@@ -125,7 +125,7 @@ namespace Carestream.AdmTramas.Facade.Generator.Import
             }
 
             //Insertamos el detalle
-            var result2 = await Task.Run(()=>InsertarDetalleImport<T>(lstComplete, import));
+            var result2 = await Task.Run(()=>InsertarDetalleImport<T>(result.Item1, import));
 
             if (!prgb.CheckAccess())
             {
@@ -149,6 +149,7 @@ namespace Carestream.AdmTramas.Facade.Generator.Import
             var lstCompras = new List<RegistroCompra>();
             var lstDiarioDetalles = new List<LibroDiarioDetalle>();
             var lstMayor = new List<LibroMayor>();
+            var lstNoDomiciliado = new List<RegistroNoDomiciliado>();
 
             switch (tipoLibro)
             {
@@ -199,6 +200,15 @@ namespace Carestream.AdmTramas.Facade.Generator.Import
                     }
                     lstResult = lstMayor.Cast<T>().ToList();
                     break;
+                case TipoLibro.NoDomiciliado:
+                    lstNoDomiciliado = lstDetalle.Cast<RegistroNoDomiciliado>().ToList();
+
+                    foreach (var libro in lstNoDomiciliado)
+                    {
+                        libro.IdLibroLog = idLibroLog;
+                    }
+                    lstResult = lstNoDomiciliado.Cast<T>().ToList();
+                    break;
             }
 
             return lstResult;
@@ -232,6 +242,10 @@ namespace Carestream.AdmTramas.Facade.Generator.Import
                     case TipoLibro.LibroDiarioDetalle:
                         var detalle4 = lstDetalle.Cast<LibroDiarioDetalle>().ToList();
                         _daLibroLog.GuardarDetalleImportDiarioDetalle(detalle4);
+                        break;
+                    case TipoLibro.NoDomiciliado:
+                        var detalle5 = lstDetalle.Cast<RegistroNoDomiciliado>().ToList();
+                        _daLibroLog.GuardarDetalleNoDomicialado(detalle5);
                         break;
                 }
             }
@@ -274,7 +288,7 @@ namespace Carestream.AdmTramas.Facade.Generator.Import
                         lstImport = _objImportLibroDiarioDetalle.LeeRegistro(import).Cast<T>().ToList();
                         break;
                     case TipoLibro.NoDomiciliado:
-                        lstImport = _objImportLibroDiarioDetalle.LeeRegistro(import).Cast<T>().ToList();
+                        lstImport = _objImportLibroNoDomiciliado.LeeRegistro(import).Cast<T>().ToList();
                         break;
                 }
             }
@@ -314,7 +328,8 @@ namespace Carestream.AdmTramas.Facade.Generator.Import
                 Registros = registros,
                 TipoLog = "I",
                 sFechaCarga = Formato.FormateaFecha("AAAA-MM-DD", DateTime.Now),
-                sFechaGeneracion = String.Empty
+                sFechaGeneracion = String.Empty,
+                FechaPeriodo = import.Periodo
             };
 
             var fLibroLog = new FLibroLog();

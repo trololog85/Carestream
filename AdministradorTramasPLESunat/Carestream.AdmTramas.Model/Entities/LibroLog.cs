@@ -1,4 +1,7 @@
-﻿namespace Carestream.AdmTramas.Model.Entities
+﻿using System;
+using System.Dynamic;
+
+namespace Carestream.AdmTramas.Model.Entities
 {
     public class LibroLog
     {
@@ -14,5 +17,6 @@
         public string IndicadorLibro { get; set; }
         public string TipoLog { get; set; }
         public int TotalErrores { get; set; }
+        public DateTime FechaPeriodo { get; set; }
     }
 }

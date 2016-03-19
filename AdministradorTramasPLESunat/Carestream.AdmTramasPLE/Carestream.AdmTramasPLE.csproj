@@ -73,6 +73,9 @@
     <Compile Include="Procesos\Import.xaml.cs">
       <DependentUpon>Import.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\UpdateCUO.xaml.cs">
+      <DependentUpon>UpdateCUO.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VersionSelector.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +106,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Procesos\Resumen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Procesos\UpdateCUO.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -197,6 +204,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\Iconos\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recursos\Iconos\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -18,7 +18,7 @@ namespace Carestream.AdmTramas.Generator.Export.Validador
         {
             var errores = new List<Error>();
 
-            Error error = null;
+            Error error = null; 
 
             foreach (var libro in libroDiario)
             {

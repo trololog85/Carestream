@@ -99,5 +99,13 @@ namespace Carestream.AdmTramasPLE
 
             result = String.Format("{0} a las {1}", "Conexión exitosa", DateTime.Now);
         }
+
+        private void ActualizarCUO_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new UpdateCUO();
+
+            window.Show();
+            window.ShowActivated = true;
+        }
     }
 }

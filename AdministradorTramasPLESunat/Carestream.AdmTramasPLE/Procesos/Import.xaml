@@ -1,32 +1,35 @@
 ﻿<Window x:Class="Carestream.AdmTramasPLE.Procesos.Import"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Registro de Información" Height="500" Width="710.5" Loaded="Window_Loaded">
+        Title="Registro de Información" Height="500" Width="748" Loaded="Window_Loaded">
     <Grid>
         <StackPanel>
-            <GroupBox Header="Archivos" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="682">
+            <GroupBox Header="Archivos" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="720">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width ="auto"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
-                    <Label Name="LblEstructura" Grid.Row="0" Grid.Column="0" Content="Libro:" Margin="5,2,5,5" Padding="5,2,5,5"></Label>
-                    <ComboBox Name="CmbArchivo" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Height="23" Margin="5,4,0,4" Width="156"
-                              ItemsSource="{Binding}"
-                              SelectedValuePath="Id" DisplayMemberPath="Nombre"/>
-                    <Label Name="lblVersion" Grid.Row="0" Grid.Column="2" Content="Versión:" Margin="5,2,5,5" Padding="5,2,5,5"/>
-                    <ComboBox Name="CmbVersion" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="3" Height="23" Margin="5,2" Width="80"
-                              ItemsSource="{Binding}"
-                              DisplayMemberPath="Nombre"
-                              SelectedValuePath="sCod"/>
+                    <Label Name="LblAnio" Grid.Row="0" Grid.Column="0" Content="Año:" Margin="5,2,5,5" Padding="5,2,5,5" />
+                    <TextBox Name="TxtAnio" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Width="80" Height="23" Margin="5,5,5,2" />
+                    <Label Name="LblMes" Grid.Row="0" Grid.Column="2" Content="Mes:" Margin="5,2,5,5" Padding="5,2,5,5" />
+                    <ComboBox Name="CmbMes" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="3" Height="23" Margin="5,2" Width="150" DisplayMemberPath="Nombre" SelectedValuePath="sCod" ItemsSource="{Binding}" />
+                    <Label Name="LblEstructura" Grid.Row="0" Grid.Column="4" Content="Libro:" Margin="5,2,5,5" Padding="5,2,5,5" />
+                    <ComboBox Name="CmbArchivo" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="5" Height="23" Margin="5,4,0,4" Width="156" SelectedValuePath="Id" DisplayMemberPath="Nombre" ItemsSource="{Binding}" />
+                    <Label Name="lblVersion" Grid.Row="0" Grid.Column="6" Content="Versión:" Margin="5,2,5,5" Padding="5,2,5,5" />
+                    <ComboBox Name="CmbVersion" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="7" Height="23" Margin="5,2" Width="80" DisplayMemberPath="Nombre" SelectedValuePath="sCod" ItemsSource="{Binding}" />
                 </Grid>
             </GroupBox>
-            <GroupBox Header="Información General" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="682">
+            <GroupBox Header="Información General" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="720">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -61,7 +64,7 @@
                               SelectedValuePath="sCod" DisplayMemberPath="Nombre"/>
                 </Grid>
             </GroupBox>
-            <GroupBox Header="Carga de Archivo" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="682">
+            <GroupBox Header="Carga de Archivo" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="720">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
@@ -88,7 +91,8 @@
                     <Label Name="LblMsgProgress" Grid.Row="1" Grid.Column="2" Content="" Margin="5,2,5,5" Padding="5,2,5,5"/>
                 </Grid>
             </GroupBox>
-            <GroupBox Header="Registro de Cargas" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="682">
+            <GroupBox Header="Registro de Cargas" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="720
+                      ">
                 <Grid>
                     <DataGrid AutoGenerateColumns="false" Name="GridLibroLog" Margin="5,5,5,5" 
                               CanUserAddRows="false" 

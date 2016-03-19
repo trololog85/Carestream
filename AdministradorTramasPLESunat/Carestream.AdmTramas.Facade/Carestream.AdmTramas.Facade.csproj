@@ -61,6 +61,7 @@
     <Compile Include="Mantenimientos\FCodigoDetalle.cs" />
     <Compile Include="Mantenimientos\FLibro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroVentas\FRegistroVenta.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Carestream.AdmTramas.Converter\Carestream.AdmTramas.Converter.csproj">

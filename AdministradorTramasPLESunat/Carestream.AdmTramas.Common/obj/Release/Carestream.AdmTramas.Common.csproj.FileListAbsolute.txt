@@ -1,0 +1,7 @@
+C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Release\Carestream.AdmTramas.Common.dll
+C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Release\Carestream.AdmTramas.Common.pdb
+C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Release\Carestream.AdmTramas.Model.dll
+C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\bin\Release\Carestream.AdmTramas.Model.pdb
+C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Release\Carestream.AdmTramas.Common.csprojResolveAssemblyReference.cache
+C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Release\Carestream.AdmTramas.Common.dll
+C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Common\obj\Release\Carestream.AdmTramas.Common.pdb

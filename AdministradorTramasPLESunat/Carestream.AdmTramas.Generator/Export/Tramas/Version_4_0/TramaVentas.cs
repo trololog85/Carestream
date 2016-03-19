@@ -68,6 +68,8 @@ namespace Carestream.AdmTramas.Generator.Export.Tramas.Version_4_0
             var campo31 = ConfigurationManager.AppSettings["campoDefault"];
             var campo32 = ConfigurationManager.AppSettings["campo32"];
             var campo33 = ConfigurationManager.AppSettings["campo33"];
+            var descuentoBaseImponible = registroVenta.DescuentoBaseImponible;
+            var descuentoIGV = registroVenta.DescuentoIGV;
 
 
             trama.Append(fechaPeriodo);
@@ -98,11 +100,11 @@ namespace Carestream.AdmTramas.Generator.Export.Tramas.Version_4_0
             trama.Append(separador);
             trama.Append(baseImponible);
             trama.Append(separador);
-            trama.Append(campo15);
+            trama.Append(descuentoBaseImponible);
             trama.Append(separador);
             trama.Append(igv);
             trama.Append(separador);
-            trama.Append(campo17);
+            trama.Append(descuentoIGV);
             trama.Append(separador);
             trama.Append(importeTotalExonerado);
             trama.Append(separador);

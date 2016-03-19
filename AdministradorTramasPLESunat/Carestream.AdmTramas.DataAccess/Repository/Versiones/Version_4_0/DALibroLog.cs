@@ -112,6 +112,16 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0
             }
         }
 
+        public List<RegistroNoDomiciliado> ConsultaLibroNoDomiciliado(int idLibroLog)
+        {
+            var lst = new List<RegistroNoDomiciliado>();
+
+            using (context)
+            {
+                return context.ConsultaLogRegistroNoDomiciliado(idLibroLog).ToList();
+            }
+        }
+
         public int Guardar(LibroLog libroLog)
         {
             var id = 0;
@@ -439,6 +449,7 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0
             var dc56 = new DataColumn("CodigoUnicoOperacion");
             var dc58 = new DataColumn("NumeroCorrelativo");
             var dc60 = new DataColumn("DUA");
+            var dc61 = new DataColumn("ClasificacionBien");
 
             dt.Columns.Add(dc1);
             dt.Columns.Add(dc2);
@@ -500,6 +511,7 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0
             dt.Columns.Add(dc58);
             dt.Columns.Add(dc59);
             dt.Columns.Add(dc60);
+            dt.Columns.Add(dc61);
 
             var dr = dt.NewRow();
 
@@ -567,6 +579,7 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0
                 dr["CodigoUnicoOperacion"] = obj.codigounicooperacion;
                 dr["NumeroCorrelativo"] = obj.numerocorrelativo;
                 dr["DUA"] = obj.DUA;
+                dr["ClasificacionBien"] = obj.ClasificacionBien1;
 
                 dt.Rows.Add(dr);
             }
@@ -819,6 +832,10 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0
                     var Idlibro = new SqlBulkCopyColumnMapping("IdLibro",
                         "IdLibro");
                     sqlBlk.ColumnMappings.Add(Idlibro);
+
+                    var ClasificacionBien = new SqlBulkCopyColumnMapping("ClasificacionBien",
+                        "ClasificacionBien");
+                    sqlBlk.ColumnMappings.Add(ClasificacionBien);
 
                     sqlBlk.WriteToServer(dt);
                 }
@@ -1266,7 +1283,6 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0
             dt.Columns.Add(dc28);
             dt.Columns.Add(dc29);
             dt.Columns.Add(dc30);
-            dt.Columns.Add(dc29);
             dt.Columns.Add(dc31);
             dt.Columns.Add(dc32);
             dt.Columns.Add(dc33);
@@ -1297,7 +1313,7 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0
                 dr["OtrosConceptos"] = obj.OtrosConceptos;
                 dr["ImporteTotalAdquisicion"] = obj.ImporteTotalAdquisicion;
                 dr["TipoComprobanteFiscal"] = obj.TipoComprobanteFiscal;
-                dr["NumeroSerieComprobanteFiscal"] = obj.NumeroSerieComprobante;
+                dr["NumeroSerieComprobanteFiscal"] = obj.NumeroSerieComprobanteFiscal;
                 dr["AnioEmisionDUA"] = obj.AnioEmisionDUA;
                 dr["NumeroComprobanteDUA"] = obj.NumeroComprobanteDUA;
                 dr["IGV"] = obj.IGV;
@@ -1312,6 +1328,7 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0
                 dr["PaisBeneficiario"] = obj.PaisBeneficiario;
                 dr["Vinculo"] = obj.Vinculo;
                 dr["RentaBruta"] = obj.RentaBruta;
+                dr["Deduccion"] = obj.Deduccion;
                 dr["RentaNeta"] = obj.RentaNeta;
                 dr["TasaRetencion"] = obj.TasaRetencion;
                 dr["ImpuestoRetenido"] = obj.ImpuestoRetenido;
@@ -1324,6 +1341,197 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0
 
                 dt.Rows.Add(dr);
             }
+
+            using (var sqlCon = new SqlConnection(Connection.DbConnection))
+            {
+                sqlCon.Open();
+
+                using (var sqlBlk = new SqlBulkCopy(sqlCon))
+                {
+                    sqlBlk.BatchSize = dt.Rows.Count;
+                    sqlBlk.DestinationTableName = "dbo.RegistroNoDomiciliado";
+
+                    var idlibrolog = new SqlBulkCopyColumnMapping("IdLibroLog",
+                        "IdLibroLog");
+                    sqlBlk.ColumnMappings.Add(idlibrolog);
+
+                    var linea = new SqlBulkCopyColumnMapping("Linea",
+                        "Linea");
+                    sqlBlk.ColumnMappings.Add(linea);
+
+                    var idlibro = new SqlBulkCopyColumnMapping("IdLibro",
+                        "IdLibro");
+                    sqlBlk.ColumnMappings.Add(idlibro);
+
+                    var numerocorrelativo = new SqlBulkCopyColumnMapping("Periodo",
+                        "Periodo");
+                    sqlBlk.ColumnMappings.Add(numerocorrelativo);
+
+                    var cuo = new SqlBulkCopyColumnMapping("CUO",
+                        "CUO");
+                    sqlBlk.ColumnMappings.Add(cuo);
+
+                    var NumeroCorrelativo = new SqlBulkCopyColumnMapping("NumeroCorrelativo",
+                        "NumeroCorrelativo");
+                    sqlBlk.ColumnMappings.Add(NumeroCorrelativo);
+
+                    var FechaEmisionComprobante = new SqlBulkCopyColumnMapping("FechaEmision",
+                        "FechaEmision");
+                    sqlBlk.ColumnMappings.Add(FechaEmisionComprobante);
+
+                    var TipoComprobante = new SqlBulkCopyColumnMapping("TipoComprobante",
+                        "TipoComprobante");
+                    sqlBlk.ColumnMappings.Add(TipoComprobante);
+
+                    var SerieComprobante = new SqlBulkCopyColumnMapping("NumeroSerieComprobante",
+                        "NumeroSerieComprobante");
+                    sqlBlk.ColumnMappings.Add(SerieComprobante);
+
+                    var NumeroComprobante = new SqlBulkCopyColumnMapping("NumeroComprobante",
+                        "NumeroComprobante");
+                    sqlBlk.ColumnMappings.Add(NumeroComprobante);
+
+                    var ValorAdquisicion = new SqlBulkCopyColumnMapping("ValorAdquisicion",
+                        "ValorAdquisicion");
+                    sqlBlk.ColumnMappings.Add(ValorAdquisicion);
+
+                    var OtrosConceptos = new SqlBulkCopyColumnMapping("OtrosConceptos",
+                        "OtrosConceptos");
+                    sqlBlk.ColumnMappings.Add(OtrosConceptos);
+
+                    var ImporteTotalAdquisicion = new SqlBulkCopyColumnMapping("ImporteTotalAdquisicion",
+                        "ImporteTotalAdquisicion");
+                    sqlBlk.ColumnMappings.Add(ImporteTotalAdquisicion);
+
+                    var TipoComprobanteFiscal = new SqlBulkCopyColumnMapping("TipoComprobanteFiscal",
+                        "TipoComprobanteFiscal");
+                    sqlBlk.ColumnMappings.Add(TipoComprobanteFiscal);
+
+                    var NumeroSerieComprobanteFiscal = new SqlBulkCopyColumnMapping("NumeroSerieComprobanteFiscal",
+                        "NumeroSerieComprobanteFiscal");
+                    sqlBlk.ColumnMappings.Add(NumeroSerieComprobanteFiscal);
+
+                    var AnioEmisionDUA = new SqlBulkCopyColumnMapping("AnioEmisionDUA",
+                        "AnioEmisionDUA");
+                    sqlBlk.ColumnMappings.Add(AnioEmisionDUA);
+
+                    var NumeroComprobanteDUA = new SqlBulkCopyColumnMapping("NumeroComprobanteDUA",
+                        "NumeroComprobanteDUA");
+                    sqlBlk.ColumnMappings.Add(NumeroComprobanteDUA);
+
+                    var IGV = new SqlBulkCopyColumnMapping("IGV",
+                        "IGV");
+                    sqlBlk.ColumnMappings.Add(IGV);
+
+                    var Moneda = new SqlBulkCopyColumnMapping("Moneda",
+                        "Moneda");
+                    sqlBlk.ColumnMappings.Add(Moneda);
+
+                    var TipoCambio = new SqlBulkCopyColumnMapping("TipoCambio",
+                        "TipoCambio");
+                    sqlBlk.ColumnMappings.Add(TipoCambio);
+
+                    var Pais = new SqlBulkCopyColumnMapping("Pais",
+                        "Pais");
+                    sqlBlk.ColumnMappings.Add(Pais);
+
+                    var RazonSocial = new SqlBulkCopyColumnMapping("RazonSocial",
+                        "RazonSocial");
+                    sqlBlk.ColumnMappings.Add(RazonSocial);
+
+                    var Domicilio = new SqlBulkCopyColumnMapping("Domicilio",
+                        "Domicilio");
+                    sqlBlk.ColumnMappings.Add(Domicilio);
+
+                    var NumeroIdentificacionSujeto = new SqlBulkCopyColumnMapping("NumeroIdentificacionSujeto",
+                        "NumeroIdentificacionSujeto");
+                    sqlBlk.ColumnMappings.Add(NumeroIdentificacionSujeto);
+
+                    var NumeroIdentificacionFiscal = new SqlBulkCopyColumnMapping("NumeroIdentificacionFiscal",
+                        "NumeroIdentificacionFiscal");
+                    sqlBlk.ColumnMappings.Add(NumeroIdentificacionFiscal);
+
+                    var RazonSocialBeneficiario = new SqlBulkCopyColumnMapping("RazonSocialBeneficiario",
+                        "RazonSocialBeneficiario");
+                    sqlBlk.ColumnMappings.Add(RazonSocialBeneficiario);
+
+                    var PaisBeneficiario = new SqlBulkCopyColumnMapping("PaisBeneficiario",
+                        "PaisBeneficiario");
+                    sqlBlk.ColumnMappings.Add(PaisBeneficiario);
+
+                    var Vinculo = new SqlBulkCopyColumnMapping("Vinculo",
+                        "Vinculo");
+                    sqlBlk.ColumnMappings.Add(Vinculo);
+
+                    var RentaBruta = new SqlBulkCopyColumnMapping("RentaBruta",
+                        "RentaBruta");
+                    sqlBlk.ColumnMappings.Add(RentaBruta);
+
+                    var RentaNeta = new SqlBulkCopyColumnMapping("RentaNeta",
+                        "RentaNeta");
+                    sqlBlk.ColumnMappings.Add(RentaNeta);
+
+                    var Deduccion = new SqlBulkCopyColumnMapping("Deduccion",
+                        "Deduccion");
+                    sqlBlk.ColumnMappings.Add(Deduccion);
+
+                    var TasaRetencion = new SqlBulkCopyColumnMapping("TasaRetencion",
+                        "TasaRetencion");
+                    sqlBlk.ColumnMappings.Add(TasaRetencion);
+
+                    var ImpuestoRetenido = new SqlBulkCopyColumnMapping("ImpuestoRetenido",
+                        "ImpuestoRetenido");
+                    sqlBlk.ColumnMappings.Add(ImpuestoRetenido);
+
+                    var Convenio = new SqlBulkCopyColumnMapping("Convenio",
+                        "Convenio");
+                    sqlBlk.ColumnMappings.Add(Convenio);
+
+                    var ExoneracionAplicada = new SqlBulkCopyColumnMapping("ExoneracionAplicada",
+                        "ExoneracionAplicada");
+                    sqlBlk.ColumnMappings.Add(ExoneracionAplicada);
+
+                    var TipoRenta = new SqlBulkCopyColumnMapping("TipoRenta",
+                        "TipoRenta");
+                    sqlBlk.ColumnMappings.Add(TipoRenta);
+
+                    var ServicioPrestado = new SqlBulkCopyColumnMapping("ServicioPrestado",
+                        "ServicioPrestado");
+                    sqlBlk.ColumnMappings.Add(ServicioPrestado);
+
+                    var CampoArt76 = new SqlBulkCopyColumnMapping("Campo35",
+                        "Campo35");
+                    sqlBlk.ColumnMappings.Add(CampoArt76);
+
+                    var Estado = new SqlBulkCopyColumnMapping("Estado",
+                        "Estado");
+                    sqlBlk.ColumnMappings.Add(Estado);
+
+                    sqlBlk.WriteToServer(dt);
+                }
+            }
+        }
+
+        public void ActualizarCorrelativoVentas(int idLibroLog, string correlativo, string linea)
+        {
+            using (this.context)
+                this.context.ActualizarCorrelativoVentas(linea, correlativo, new int?(idLibroLog));
+        }
+
+        public List<RegistroVenta> ConsultaRegistroVentasCUOVacio(int idLibroLog)
+        {
+            using (this.context)
+                return Enumerable.ToList<RegistroVenta>((IEnumerable<RegistroVenta>)this.context.ConsultaImportVentasCUO(new int?(idLibroLog)));
+        }
+
+        public int ConsultaLibroLogPorPeriodoLibro(short idLibro, DateTime periodo)
+        {
+            int? num = new int?(0);
+            using (this.context)
+            {
+                num = this.context.ConsultaLibroLogPeriodoLibro(periodo,idLibro).FirstOrDefault<int?>();
+            }
+            return Convert.ToInt32(num);
         }
     }
 }

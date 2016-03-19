@@ -56,13 +56,13 @@ namespace Carestream.AdmTramas.Generator.Import.Version_4_0
 
                                     objReg.Fecha = oleDbdr.GetDateTime(i1);
 
-                                    objReg.NumeroCorrelativo = Convert.ToInt32(oleDbdr.GetDouble(i2));
+                                    objReg.NumeroCorrelativo = Convert.ToInt32(oleDbdr.GetString(i2));
 
-                                    objReg.CodigoUnico = Convert.ToInt64(oleDbdr.GetDouble(i3)).ToString(CultureInfo.InvariantCulture);
+                                    objReg.CodigoUnico = oleDbdr.GetString(i3);
 
                                     objReg.Referencia = oleDbdr.IsDBNull(i4) ? String.Empty : oleDbdr.GetString(i4);
 
-                                    objReg.Cuenta = oleDbdr.IsDBNull(i5) ? String.Empty : Convert.ToInt64(oleDbdr.GetDouble(i5)).ToString(CultureInfo.InvariantCulture);
+                                    objReg.Cuenta = oleDbdr.IsDBNull(i5) ? string.Empty : oleDbdr.GetString(i5);
 
                                     objReg.Centro = oleDbdr.IsDBNull(i6) ? String.Empty : oleDbdr.GetString(i6);
 

@@ -395,5 +395,132 @@ namespace Carestream.AdmTramas.DataAccess.Model
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ErrorLinea>("ConsultaErroresPorLog", mergeOption, idLibroLogParameter);
         }
+    
+        public virtual ObjectResult<LibroLog_ConsultaComprasxCUO_Result> LibroLog_ConsultaComprasxCUO(Nullable<int> idLibroLog)
+        {
+            var idLibroLogParameter = idLibroLog.HasValue ?
+                new ObjectParameter("idLibroLog", idLibroLog) :
+                new ObjectParameter("idLibroLog", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LibroLog_ConsultaComprasxCUO_Result>("LibroLog_ConsultaComprasxCUO", idLibroLogParameter);
+        }
+    
+        public virtual ObjectResult<LibroLog_ConsultaLogVentasxCUO_Result> LibroLog_ConsultaLogVentasxCUO(Nullable<int> idLibroLog)
+        {
+            var idLibroLogParameter = idLibroLog.HasValue ?
+                new ObjectParameter("idLibroLog", idLibroLog) :
+                new ObjectParameter("idLibroLog", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LibroLog_ConsultaLogVentasxCUO_Result>("LibroLog_ConsultaLogVentasxCUO", idLibroLogParameter);
+        }
+    
+        public virtual int RegistroCompras_ActualizaCUO(string numeroOperacion, string numeroCorrelativo, Nullable<int> idLibroLog)
+        {
+            var numeroOperacionParameter = numeroOperacion != null ?
+                new ObjectParameter("numeroOperacion", numeroOperacion) :
+                new ObjectParameter("numeroOperacion", typeof(string));
+    
+            var numeroCorrelativoParameter = numeroCorrelativo != null ?
+                new ObjectParameter("numeroCorrelativo", numeroCorrelativo) :
+                new ObjectParameter("numeroCorrelativo", typeof(string));
+    
+            var idLibroLogParameter = idLibroLog.HasValue ?
+                new ObjectParameter("idLibroLog", idLibroLog) :
+                new ObjectParameter("idLibroLog", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroCompras_ActualizaCUO", numeroOperacionParameter, numeroCorrelativoParameter, idLibroLogParameter);
+        }
+    
+        public virtual int RegistroVentas_ActualizaCUO(string numero, string numeroCorrelativo, Nullable<int> idLibroLog)
+        {
+            var numeroParameter = numero != null ?
+                new ObjectParameter("numero", numero) :
+                new ObjectParameter("numero", typeof(string));
+    
+            var numeroCorrelativoParameter = numeroCorrelativo != null ?
+                new ObjectParameter("numeroCorrelativo", numeroCorrelativo) :
+                new ObjectParameter("numeroCorrelativo", typeof(string));
+    
+            var idLibroLogParameter = idLibroLog.HasValue ?
+                new ObjectParameter("idLibroLog", idLibroLog) :
+                new ObjectParameter("idLibroLog", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RegistroVentas_ActualizaCUO", numeroParameter, numeroCorrelativoParameter, idLibroLogParameter);
+        }
+    
+        public virtual int ActualizarCorrelativoVentas(string numero, string numeroCorrelativo, Nullable<int> idLibroLog)
+        {
+            var numeroParameter = numero != null ?
+                new ObjectParameter("numero", numero) :
+                new ObjectParameter("numero", typeof(string));
+    
+            var numeroCorrelativoParameter = numeroCorrelativo != null ?
+                new ObjectParameter("numeroCorrelativo", numeroCorrelativo) :
+                new ObjectParameter("numeroCorrelativo", typeof(string));
+    
+            var idLibroLogParameter = idLibroLog.HasValue ?
+                new ObjectParameter("idLibroLog", idLibroLog) :
+                new ObjectParameter("idLibroLog", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ActualizarCorrelativoVentas", numeroParameter, numeroCorrelativoParameter, idLibroLogParameter);
+        }
+    
+        public virtual ObjectResult<RegistroVenta> ConsultaImportVentasCUO(Nullable<int> idLibroLog)
+        {
+            var idLibroLogParameter = idLibroLog.HasValue ?
+                new ObjectParameter("idLibroLog", idLibroLog) :
+                new ObjectParameter("idLibroLog", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RegistroVenta>("ConsultaImportVentasCUO", idLibroLogParameter);
+        }
+    
+        public virtual ObjectResult<RegistroVenta> ConsultaImportVentasCUO(Nullable<int> idLibroLog, MergeOption mergeOption)
+        {
+            var idLibroLogParameter = idLibroLog.HasValue ?
+                new ObjectParameter("idLibroLog", idLibroLog) :
+                new ObjectParameter("idLibroLog", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RegistroVenta>("ConsultaImportVentasCUO", mergeOption, idLibroLogParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> ConsultaLibroLogPeriodoLibro(Nullable<System.DateTime> periodo, Nullable<short> idLibro)
+        {
+            var periodoParameter = periodo.HasValue ?
+                new ObjectParameter("periodo", periodo) :
+                new ObjectParameter("periodo", typeof(System.DateTime));
+    
+            var idLibroParameter = idLibro.HasValue ?
+                new ObjectParameter("idLibro", idLibro) :
+                new ObjectParameter("idLibro", typeof(short));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("ConsultaLibroLogPeriodoLibro", periodoParameter, idLibroParameter);
+        }
+    
+        public virtual ObjectResult<LibroLog_ConsultaLogNoDomiciliado_Result> LibroLog_ConsultaLogNoDomiciliado(Nullable<int> idLibroLog)
+        {
+            var idLibroLogParameter = idLibroLog.HasValue ?
+                new ObjectParameter("idLibroLog", idLibroLog) :
+                new ObjectParameter("idLibroLog", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LibroLog_ConsultaLogNoDomiciliado_Result>("LibroLog_ConsultaLogNoDomiciliado", idLibroLogParameter);
+        }
+    
+        public virtual ObjectResult<RegistroNoDomiciliado> ConsultaLogRegistroNoDomiciliado(Nullable<int> idLibroLog)
+        {
+            var idLibroLogParameter = idLibroLog.HasValue ?
+                new ObjectParameter("idLibroLog", idLibroLog) :
+                new ObjectParameter("idLibroLog", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RegistroNoDomiciliado>("ConsultaLogRegistroNoDomiciliado", idLibroLogParameter);
+        }
+    
+        public virtual ObjectResult<RegistroNoDomiciliado> ConsultaLogRegistroNoDomiciliado(Nullable<int> idLibroLog, MergeOption mergeOption)
+        {
+            var idLibroLogParameter = idLibroLog.HasValue ?
+                new ObjectParameter("idLibroLog", idLibroLog) :
+                new ObjectParameter("idLibroLog", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RegistroNoDomiciliado>("ConsultaLogRegistroNoDomiciliado", mergeOption, idLibroLogParameter);
+        }
     }
 }

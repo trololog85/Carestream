@@ -97,6 +97,9 @@
     <Compile Include="Model\LibroLogExportDetalle.cs">
       <DependentUpon>AdmTramasModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\LibroLog_ConsultaComprasxCUO_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\LibroLog_ConsultaLogCompras_Result.cs">
       <DependentUpon>AdmTramasModel.tt</DependentUpon>
     </Compile>
@@ -107,6 +110,12 @@
       <DependentUpon>AdmTramasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\LibroLog_ConsultaLogLibroMayor_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroLog_ConsultaLogNoDomiciliado_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroLog_ConsultaLogVentasxCUO_Result.cs">
       <DependentUpon>AdmTramasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\LibroLog_ConsultaLogVentas_Result.cs">

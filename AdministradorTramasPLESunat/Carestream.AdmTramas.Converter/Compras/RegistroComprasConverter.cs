@@ -67,8 +67,7 @@ namespace Carestream.AdmTramas.Converter.Compras
                        IdLibroLog = registroCompra.IdLibroLog,
                        FlagOperacionesDiarias = "0",
                        Moneda = MonedaConverter(registroCompra.TipoCambio),
-                       ClasificacionBien = registroCompra.ClasificacionBien,
-
+                       ClasificacionBien = registroCompra.ClasificacionBien1
                    };
         }
 
@@ -176,6 +175,9 @@ namespace Carestream.AdmTramas.Converter.Compras
 
         private static string NumeroSerieConverter(string numeroSerie,string tipoComprobante)
         {
+            if (tipoComprobante == "05" || tipoComprobante == "5")
+                return "3";
+
             if (tipoComprobante == "50" || tipoComprobante == "52")
                 return numeroSerie;
 

@@ -64,6 +64,7 @@
     <Compile Include="Entities\ExportResult.cs" />
     <Compile Include="Entities\RutaArchivo.cs" />
     <Compile Include="Entities\ValidacionResponse.cs" />
+    <Compile Include="Entities\RegistroNoDomiciliado.cs" />
     <Compile Include="Tipos\TipoAsiento.cs" />
     <Compile Include="Tipos\TipoContribuyente.cs" />
     <Compile Include="Tipos\TipoDocumento.cs" />

@@ -39,7 +39,7 @@ namespace Carestream.AdmTramas.Generator.Export.Tramas.Version_4_0
             var numeroSerieComprobante = registoCompra.NumeroSerieComprobante;
             var añoEmisionDUA = registoCompra.AnioEmisionComprobante;
             var numeroComprobante = registoCompra.NumeroComprobante;
-            var flagOperacionDiaria = registoCompra.FlagOperacionesDiarias;
+            var flagOperacionDiaria = string.Empty;//registoCompra.FlagOperacionesDiarias;
             var tipoDocumento = registoCompra.TipoDocumento;
             var numeroDocumento = registoCompra.NumeroDocumento;
             var nombreCliente = registoCompra.ApellidoNombreRazonSocial;
@@ -56,7 +56,7 @@ namespace Carestream.AdmTramas.Generator.Export.Tramas.Version_4_0
             var tipoCambio = registoCompra.TipoDeCambio;
             var fechaEmisionConstancia = Formato.FormateaFecha("DD/MM/AAAA", registoCompra.FechaEmisionComprobante);
             var numeroDeConstancia = registoCompra.NumeroConstancia;
-            var marcaComprobante = registoCompra.MarcaComprobante;
+            var marcaComprobante = string.Empty;//registoCompra.MarcaComprobante;
             var estadoAnotacion = registoCompra.EstadoAnotacion;
             var tipoComprobanteMod = registoCompra.TipoComprobanteModificado;
             var numeroSerieMod = registoCompra.NumeroSerieModificado;

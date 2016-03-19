@@ -20,7 +20,7 @@ namespace Carestream.AdmTramas.DataAccess.Model
         public string Periodo { get; set; }
         public string CUO { get; set; }
         public string NumeroCorrelativo { get; set; }
-        public System.DateTime FechaEmision { get; set; }
+        public Nullable<System.DateTime> FechaEmision { get; set; }
         public string TipoComprobante { get; set; }
         public string NumeroSerieComprobante { get; set; }
         public string NumeroComprobante { get; set; }

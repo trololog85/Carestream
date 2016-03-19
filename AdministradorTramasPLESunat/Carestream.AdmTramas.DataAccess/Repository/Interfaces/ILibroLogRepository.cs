@@ -13,6 +13,7 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Interfaces
         List<RegistroCompra> ConsultaRegistroCompras(int idLibroLog);
         List<LibroMayor> ConsultaLibroMayor(int idLibroLog);
         List<LibroDiarioDetalle> ConsultaLibroDiarioDetalle(int idLibroLog);
+        List<RegistroNoDomiciliado> ConsultaLibroNoDomiciliado(int idLibroLog);
         int Guardar(LibroLog libroLog);
         void GuardarDetalleImportVentas(List<RegistroVenta> lstRegistroVentas);
         void GuardarDetalleImportCompras(List<RegistroCompra> lstRegistroCompras);

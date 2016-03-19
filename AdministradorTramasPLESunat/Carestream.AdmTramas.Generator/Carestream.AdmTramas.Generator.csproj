@@ -58,13 +58,16 @@
     <Compile Include="Export\Tramas\Version_4_0\TramaLibroDetalle.cs" />
     <Compile Include="Export\Tramas\Version_4_0\TramaLibroDiario.cs" />
     <Compile Include="Export\Tramas\Version_4_0\TramaLibroMayor.cs" />
+    <Compile Include="Export\Tramas\Version_4_0\TramaNoDomiciliado.cs" />
     <Compile Include="Export\Tramas\Version_4_0\TramaVentas.cs" />
     <Compile Include="Export\Validador\Interface\ILibroDiarioDetalles.cs" />
+    <Compile Include="Export\Validador\Interface\INoDomiciliado.cs" />
     <Compile Include="Export\Validador\ValidadorLibroCompras.cs" />
     <Compile Include="Export\Validador\ValidadorLibroDiario.cs" />
     <Compile Include="Export\Validador\ValidadorLibroDiarioDetalle.cs" />
     <Compile Include="Export\Validador\ValidadorLibroMayor.cs" />
     <Compile Include="Export\Validador\ValidadorLibroVentas.cs" />
+    <Compile Include="Export\Validador\ValidadorNoDomiciliado.cs" />
     <Compile Include="Export\Validador\Version_3_0\Common.cs" />
     <Compile Include="Export\Validador\Interface\ICommon.cs" />
     <Compile Include="Export\Validador\Interface\ILibroDiario.cs" />
@@ -79,6 +82,7 @@
     <Compile Include="Export\Validador\Version_4_0\LibroDiario.cs" />
     <Compile Include="Export\Validador\Version_4_0\LibroDiarioDetalle.cs" />
     <Compile Include="Export\Validador\Version_4_0\LibroMayor.cs" />
+    <Compile Include="Export\Validador\Version_4_0\NoDomiciliado.cs" />
     <Compile Include="Export\Validador\Version_4_0\RegistroCompra.cs" />
     <Compile Include="Export\Validador\Version_4_0\RegistroVenta.cs" />
     <Compile Include="Export\Tramas\Interface\ITramaVentas.cs" />

@@ -13,6 +13,7 @@
                 </MenuItem>
                 <MenuItem Name="MenuArchivo" Header="Archivos">
                     <MenuItem Name="MenuArchivoImport" Header="Cargar Información" Click="MenuArchivoImport_Click"/>
+                    <MenuItem Name="ActualizarCUO" Header="Actualizar CUO" Click="ActualizarCUO_Click"/>
                 </MenuItem>
             </Menu>
             <StatusBar DockPanel.Dock="Bottom" Height="23">
@@ -21,6 +22,10 @@
                 </StatusBarItem>
             </StatusBar>
             <Grid x:Name="rootGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="161*"/>
+                    <ColumnDefinition Width="356*"/>
+                </Grid.ColumnDefinitions>
 
             </Grid>
         </DockPanel>

@@ -41,5 +41,8 @@ namespace Carestream.AdmTramas.Model.Entities
         public long IdLibroLog { get; set; }
         public string Ticket { get; set; }
         public string Moneda { get; set; }
+        public string Numero { get; set; }
+        public decimal DescuentoBaseImponible { get; set; }
+        public decimal DescuentoIGV { get; set; }
     }
 }

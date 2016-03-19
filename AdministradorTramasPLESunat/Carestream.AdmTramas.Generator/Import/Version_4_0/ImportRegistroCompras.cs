@@ -86,6 +86,7 @@ namespace Carestream.AdmTramas.Generator.Import.Version_4_0
                                 var i54 = oleDbdr.GetOrdinal("otroscargos");
                                 var i55 = oleDbdr.GetOrdinal("total1");
                                 var i56 = oleDbdr.GetOrdinal("estado");
+                                var i57 = oleDbdr.GetOrdinal("clasificacionbien");
 
                                 var objReg = new RegistroCompra();
 
@@ -262,6 +263,8 @@ namespace Carestream.AdmTramas.Generator.Import.Version_4_0
 
                                     objReg.Estado = oleDbdr.IsDBNull(i56) ?
                                         "1" : oleDbdr.GetString(i56);
+
+                                    objReg.ClasificacionBien1 = oleDbdr.GetString(i57);
 
                                     objReg.DUA = String.Empty;
 

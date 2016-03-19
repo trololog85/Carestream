@@ -43,7 +43,8 @@ namespace Carestream.AdmTramas.Converter
                 Registros = log.Registros,
                 NombreLibro = log.NombreLibro,
                 RUC = log.RUC,
-                Errores = log.TotalErrores
+                Errores = log.TotalErrores,
+                FechaPeriodo = log.FechaPeriodo
             };
         }
     }

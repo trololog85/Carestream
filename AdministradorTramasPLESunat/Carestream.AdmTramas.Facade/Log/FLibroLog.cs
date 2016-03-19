@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Carestream.AdmTramas.Converter;
+using Carestream.AdmTramas.Converter.Compras;
+using Carestream.AdmTramas.Converter.Ventas;
 using Carestream.AdmTramas.DataAccess.Model;
 using Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0;
 using Carestream.AdmTramas.Facade.Generator.Interface;
@@ -51,6 +53,23 @@ namespace Carestream.AdmTramas.Facade.Log
             }
 
             return lstLibroLog.Select(LibroLogConverter.ConvertOut).ToList();
+        }
+
+        public List<Carestream.AdmTramas.Model.Entities.RegistroVenta> ListarRegistroVentasCUOFaltante(DateTime periodo)
+        {
+            List<Carestream.AdmTramas.DataAccess.Model.RegistroVenta> registroVenta = new List<Carestream.AdmTramas.DataAccess.Model.RegistroVenta>();
+            try
+            {
+                DALibroLog dALibroLog = new DALibroLog(new AdmTramasContainer());
+                int idLibroLog = dALibroLog.ConsultaLibroLogPorPeriodoLibro(1, periodo);
+                dALibroLog = new DALibroLog(new AdmTramasContainer());
+                registroVenta = dALibroLog.ConsultaRegistroVentasCUOVacio(idLibroLog);
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+            }
+            return RegistroVentaConverter.ConvertList(registroVenta);
         }
     }
 }

@@ -47,6 +47,7 @@
     <Compile Include="LibroLogConverter.cs" />
     <Compile Include="LibroMayor\LibroMayorConverter.cs" />
     <Compile Include="ListaErrorConverter.cs" />
+    <Compile Include="NoDomiciliado\RegistroNoDomiciliadoConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ventas\RegistroVentaConverter.cs" />
     <Compile Include="TipoDocumentoConverter.cs" />

@@ -81,7 +81,9 @@ namespace Carestream.AdmTramas.Generator.Import.Version_4_0
 
                             objReg.Numero = oleDbdr.GetString(i1);
 
-                            objReg.FechaComprobante = Formato.ObtieneFecha(oleDbdr.GetString(i2),
+                            objReg.FechaComprobante = oleDbdr.IsDBNull(i2)?
+                                new DateTime(1900,1,1) : 
+                                Formato.ObtieneFecha(oleDbdr.GetString(i2),
                                 "DD.MM.AAAA");
 
                             objReg.TipoComprobante = oleDbdr.IsDBNull(i3)

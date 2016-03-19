@@ -69,3 +69,17 @@ C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLE
 C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\obj\Debug\Carestream.AdmTramas.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\obj\Debug\Carestream.AdmTramas.DataAccess.dll
 C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\obj\Debug\Carestream.AdmTramas.DataAccess.pdb
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\bin\Debug\Carestream.AdmTramas.DataAccess.dll.config
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\bin\Debug\Carestream.AdmTramas.DataAccess.dll
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\bin\Debug\Carestream.AdmTramas.DataAccess.pdb
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\bin\Debug\Carestream.AdmTramas.Model.dll
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\bin\Debug\Carestream.AdmTramas.Utils.dll
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\bin\Debug\EntityFramework.dll
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\bin\Debug\Carestream.AdmTramas.Common.dll
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\bin\Debug\Carestream.AdmTramas.Model.pdb
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\bin\Debug\Carestream.AdmTramas.Utils.pdb
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\bin\Debug\EntityFramework.xml
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\bin\Debug\Carestream.AdmTramas.Common.pdb
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\obj\Debug\Carestream.AdmTramas.DataAccess.csprojResolveAssemblyReference.cache
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\obj\Debug\Carestream.AdmTramas.DataAccess.dll
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\obj\Debug\Carestream.AdmTramas.DataAccess.pdb

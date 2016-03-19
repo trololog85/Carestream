@@ -40,14 +40,14 @@ namespace Carestream.AdmTramas.Converter.Ventas
                 NumeroDocumento = NumeroDocumentoConverter(registroVenta.NumeroDocumento,registroVenta.NombreRazonSocial),
                 NombreRazonSocial = registroVenta.NombreRazonSocial,
                 ValorFacturadoExportacion = Convert.ToDecimal(registroVenta.OperacionNoGravada),
-                BaseImponibleOperacionGravada = registroVenta.VV,
+                BaseImponibleOperacionGravada = BaseImponibleConverter(registroVenta.TipoComprobante, registroVenta.VV),//registroVenta.VV,
                 ImporteTotalOperacionExonerada = Decimal.Parse("0.00"),
                 ImporteTotalOperacionInafecta = Decimal.Parse("0.00"),
                 ImporteTotalComprobante = registroVenta.PV,
                 ISC = Decimal.Parse("0.00"),
-                IGV = registroVenta.IGV,
+                IGV = IGVConverter(registroVenta.TipoComprobante, registroVenta.IGV),
                 IVAP = Decimal.Parse("0.00"),
-                TipodeCambio = registroVenta.TipoCambio,
+                TipodeCambio = TipoCambioConverter(registroVenta.TipoCambio, registroVenta.NombreRazonSocial),
                 FechaEmisionModificada = FechaEmisionModificadaConverter(registroVenta.FechaModificada),
                 TipoComprobanteModificado = TipoComprobanteModConverter(registroVenta.TipoComprobanteModificado),
                 NumeroSerieModificado = NumeroSerieModificadoConverter(registroVenta.NumeroSerieModificado),
@@ -60,8 +60,51 @@ namespace Carestream.AdmTramas.Converter.Ventas
                 ImpuestoIVAP = Decimal.Parse("0.00"),
                 IdLibroLog = registroVenta.IdLibroLog,
                 NumLinea = registroVenta.Linea,
-                Moneda = MonedaConverter(registroVenta.TipoCambio)
+                Moneda = MonedaConverter(registroVenta.TipoCambio,registroVenta.NombreRazonSocial),
+                Numero = registroVenta.Numero,
+                DescuentoBaseImponible = DescuentoBaseImponibleConverter(registroVenta.TipoComprobante, registroVenta.VV),
+                DescuentoIGV = DescuentoIgvConverter(registroVenta.TipoComprobante, registroVenta.IGV)
             };
+        }
+
+        private static decimal TipoCambioConverter(decimal tipoCambio, string nombreRazonSocial)
+        {
+            if (nombreRazonSocial == constAnulado)
+                return Decimal.Parse("1.000");
+            
+            return tipoCambio;
+        }
+
+        private static decimal BaseImponibleConverter(string tipoDocumento, decimal registroVenta)
+        {
+            if (tipoDocumento == "7")
+                return 0;
+
+            return registroVenta;
+        }
+
+        public static decimal IGVConverter(string tipoDocumento, decimal igv)
+        {
+            if (tipoDocumento == "7")
+                return 0;
+
+            return igv;
+        }
+
+        private static decimal DescuentoBaseImponibleConverter(string tipoDocumento, decimal registroVenta)
+        {
+            if (tipoDocumento == "7")
+                return registroVenta;
+
+            return 0;
+        }
+
+        public static decimal DescuentoIgvConverter(string tipoDocumento, decimal igv)
+        {
+            if (tipoDocumento == "7")
+                return igv;
+
+            return 0;
         }
 
         private static string NumeroComprobanteModificadoConverter(string numeroCompMod)
@@ -76,6 +119,9 @@ namespace Carestream.AdmTramas.Converter.Ventas
         {
             if (numeroSerieMod == string.Empty)
                 return ConfigurationManager.AppSettings["NumeroSerieDefault"];
+
+            if (numeroSerieMod == "004")
+                return "0004";
 
             return numeroSerieMod;
         }
@@ -123,7 +169,7 @@ namespace Carestream.AdmTramas.Converter.Ventas
         private static string NumeroDocumentoConverter(string numeroDocumento, string nombreRazonSocial)
         {
             return nombreRazonSocial == constAnulado
-                ? numDocAnulado
+                ? "0"
                 : numeroDocumento;
         }
 
@@ -141,7 +187,7 @@ namespace Carestream.AdmTramas.Converter.Ventas
                 : codigoUnico;
         }
 
-        private static string MonedaConverter(decimal tipoCambio)
+        private static string MonedaConverter(decimal tipoCambio, string nombreRazonSocial)
         {
             if (tipoCambio > 0)
                 return ConfigurationManager.AppSettings["monedaUSD"];

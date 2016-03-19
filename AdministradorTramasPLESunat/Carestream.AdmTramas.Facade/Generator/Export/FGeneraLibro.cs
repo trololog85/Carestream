@@ -7,6 +7,7 @@ using Carestream.AdmTramas.Converter.Compras;
 using Carestream.AdmTramas.Converter.LibroDiario;
 using Carestream.AdmTramas.Converter.LibroDiarioDetalle;
 using Carestream.AdmTramas.Converter.LibroMayor;
+using Carestream.AdmTramas.Converter.NoDomiciliado;
 using Carestream.AdmTramas.Converter.Ventas;
 using Carestream.AdmTramas.DataAccess.Model;
 using Carestream.AdmTramas.DataAccess.Repository.Interfaces;
@@ -23,6 +24,8 @@ using LibroDiarioDetalle = Carestream.AdmTramas.Model.Entities.LibroDiarioDetall
 using LibroMayor = Carestream.AdmTramas.Model.Entities.LibroMayor;
 using RegistroCompra = Carestream.AdmTramas.Model.Entities.RegistroCompra;
 using RegistroVenta = Carestream.AdmTramas.Model.Entities.RegistroVenta;
+using RegNoDomiciliado = Carestream.AdmTramas.Model.Entities.RegistroNoDomiciliado;
+
 using Validador = Carestream.AdmTramas.Generator.Export.Validador.Version_4_0;
 
 namespace Carestream.AdmTramas.Facade.Generator.Export
@@ -318,6 +321,61 @@ namespace Carestream.AdmTramas.Facade.Generator.Export
                         progress.Dispatcher.Invoke(() => label.Content = "");
                     }
                     break;
+                case TipoLibro.NoDomiciliado:
+                    if (!progress.CheckAccess())
+                    {
+                        progress.Dispatcher.Invoke(() => progress.Value = 0);
+                    }
+
+                    if (!label.CheckAccess())
+                    {
+                        progress.Dispatcher.Invoke(() => label.Content = "Obtienendo Informacion...");
+                    }
+
+                    var infoPeriodo5 = await Task.Run(() => ObtieneInformacionPeriodo<DataAccess.Model.RegistroNoDomiciliado>(idLibroLog, tipoLibro));
+
+                    var domiciliadoModel = ConvierteInfoModel<RegNoDomiciliado, DataAccess.Model.RegistroNoDomiciliado>(infoPeriodo5, tipoLibro);
+
+                    if (!progress.CheckAccess())
+                    {
+                        progress.Dispatcher.Invoke(() => progress.Value = 33);
+                    }
+
+                    if (!label.CheckAccess())
+                    {
+                        progress.Dispatcher.Invoke(() => label.Content = "Validando Informacion...");
+                    }
+
+                    var validador5 = new ValidadorNoDomiciliado(new Validador.NoDomiciliado(new Validador.Common()));
+
+                    errores = await Task.Run(() => validador5.ValidaRegistros(domiciliadoModel));
+
+                    total = infoPeriodo5.Count;
+
+                    var generador5 = new TramaNoDomiciliado();
+
+                    if (!progress.CheckAccess())
+                    {
+                        progress.Dispatcher.Invoke(() => progress.Value = 66);
+                    }
+
+                    if (!label.CheckAccess())
+                    {
+                        progress.Dispatcher.Invoke(() => label.Content = "Generando Archivo...");
+                    }
+
+                    await Task.Run(() => generador5.GeneraTrama(domiciliadoModel, ruta));
+
+                    if (!progress.CheckAccess())
+                    {
+                        progress.Dispatcher.Invoke(() => progress.Value = 100);
+                    }
+
+                    if (!label.CheckAccess())
+                    {
+                        progress.Dispatcher.Invoke(() => label.Content = "");
+                    }
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -397,6 +455,9 @@ namespace Carestream.AdmTramas.Facade.Generator.Export
                 case TipoLibro.LibroDiarioDetalle:
                     info = _libroLogRepository.ConsultaLibroDiarioDetalle(IdLibroLog).Cast<T>().ToList();
                     break;
+                case TipoLibro.NoDomiciliado:
+                    info = _libroLogRepository.ConsultaLibroNoDomiciliado(IdLibroLog).Cast<T>().ToList();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException("tipoLibro");
             }
@@ -430,6 +491,11 @@ namespace Carestream.AdmTramas.Facade.Generator.Export
                     var model5 = LibroDiarioDetalleConverter.ConvertList(lstData.Cast<DataAccess.Model.LibroDiarioDetalle>());
                     result = model5.Cast<T>().ToList();
                     break;
+                case TipoLibro.NoDomiciliado:
+                    var model6 = RegistroNoDomiciliadoConverter.ConvertList(lstData.Cast<DataAccess.Model.RegistroNoDomiciliado>());
+                    result = model6.Cast<T>().ToList();
+                    break;
+
                 default:
                     throw new ArgumentOutOfRangeException("tipoLibro");
             }

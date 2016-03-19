@@ -251,6 +251,8 @@ namespace Carestream.AdmTramas.Utils
                     return TipoLibro.LibroMayor;
                 case 5:
                     return TipoLibro.LibroDiarioDetalle;
+                case 6:
+                    return TipoLibro.NoDomiciliado;
                 default:
                     return TipoLibro.Ventas;
             }
@@ -337,6 +339,24 @@ namespace Carestream.AdmTramas.Utils
             sb.Append(".txt");
 
             return sb.ToString();
+        }
+
+        public static string GeneraCorrelativoSinPrefijo(short numero)
+        {
+            string str = numero.ToString((IFormatProvider)CultureInfo.InvariantCulture);
+            int num = 0;
+            while (str.Length < 5)
+            {
+                str = "0" + str;
+                ++num;
+            }
+            return str;
+        }
+
+        public static DateTime GeneraFecha(string anio, string mes)
+        {
+            int month = int.Parse(mes);
+            return new DateTime(int.Parse(anio), month, 1);
         }
     }
 }
