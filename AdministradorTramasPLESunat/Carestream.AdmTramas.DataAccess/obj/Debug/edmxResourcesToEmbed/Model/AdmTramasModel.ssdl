@@ -107,8 +107,8 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdLibro" Type="smallint" Nullable="false" />
     <Property Name="NombreLibro" Type="nvarchar" MaxLength="250" Nullable="false" />
-    <Property Name="FechaCarga" Type="datetime" />
-    <Property Name="FechaGeneracion" Type="datetime" />
+    <Property Name="FechaCarga" Type="datetime2" Precision="7" />
+    <Property Name="FechaGeneracion" Type="datetime2" Precision="7" />
     <Property Name="Registros" Type="int" Nullable="false" />
     <Property Name="RUC" Type="nvarchar" MaxLength="11" Nullable="false" />
     <Property Name="IndicadorOperacion" Type="nvarchar" MaxLength="1" />
@@ -226,7 +226,7 @@
     <Property Name="Periodo" Type="char" MaxLength="8" Nullable="false" />
     <Property Name="CUO" Type="varchar" MaxLength="40" Nullable="false" />
     <Property Name="NumeroCorrelativo" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="FechaEmision" Type="datetime" Nullable="false" />
+    <Property Name="FechaEmision" Type="datetime2" Precision="7" />
     <Property Name="TipoComprobante" Type="varchar" MaxLength="2" Nullable="false" />
     <Property Name="NumeroSerieComprobante" Type="varchar" MaxLength="20" />
     <Property Name="NumeroComprobante" Type="varchar" MaxLength="24" Nullable="false" />
@@ -269,7 +269,7 @@
     <Property Name="Linea" Type="int" Nullable="false" />
     <Property Name="IdLibro" Type="smallint" Nullable="false" />
     <Property Name="Numero" Type="nvarchar" MaxLength="40" />
-    <Property Name="FechaComprobante" Type="datetime2" Precision="7" />
+    <Property Name="FechaComprobante" Type="datetime" Nullable="false" />
     <Property Name="TipoComprobante" Type="nvarchar" MaxLength="2" Nullable="false" />
     <Property Name="SerieComprobante" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="NumeroComprobante" Type="nvarchar" MaxLength="20" Nullable="false" />
@@ -283,7 +283,7 @@
     <Property Name="VV" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="IGV" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="PV" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-    <Property Name="FechaModificada" Type="datetime2" Precision="7" />
+    <Property Name="FechaModificada" Type="datetime" />
     <Property Name="TipoComprobanteModificado" Type="nvarchar" MaxLength="2" />
     <Property Name="NumeroSerieModificado" Type="nvarchar" MaxLength="20" />
     <Property Name="NumeroComprobanteModificado" Type="nvarchar" MaxLength="20" />
@@ -293,7 +293,7 @@
     <Property Name="NumeroUnicoOperacion" Type="nvarchar" MaxLength="40" Nullable="false" />
     <Property Name="OperacionNoGravada" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="estado" Type="char" MaxLength="1" Nullable="false" />
-    <Property Name="FechaVencimiento" Type="datetime2" Precision="7" />
+    <Property Name="FechaVencimiento" Type="datetime" />
     <Property Name="ValorEmbarcadoExportacion" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="OperacionGravada" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="NumeroCorrelativo" Type="nvarchar" MaxLength="10" />
@@ -446,6 +446,9 @@
     <Parameter Name="mes" Type="int" Mode="In" />
     <Parameter Name="anio" Type="int" Mode="In" />
   </Function>
+  <Function Name="LibroLog_ConsultaComprasxCUO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idLibroLog" Type="int" Mode="In" />
+  </Function>
   <Function Name="LibroLog_ConsultaLogCompras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idLibroLog" Type="int" Mode="In" />
   </Function>
@@ -458,7 +461,13 @@
   <Function Name="LibroLog_ConsultaLogLibroMayor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idLibroLog" Type="int" Mode="In" />
   </Function>
+  <Function Name="LibroLog_ConsultaLogNoDomiciliado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idLibroLog" Type="int" Mode="In" />
+  </Function>
   <Function Name="LibroLog_ConsultaLogVentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idLibroLog" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LibroLog_ConsultaLogVentasxCUO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idLibroLog" Type="int" Mode="In" />
   </Function>
   <Function Name="LibroLog_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -470,6 +479,20 @@
   </Function>
   <Function Name="LibroLog_ObtieneMaximo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idLibro" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="LibroLog_ObtienexPeriodoxLibro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="periodo" Type="datetime" Mode="In" />
+    <Parameter Name="idLibro" Type="smallint" Mode="In" />
+  </Function>
+  <Function Name="RegistroCompras_ActualizaCUO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numeroOperacion" Type="nvarchar" Mode="In" />
+    <Parameter Name="numeroCorrelativo" Type="nvarchar" Mode="In" />
+    <Parameter Name="idLibroLog" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RegistroVentas_ActualizaCUO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero" Type="nvarchar" Mode="In" />
+    <Parameter Name="numeroCorrelativo" Type="nvarchar" Mode="In" />
+    <Parameter Name="idLibroLog" Type="int" Mode="In" />
   </Function>
   <EntityContainer Name="DatabaseStoreContainer">
     <EntitySet Name="CodigoDetalles" EntityType="Self.CodigoDetalles" Schema="dbo" store:Type="Tables" />
