@@ -14,6 +14,7 @@
                 <MenuItem Name="MenuArchivo" Header="Archivos">
                     <MenuItem Name="MenuArchivoImport" Header="Cargar Información" Click="MenuArchivoImport_Click"/>
                     <MenuItem Name="ActualizarCUO" Header="Actualizar CUO" Click="ActualizarCUO_Click"/>
+                    <MenuItem Name="ProcesarDiario" Header="Procesar Diario" Click="ProcesarDiario_Click"/>
                 </MenuItem>
             </Menu>
             <StatusBar DockPanel.Dock="Bottom" Height="23">

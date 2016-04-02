@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA5FA2DF-E978-4EDC-98CF-A29DBB2ECE30}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MigraPle.Windows.Facade</RootNamespace>
+    <AssemblyName>MigraPle.Windows.Facade</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ArchivoFacade.cs" />
+    <Compile Include="IArchivoFacade.cs" />
+    <Compile Include="ILoginFacade.cs" />
+    <Compile Include="LoginFacade.cs" />
+    <Compile Include="IMasterEntitiesFacade.cs" />
+    <Compile Include="MasterEntitiesFacade.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Model\MigraPle.Model\MigraPle.Model.Entities.csproj">
+      <Project>{F91DA3C8-7F3B-41A9-8088-244C7CC1A94C}</Project>
+      <Name>MigraPle.Model.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MigraPle.Api.Windows.Utils\MigraPle.Api.Windows.Utils.csproj">
+      <Project>{6599322C-A884-4566-B2EA-8DF3CF859F68}</Project>
+      <Name>MigraPle.Api.Windows.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MigraPle.Windows.Proxy\MigraPle.Windows.Proxy.csproj">
+      <Project>{F8F3C1F7-13D4-4DB8-A02F-D28F5577D897}</Project>
+      <Name>MigraPle.Windows.Proxy</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

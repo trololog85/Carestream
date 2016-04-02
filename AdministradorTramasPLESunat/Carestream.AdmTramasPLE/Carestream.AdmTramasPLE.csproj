@@ -73,6 +73,9 @@
     <Compile Include="Procesos\Import.xaml.cs">
       <DependentUpon>Import.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Procesos\ProcesarDiario.xaml.cs">
+      <DependentUpon>ProcesarDiario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Procesos\UpdateCUO.xaml.cs">
       <DependentUpon>UpdateCUO.xaml</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Procesos\Import.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Procesos\ProcesarDiario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

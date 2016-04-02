@@ -1,0 +1,417 @@
+20140501|104|Cuentas Corrientes en Instituciones Financieras|01|-|1|
+20140501|1041|Cuentas Corrientes Operativas|01|-|1|
+20140501|1041010001|Cuentas Corrientes-Banco Citibank MN 5401-003|01|-|1|
+20140501|1041010002|Cuentas Corrientes-Banco Citibank MN 5401-003|01|-|1|
+20140501|1041020001|Cuentas Corrientes-Banco Citibank ME 5401-119|01|-|1|
+20140501|1041020002|Cuentas Corrientes-Banco Citibank ME 5401-119|01|-|1|
+20140501|1041030001|Cuentas Corrientes-Banco BCP MN 194-1584732-0-92|01|-|1|
+20140501|1041030002|Cuentas Corrientes-Banco BCP MN 194-1584732-0-92|01|-|1|
+20140501|1041030003|Cuentas Corrientes-Banco BCP MN 194-1584732-0-92|01|-|1|
+20140501|1041040001|Cuentas Corrientes-Banco BCP ME 194-1587140-1-26|01|-|1|
+20140501|1041040002|Cuentas Corrientes-Banco BCP ME 194-1587140-1-26|01|-|1|
+20140501|1041040003|Cuentas Corrientes-Banco BCP ME 194-1587140-1-26|01|-|1|
+20140501|1042|Cuentas Corrientes para fines especificos|01|-|1|
+20140501|1042000000|Caja y Bancos-Diferencia de Cambio|01|-|1|
+20140501|1042000001|Caja y Bancos-Diferencia de Cambio|01|-|1|
+20140501|1042010001|Cuentas Corrientes-Banco de la Nacion MN 00-076-020620|01|-|1|
+20140501|121|Facturas,boletas y otros Comprobantes|01|-|1|
+20140501|1212|Emitidas en Cartera|01|-|1|
+20140501|1212100000|Facturas por Cobrar emitidas|01|-|1|
+20140501|1212100001|Facturas por Cobrar - Presentacion de Balance|01|-|1|
+20140501|1212100100|Facturas por Cobrar-Diferencia de Cambio|01|-|1
+20140501|1212100101|Facturas por Cobrar-Diferencia de Cambio|01|-|1
+20140501|131|Facturas,boletas y otros Comprobantes por Cobrar|01|-|1
+20140501|1312|Emitidas en Cartera|01|-|1
+20140501|13123|Asociadas|01|-|1
+20140501|1312300001|Facturas por Cobrar-Vinculadas|01|-|1
+20140501|1312300002|Facturas por Cobrar-Vinculadas Dif. de Cambio|01|-|1
+20140501|141|Personal|01|-|1
+20140501|1411|Prestamos|01|-|1
+20140501|1411100001|Prestamos al personal|01|-|1
+20140501|148|Diversas|01|-|1
+20140501|1480010001|Entregas a rendir Cuenta|01|-|1
+20140501|164|Depósitos Otorgados en Garantía|01|-|1
+20140501|1644|Depósitos en Garantía por Alquileres|01|-|1
+20140501|1644010002|Depósitos en Garantía|01|-|1
+20140501|1644010003|Depositos en Garantía-Diferencia de Cambio|01|-|1
+20140501|168|Otras Cuentas por Cobrar Diversas|01|-|1
+20140501|1682|Otras Cuentas por Cobrar Diversas|01|-|1
+20140501|1682100001|Otras Cuentas por Cobrar Diversas|01|-|1
+20140501|1682100002|Otras Cuentas por Cobrar Diversas-Manual|01|-|1
+20140501|1682100004|Otras Cuentas por Cobrar Diversas-Dif. de Cambio|01|-|1
+20140501|1682100005|Cuentas por Cobrar Miscelaneos|01|-|1
+20140501|1682100006|Otras Cuentas por Cobrar Diversas-Dif. de Cambio|01|-|1
+20140501|178|Otras Cuentas por Cobrar Diversas|01|-|1
+20140501|1780010000|Otras Cuentas por Cobrar Diversas-Vinculadas|01|-|1
+20140501|182|Seguros|01|-|1
+20140501|1820010001|Gastos Pagados por Anticipado Seguros|01|-|1
+20140501|1820010003|Gastos Pagados por Anticipado Seguros Diferencia de Cambio|01|-|1
+20140501|189|Otros gastos contratados por anticipado|01|-|1
+20140501|1890010001|Gastos Pagados por Anticipado|01|-|1
+20140501|1890010002|Gastos Pagados por Anticipado - Proyectos Diferidos|01|-|1
+20140501|191|Cuentas por Cobrar Comerciales Terceros|01|-|1
+20140501|1911|Facturas,boletas y otros Comprobantes por cobrar|01|-|1
+20140501|1911100001|Provision Cuentas Cobranza Dudosa-Clientes|01|-|1
+20140501|201|Mercaderias Manufacturadas|01|-|1
+20140501|2011|Costo|01|-|1
+20140501|2011100000|Mercaderías|01|-|1
+20140501|2011100001|Revaluacion de Moneda|01|-|1
+20140501|2011100002|Mercaderías|01|-|1
+20140501|253|Repuestos|01|-|1
+20140501|2530010001|Repuestos|01|-|1
+20140501|281|Mercaderias|01|-|1
+20140501|2810010000|Existencias por Recibir|01|-|1
+20140501|2810010099|Existencias por Recibir-Diferencia de Cambio|01|-|1
+20140501|291|Mercaderias|01|-|1
+20140501|2911|Mercaderias Manufacturadas|01|-|1
+20140501|2911010000|Provisión para Desvalorización (NRV)|01|-|1
+20140501|2911010001|Provisión para Desvalorización de Existencias|01|-|1
+20140501|2911010002|Provisión para Desvalorización (NRV)|01|-|1
+20140501|2911010003|Provisión para Desvalorización de Existencias|01|-|1
+20140501|322|Inmuebles Maquinaria y Equipo|01|-|1
+20140501|3224|Equipo de Transporte|01|-|1
+20140501|3224001001|Equipos de Transporte en Arrendamiento Financiero|01|-|1
+20140501|332|EDIFICACIONES|01|-|1
+20140501|3324|Instalaciones|01|-|1
+20140501|3324010001|Edificios y Otras Construcciones|01|-|1
+20140501|3324110001|Edificios y Otras Construcciones-Instalaciones|01|-|1
+20140501|333|Maquinarias y Equipos de Explotación|01|-|1
+20140501|3331|Maquinarias y Equipos de Explotación|01|-|1
+20140501|3331110001|Maquinaria|01|-|1
+20140501|3331110002|Maquinaria y Equipos y otras unidades de explot.|01|-|1
+20140501|334|Unidades de Transporte|01|-|1
+20140501|3341|Vehiculos Motorizados|01|-|1
+20140501|3341110001|Vehiculos|01|-|1
+20140501|3341110002|Revaluacion de Moneda|01|-|1
+20140501|3341110003|Vehiculos-Local|01|-|1
+20140501|336|Equipos Diversos|01|-|1
+20140501|3361|Equipo para Procesamiento de Informacion|01|-|1
+20140501|33611|Costo|01|-|1
+20140501|3361110000|Equipos Diversos-Equipos de Oficina|01|-|1
+20140501|3361110001|Equipos Diversos|01|-|1
+20140501|3361110002|Revaluacion de Moneda|01|-|1
+20140501|3361110003|Equipos Diversos|01|-|1
+20140501|3361110004|Equipos Diversos|01|-|1
+20140501|3361110005|Equipos Diversos-Equipos de Oficina|01|-|1
+20140501|339|Construcciones y obras en curso|01|-|1
+20140501|3399|Otros Activos en Curso|01|-|1
+20140501|3399010000|Cuenta Transitoria para Capitalización|01|-|1
+20140501|3399010001|Trabajos en Curso|01|-|1
+20140501|3399010003|Cuenta Transitoria para Capitalización|01|-|1
+20140501|347|Plusvalia Mercantil|01|-|1
+20140501|3471|Plusvalia Mercantil|01|-|1
+20140501|3471010001|Intangibles|01|-|1
+20140501|3471010002|Intangibles-Revaluacion de Moneda|01|-|1
+20140501|3471010004|Intangibles|01|-|1
+20140501|3471010003|Intangibles-Revaluacion de Moneda|01|-|1
+20140501|3471010005|Intangibles|01|-|1
+20140501|3471010006|Intangibles|01|-|1
+20140501|371|Impuesto a la Renta Diferido|01|-|1
+20140501|3711|Impuesto a la Renta Diferido-Patrimonio|01|-|1
+20140501|3711010001|Otras Cargas Diferidas-IR Diferido Corriente|01|-|1
+20140501|3711010002|Otras Cargas Diferidas-IR Diferido Corriente Revaluacion|01|-|1
+20140501|3711010003|Otras Cargas Diferidas-IR Diferido Corriente|01|-|1
+20140501|3711020001|Otras Cargas Diferidas-IR Diferido No Corriente|01|-|1
+20140501|3711020002|Otras Cargas Diferidas-IR Dif. No Corriente Revaluacion|01|-|1
+20140501|3711020003|Otras Cargas Diferidas-IR Diferido No Corriente|01|-|1
+20140501|373|Intereses Diferidos|01|-|1
+20140501|3731|Intereses no devengados en transacciones con terceros|01|-|1
+20140501|3731001000|Intereses no Devengados en operaciones con terceros|01|-|1
+20140501|391|Depreciacion Acumulada|01|-|1
+20140501|3912|Activos adquiridos en arrendamiento Financiero|01|-|1
+20140501|39124|Inmuebles Maquinaria y Equipos -Equipos de Transporte|01|-|1
+20140501|3912420001|Depreciacion de Inmuebles, Maquinaria y Equipo-Leasing|01|-|1
+20140501|3913|Inmuebles Maquinaria y Equipos -Costo|01|-|1
+20140501|39130|Revaluacion de Moneda|01|-|1
+20140501|3913010004|Revaluacion de Moneda|01|-|1
+20140501|3913010007|Revaluacion de Moneda|01|-|1
+20140501|39131|Edificaciones|01|-|1
+20140501|3913110001|Depreciacion de Inmuebles, Maquinaria y Equipo |01|-|1
+20140501|39132|Maquinarias y Equipos de Explotación|01|-|1
+20140501|3913210001|Depreciacion de Inmuebles, Maquinaria y Equipo |01|-|1
+20140501|3913210002|Depreciacion de Inmuebles, Maquinaria y Equipo |01|-|1
+20140501|39133|Equipo de Transporte|01|-|1
+20140501|3913310001|Depreciacion de Inmuebles, Maquinaria y Equipo |01|-|1
+20140501|3913310002|Depreciacion de Inmuebles, Maquinaria y Equipo |01|-|1
+20140501|39134|Muebles y Enseres|01|-|1
+20140501|3913410001|Depreciacion de Inmuebles, Maquinaria y Equipo |01|-|1
+20140501|3913410002|Depreciacion de Inmuebles, Maquinaria y Equipo |01|-|1
+20140501|3913410003|Depreciacion de Inmuebles, Maquinaria y Equipo |01|-|1
+20140501|39135|Equipos Diversos|01|-|1
+20140501|3913510001|Depreciacion de Inmuebles, Maquinaria y Equipo |01|-|1
+20140501|3913510002|Depreciacion de Inmuebles, Maquinaria y Equipo |01|-|1
+20140501|3913510003|Depreciacion de Inmuebles, Maquinaria y Equipo |01|-|1
+20140501|392|Amortizacion Acumulada|01|-|1
+20140501|3921|Intangibles Costo|01|-|1
+20140501|39219|Otros Activos Intangibles|01|-|1
+20140501|3921010001|Amortizacion de Intangibles|01|-|1
+20140501|3921910001|Amortizacion de Intangibles|01|-|1
+20140501|401|Gobierno Central|01|-|1
+20140501|4011|Impuesto General a las Ventas|01|-|1
+20140501|40111|IGV Cuenta Propia|01|-|1
+20140501|4011100001|Credito Fiscal IGV|01|-|1
+20140501|4011110000|IGV -Credito Fiscal -Cuenta Propia|01|-|1
+20140501|4011110001|IGV -Debito  Fiscal -Cuenta Propia|01|-|1
+20140501|40112|IGV Servicios Prestados por No Domiciliados|01|-|1
+20140501|4011200001|Credito Fiscal por IGV No Domiciliados|01|-|1
+20140501|4011200002|IGV Servicios Prestados por No Domiciliados|01|-|1
+20140501|40113|IGV Regimen de Percepciones|01|-|1
+20140501|4011310000|IGV Regimen de Percepciones|01|-|1
+20140501|40114|IGV Regimen de Retenciones|01|-|1
+20140501|4011410001|IGV Regimen de Retenciones Clientes|01|-|1
+20140501|4011410002|IGV Regimen de Retenciones por Pagar|01|-|1
+20140501|4017|Impuesto a la Renta|01|-|1
+20140501|40171|Renta de Tercera Categoria|01|-|1
+20140501|4017100002|Impuesto a la Renta Tercera Categoria|01|-|1
+20140501|4017100003|Impuesto a la Renta Tercera Categoria-Revaluacion de Moneda|01|-|1
+20140501|4017100004|Impuesto a la Renta Tercera Categoria(L)|01|-|1
+20140501|40172|Renta de Cuarta Categoria|01|-|1
+20140501|4017210001|Retenciones de Imp. Renta Cuarta categoria|01|-|1
+20140501|40173|Renta de Quinta Categoria|01|-|1
+20140501|4017310001|Retenciones de Imp. Renta Quinta categoria|01|-|1
+20140501|40174|Renta de No Domiciliados|01|-|1
+20140501|4017400001|Rentenciones de Renta a No Domiciliados|01|-|1
+20140501|4017410001|Retenciones de Imp. Renta No Domiciliados|01|-|1
+20140501|40189|Otros Impuestos|01|-|1
+20140501|4018910001|Detracciones de Impuestos|01|-|1
+20140501|4018910002|Detracciones de Impuestos|01|-|1
+20140501|4018910003|Impuestos por Pagar-Cuenta Transitoria|01|-|1
+20140501|403|Instituciones Publicas|01|-|1
+20140501|4031|Essalud|01|-|1
+20140501|4031010000|Contribuciones Essalud|01|-|1
+20140501|407|Administradoras de Fondos de Pensiones|01|-|1
+20140501|4070010001|Otras Ctas por Pagar -Adm Fondos de Pensiones|01|-|1
+20140501|4070010002|Otras Ctas por Pagar -Adm Fondos de Pensiones|01|-|1
+20140501|411|Remuneraciones por Pagar|01|-|1
+20140501|4111|Sueldos y Salarios por pagar|01|-|1
+20140501|4111010000|Remuneraciones por Pagar-Sueldos|01|-|1
+20140501|4111010001|Remuneraciones por Pagar-Revaluacion de moneda|01|-|1
+20140501|4112|Comisiones por Pagar|01|-|1
+20140501|4112010001|Provision de Pagos Variables-comisiones|01|-|1
+20140501|4114|Gratificaciones por Pagar|01|-|1
+20140501|4114010001|Provision de Gratificaciones por Pagar|01|-|1
+20140501|4115|Vacaciones por Pagar|01|-|1
+20140501|4115010001|Provision de Vacaciones por Pagar|01|-|1
+20140501|415|Beneficios Sociales de los Trabajadores por Pagar|01|-|1
+20140501|4151|Compensacion por Tiempo de Servicios|01|-|1
+20140501|4151010001|Beneficios Sociales de los Trabajadores|01|-|1
+20140501|421|Facturas,boletas y otros comprobantes por Pagar|01|-|1
+20140501|4212|Emitidas|01|-|1
+20140501|4212001000|Cuentas por Pagar Comerciales-Proveedores Locales|01|-|1
+20140501|4212001001|Cuentas por Pagar Comerciales-GR  / IR|01|-|1
+20140501|4212001004|Cuentas por Pagar Comerciales-Prov. Loc.Dif.Cambio|01|-|1
+20140501|4212001005|Otras Cuentas por Pagar Diversas|01|-|1
+20140501|4212001006|Otras Cuentas por Pagar Diversas-Dif. de Cambio|01|-|1
+20140501|422|Anticipos a proveedores|01|-|1
+20140501|4220010000|Anticipos a Proveedores|01|-|1
+20140501|431|Facturas,boletas y otros comprobantes por Pagar|01|-|1
+20140501|4312|Emitidas|01|-|1
+20140501|43123|Asociadas|01|-|1
+20140501|4312310000|Cuentas por Pagar Comerciales-Cias Carestream|01|-|1
+20140501|4312310001|Cuentas por Pagar Comerciales- Carestream Transito|01|-|1
+20140501|4312310002|Cuentas por Pagar Comerciales-Diferencia de Cambio|01|-|1
+20140501|4312310003|Cuentas por Pagar Comerciales-Diferencia de Cambio|01|-|1
+20140501|452|Contratos de arrendamiento Financiero|01|-|1
+20140501|4521001000|Obligaciones Financieras-Contratos de Arrendamiento Financiero|01|-|1
+20140501|455|Costos de Financiacion por Pagar|01|-|1
+20140501|4552|Contratos de arrendamiento Financiero|01|-|1
+20140501|4552001000|Costos de Financiacion / Intereses -Contratos de Arrendamiento Financiero|01|-|1
+20140501|46|CUENTAS POR PAGAR DIVERSAS TERCEROS|01|-|1
+20140501|469|Otras Cuentas por Pagar Diversas|01|-|1
+20140501|4699|Otras Cuentas por Pagar |01|-|1
+20140501|4699010001|Otras Cuentas por Pagar Diversas-Reembolso Gastos|01|-|1
+20140501|4699010002|Otras Ctas por Pagar - Presentacion de Balance|01|-|1
+20140501|471|Prestamos|01|-|1
+20140501|4711|Matriz|01|-|1
+20140501|4711010001|Otras Cuentas por Pagar -Prestamos Intercompañias|01|-|1
+20140501|4711010002|Otras Cuentas por Pagar Diversas-Dif.  de Cambio|01|-|1
+20140501|4711010003|Otras Cuentas por Pagar -Prestamos Intercompañias|01|-|1
+20140501|486|Provision para Garantias|01|-|1
+20140501|4860010001|Provisiones Div. Garantias|01|-|1
+20140501|4860010002|Provisiones Div. Garantias|01|-|1
+20140501|489|Otras Provisiones|01|-|1
+20140501|4891000001|Provisiones Div. Para Retornos|01|-|1
+20140501|4891000002|Provisiones Div. Miscelaneos|01|-|1
+20140501|4891000003|Provisiones Div. - Reserva Devoluciones Futuras|01|-|1
+20140501|4891000004|Provisiones Ventas Diferidas|01|-|1
+20140501|4891001001|Descuentos por Pronto Pago|01|-|1
+20140501|4891001003|Otras Cuentas por Pagar Diversas-Prov. Descuentos|01|-|1
+20140501|491|Impuesto a la Renta Diferido|01|-|1
+20140501|4911|Impuesto a la Renta Diferido-Patrimonio|01|-|1
+20140501|4911010001|Impuesto a la renta Diferido Pasivo-Corriente-Revaluacion Moneda|01|-|1
+20140501|4911010002|Otras Cargas Diferidas-IR Diferido No Corriente|01|-|1
+20140501|4911010003|Otras Cargas Diferidas-IR Diferido Revaluacion Moneda|01|-|1
+20140501|4911010005|Otras Cargas Diferidas-IR Dif. No Corriente(LOC)|01|-|1
+20140501|4911010007|Otras Cargas Diferidas-IR Diferido No Corriente|01|-|1
+20140501|501|Capital Social|01|-|1
+20140501|5011|Acciones|01|-|1
+20140501|5011010000|Capital Social Por Aportes-Acciones|01|-|1
+20140501|582|Legal|01|-|1
+20140501|5820000000|Reserva Legal|01|-|1
+20140501|591|Utilidades no Distribuidas|01|-|1
+20140501|5911|Utilidades Acumuladas|01|-|1
+20140501|5911010000|Utilidades No Distribuidas- Acumuladas|01|-|1
+20140501|5911010002|Ajuste por Traduccion Acumulado|01|-|1
+20140501|5911010003|Utilidades No Distribuidas- Acumuladas|01|-|1
+20140501|5911010004|Utilidades No Distribuidas- Acumuladas|01|-|1
+20140501|5911010005|Ajuste por Traduccion Acumulado|01|-|1
+20140501|5911010006|Ajuste por Traduccion Acumulado|01|-|1
+20140501|621|Remuneraciones|01|-|1
+20140501|6211|Sueldos y Salarios|01|-|1
+20140501|6211010000|Sueldos|01|-|1
+20140501|6212|Comisiones|01|-|1
+20140501|6212010000|Comisiones|01|-|1
+20140501|6212010001|Gastos de Administracion-Ajustes Manuales|01|-|1
+20140501|6214|Gratificaciones|01|-|1
+20140501|6214010000|Gratificaciones|01|-|1
+20140501|6215|Vacaciones|01|-|1
+20140501|6215100000|Vacaciones|01|-|1
+20140501|624|Capacitacion|01|-|1
+20140501|6240010000|Capacitacion- Entrenamiento|01|-|1
+20140501|625|Atencion al Personal|01|-|1
+20140501|6250010000|Otras Cargas de Personal-Comidas|01|-|1
+20140501|6250020000|Otras Cargas de Personal-Atenciones|01|-|1
+20140501|627|Seguridad,prevision social y Otras contribuciones|01|-|1
+20140501|6271|Regimen de Prestaciones de Salud|01|-|1
+20140501|6271000000|Regimen de Prestaciones de Salud|01|-|1
+20140501|6274|Seguro de Vida|01|-|1
+20140501|6274010000|Seguro de Vida|01|-|1
+20140501|6275|Seguros Particulares de Prestaciones de Salud-EPS y otros particulares|01|-|1
+20140501|6275010000|Seguros Particulares de Prestaciones de Salud|01|-|1
+20140501|6291|Compensacion por Tiempo de Servicios|01|-|1
+20140501|6291010000|Compensacion Por Tiempo de Servicios|01|-|1
+20140501|631|Transporte ,correos y gastos de viajes|01|-|1
+20140501|6311|Transporte|01|-|1
+20140501|63111|De Carga|01|-|1
+20140501|6311110000|Transporte  de Carga|01|-|1
+20140501|6311120000|Gastos de Almacenamiento|01|-|1
+20140501|6312|Correos|01|-|1
+20140501|6312010000|Gastos de Telecomunicaciones-Servicios Postales|01|-|1
+20140501|6313|Alojamiento|01|-|1
+20140501|6313010000|Gastos de Viajes|01|-|1
+20140501|6315|Otros Gastos de Viaje|01|-|1
+20140501|6315010000|Gastos de  transporte Empleados|01|-|1
+20140501|632|Asesoria y Consultoria|01|-|1
+20140501|6321|Administrativa|01|-|1
+20140501|6321010001|Servicios Profesionales|01|-|1
+20140501|6322|Legal y Tributaria|01|-|1
+20140501|6322010000|Honorarios Abogados|01|-|1
+20140501|634|Mantenimiento y Reparacion|01|-|1
+20140501|6343|Inmuebles Maquinaria y Equipo|01|-|1
+20140501|6343010000|Mantenimiento y reparacion de Vehículos|01|-|1
+20140501|6343010002|Otras Cargas Diversas-Mantenimiento Oficina|01|-|1
+20140501|6343010003|Otras Cargas Diversas-Limpieza|01|-|1
+20140501|635|Alquileres|01|-|1
+20140501|6352|Edificaciones|01|-|1
+20140501|6352010000|Gastos de Alquileres Oficina|01|-|1
+20140501|6354|Equipo de Transporte|01|-|1
+20140501|6354001000|Alquiler de Equipos Transporte -Leasing Financiero|01|-|1
+20140501|6354001001|Alquiler de Equipos Transporte -Leasing Financiero|01|-|1
+20140501|6356|Equipos Diversos|01|-|1
+20140501|6356010000|Alquiler de Equipos Diversos-Equipos computo|01|-|1
+20140501|636|Servicios Basicos|01|-|1
+20140501|6361|Energia Electrica|01|-|1
+20140501|6361010001|Gastos de Electricidad|01|-|1
+20140501|6364|Telefono|01|-|1
+20140501|6364010001|Gastos de Telecomunicaciones|01|-|1
+20140501|6364010002|Gastos de Telecomunicaciones|01|-|1
+20140501|6364010003|Gastos de Telecomunicaciones|01|-|1
+20140501|637|Publicidad publicaciones,relaciones publicas|01|-|1
+20140501|6371|Publicidad|01|-|1
+20140501|6371010001|Gastos de Publicidad -Agencias |01|-|1
+20140501|6371010014|Promociones con Clientes|01|-|1
+20140501|6373|Relaciones Publicas|01|-|1
+20140501|6373010000|RRPP -Reuniones con Clientes|01|-|1
+20140501|6373010002|Relaciones Publicas,Atenciones a Clientes.|01|-|1
+20140501|6391|Gastos Bancarios|01|-|1
+20140501|6391010001|Gastos y Comisiones Bancarias|01|-|1
+20140501|641|Gobierno Central|01|-|1
+20140501|6412|Impuesto a las Transacciones Financieras|01|-|1
+20140501|6412020000|Gastos Bancarios (ITF)|01|-|1
+20140501|643|Gobierno Local|01|-|1
+20140501|6432010000|Arbitrios Municipales y seguridad ciudadana|01|-|1
+20140501|6433010000|Impuestos al patrimonio vehicular|01|-|1
+20140501|651|Seguros|01|-|1
+20140501|6510010000|Seguros|01|-|1
+20140501|656|Suministros|01|-|1
+20140501|6560010000|Otras Cargas Diversas-Activo No Capitaliz Software|01|-|1
+20140501|6560010001|Otras Cargas Diversas-Activos No Capitalizados|01|-|1
+20140501|6560010002|Otras Cargas Diversas-Utiles|01|-|1
+20140501|6560010003|Otras Cargas Diversas-Utiles|01|-|1
+20140501|659|Otros Gastos de Gestion|01|-|1
+20140501|6590|Otras Cargas Diversas de Gestion|01|-|1
+20140501|6590010001|Otras Cargas Diversas|01|-|1
+20140501|6590010002|Otras Cargas Diversas-Repuestos y Partes |01|-|1
+20140501|6590010003|Otras Cargas Diversas-Repuestos y Partes |01|-|1
+20140501|6591|Donaciones|01|-|1
+20140501|6591010001|Otras Cargas Excepcionales|01|-|1
+20140501|6591020001|Consumos Internos de Productos|01|-|1
+20140501|6592|Sanciones Administrativas fiscales|01|-|1
+20140501|6592010001|Gastos Miscelaneos|01|-|1
+20140501|6593|Otras Cargas Excepcionales|01|-|1
+20140501|6593010001|Otras Cargas Excepcionales|01|-|1
+20140501|6593010002|Otras Cargas Excepcionales|01|-|1
+20140501|673|Intereses por Prestamos y Obligaciones|01|-|1
+20140501|6731|Prestamos de Instituciones Financieras y otras entidades|01|-|1
+20140501|6731010001|Intereses por Pagar Prestamos|01|-|1
+20140501|6732|Contratos de arrendamiento Financiero|01|-|1
+20140501|6732001000|Intereses de Arrendamiento Financiero-Leasing|01|-|1
+20140501|676|Diferencia de Cambio|01|-|1
+20140501|6760010000|Perdida por diferencia de Cambio|01|-|1
+20140501|6760010001|Perdida por diferencia de Cambio|01|-|1
+20140501|681|Depreciacion|01|-|1
+20140501|6814|Depreciacion de Inmuebles Maquinaria y Equipo-Costo|01|-|1
+20140501|68142|Maquinaria y Equipos de Explotacion|01|-|1
+20140501|6814210000|Depreciacion de Inm. Maquinaria y Equipo|01|-|1
+20140501|6814210001|Depreciacion de Inm. Maquinaria y Equipo|01|-|1
+20140501|68144|Muebles y Enseres|01|-|1
+20140501|6814410000|Depreciacion de Inm. Maquinaria y Equipo|01|-|1
+20140501|68145|Equipos Diversos|01|-|1
+20140501|6814510000|Depreciacion de Inm. Maquinaria y Equipo|01|-|1
+20140501|682|Amortizacion de Intangibles|01|-|1
+20140501|6821|Amortizacion de Intangibles Costo|01|-|1
+20140501|68219|Otros Activos Intangibles|01|-|1
+20140501|6821910000|Amortizacion de Intangibles|01|-|1
+20140501|686|Provisiones|01|-|1
+20140501|6866|Provision para Garantias|01|-|1
+20140501|6866110000|Provisiones de Reservas de Garantia|01|-|1
+20140501|691|Mercaderias|01|-|1
+20140501|6911|Mercaderias Manufacturadas|01|-|1
+20140501|69111|Terceros|01|-|1
+20140501|6911110000|Costo de Ventas|01|-|1
+20140501|6911110002|Costo de Ventas - Mercaderia STD a Promedio|01|-|1
+20140501|6911110003|Costo de Ventas - Mercaderia STD a Promedio|01|-|1
+20140501|6911110005|Costo de Ventas-Otros Costos Miscelaneo|01|-|1
+20140501|6911110006|Costo de Ventas-Provisiones Manuales|01|-|1
+20140501|6911110010|Costo de Ventas-Otros Costos Miscelaneos-Local|01|-|1
+20140501|6911112001|Costo de Ventas - Mercaderia STD a Promedio|01|-|1
+20140501|6911112002|Costo de Ventas - Mercaderia STD a Promedio|01|-|1
+20140501|695|Gastos por desvalorizacion de existencias|01|-|1
+20140501|6951|Mercaderias|01|-|1
+20140501|6951010000|Provisiones Desvalorizacion de Mercaderias|01|-|1
+20140501|6951010001|Provisiones Desvalorizacion Mercaderias-Destruccion de mercaderia|01|-|1
+20140501|6951010002|Provisiones Desvalorizacion de Mercaderias|01|-|1
+20140501|701|Mercaderias|01|-|1
+20140501|7011|Mercaderias Manufacturadas|01|-|1
+20140501|70111|Terceros|01|-|1
+20140501|7011100000|Mercaderias y Servicios|01|-|1
+20140501|7011100002|Otras reservas sobre Ventas -Ajustes Manuales de ventas|01|-|1
+20140501|7011100003|Mercaderias y Servicios-Otras Provisiones Locales|01|-|1
+20140501|7011100004|Mercaderias y Servicios-Reservas Devoluciones|01|-|1
+20140501|741|Descuentos rebajas y bonificaciones concedidos|01|-|1
+20140501|7411|Terceros|01|-|1
+20140501|7411010000|Descuentos rebajas y Bonif. Concedidos-Provision|01|-|1
+20140501|7411010001|Descuentos rebajas y Bonificaciones concedidos|01|-|1
+20140501|7411010002|Descuentos rebajas y Bonificaciones concedidos|01|-|1
+20140501|772|Rendimientos ganados|01|-|1
+20140501|7721010001|Intereses por Depositos Bancarios|01|-|1
+20140501|776|Diferencia en cambio|01|-|1
+20140501|7760010000|Ganancia por Diferencia de cambio- No Realizada|01|-|1
+20140501|7760010001|Ganancia/Perdida por Diferencia cambio realizada |01|-|1
+20140501|7760010003|Ganancia por diferencia de Cambio |01|-|1
+20140501|791|Cargas Imputables a cuentas de costos y gastos|01|-|1
+20140501|7910000000|Cargas Imputables a Cuenta de Costos y|01|-|1
+20140501|941|Gastos de Administracion|01|-|1
+20140501|9410000000|Gastos de Administracion|01|-|1
+20140501|951|Gastos de ventas|01|-|1
+20140501|9510000000|Gastos de ventas|01|-|1

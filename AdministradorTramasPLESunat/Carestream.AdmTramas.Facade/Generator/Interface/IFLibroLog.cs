@@ -9,5 +9,6 @@ namespace Carestream.AdmTramas.Facade.Generator.Interface
         IEnumerable<LibroLog> Listar(string tipoLog);
 
         Tuple<string, int> RegistrarLog(LibroLog libroLog);
+        List<LibroLog> ListarLibrosDiarios();
     }
 }

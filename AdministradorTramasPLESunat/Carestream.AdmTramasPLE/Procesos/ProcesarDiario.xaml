@@ -1,0 +1,106 @@
+﻿<Window x:Class="Carestream.AdmTramasPLE.Procesos.ProcesarDiario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Carestream.AdmTramasPLE.Procesos"
+        mc:Ignorable="d"
+        Title="ProcesarDiario" Height="500" Width="748" Loaded="Window_Loaded" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel>
+            <GroupBox Header="Archivos" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="720">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Name="LblAnio" Grid.Row="0" Grid.Column="0" Content="Año:" Margin="5,2,5,5" Padding="5,2,5,5" />
+                    <TextBox Name="TxtAnio" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Width="80" Height="23" Margin="5,5,5,2" />
+                    <Label Name="lblMes" Grid.Row="0" Grid.Column="2" Content="Mes:" Margin="5,2,5,5" Padding="5,2,5,5" />
+                    <TextBox Name="TxtMes" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="3" Width="80" Height="23" Margin="5,5,5,2" />
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Archivos Cargados" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="720">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Row="0" Grid.Column="0" AutoGenerateColumns="false" Name="GridLibroLog" Margin="5,5,5,5" 
+                              CanUserAddRows="false" 
+                              CanUserResizeColumns="false"
+                              SelectionMode="Single"
+                              IsReadOnly="True"
+                              Width="auto" VerticalScrollBarVisibility="Visible" Height="160" SelectionChanged="GridLibroLog_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=id}" Visibility="Hidden"/>
+                            <DataGridTextColumn Binding="{Binding Path=idLibro}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Nombre" Width="200" Binding="{Binding Path=NombreLibro}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Fecha " Width="150" Binding="{Binding Path=sFechaCarga}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Registros " Width="150" Binding="{Binding Path=Registros}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Registros " Width="150" Binding="{Binding Path=tipolog}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Registros " Width="150" Binding="{Binding Path=indicadorlibro}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Registros " Width="150" Binding="{Binding Path=indicadormoneda}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Registros " Width="150" Binding="{Binding Path=indicadoroperacion}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Registros " Width="150" Binding="{Binding Path=RUC}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Errores " Width="150" Binding="{Binding Path=Errores}" Visibility="Hidden"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Name="BtnGuardar" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top"
+                        Width="90" Height ="26" Margin="5,5,5,5" HorizontalAlignment="Left">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Procesar" Margin="3,3,3,3"/>
+                                <Image Source="/Recursos/Iconos/process.png"></Image>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Grid Grid.Row="1" Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Name="LblProgress" Grid.Row="0" Grid.Column="0" Content="Progreso:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                        <ProgressBar Name="PrgBarImport" Grid.Row="0" Grid.Column="1" Width="396" Height="23" HorizontalAlignment="Left" Margin="5,5,0,2"/>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Registros" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="720">
+                <Grid>
+                    <DataGrid Grid.Row="0" Grid.Column="0" AutoGenerateColumns="false" Name="GridRegistros" Margin="5,5,5,5" 
+                              CanUserAddRows="false" 
+                              CanUserResizeColumns="false"
+                              SelectionMode="Single"
+                              IsReadOnly="True"
+                              Width="auto" VerticalScrollBarVisibility="Visible" Height="120">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=id}" Visibility="Hidden"/>
+                            <DataGridTextColumn Binding="{Binding Path=idLibro}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Nombre" Width="200" Binding="{Binding Path=NombreLibro}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Fecha " Width="150" Binding="{Binding Path=sFechaCarga}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Registros " Width="150" Binding="{Binding Path=Registros}" Visibility="Visible"/>
+                            <DataGridTextColumn Header="Registros " Width="150" Binding="{Binding Path=tipolog}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Registros " Width="150" Binding="{Binding Path=indicadorlibro}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Registros " Width="150" Binding="{Binding Path=indicadormoneda}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Registros " Width="150" Binding="{Binding Path=indicadoroperacion}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Registros " Width="150" Binding="{Binding Path=RUC}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Errores " Width="150" Binding="{Binding Path=Errores}" Visibility="Hidden"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDTramaPLEModelStoreContainer" CdmEntityContainer="BDTramaPLEEntities">
+    <EntitySetMapping Name="Archivoes">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.Archivo">
+        <MappingFragment StoreEntitySet="Archivo">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre_proceso" ColumnName="nombre_proceso" />
+          <ScalarProperty Name="id_estructura" ColumnName="id_estructura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchivoLogs">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.ArchivoLog">
+        <MappingFragment StoreEntitySet="ArchivoLog">
+          <ScalarProperty Name="fecha_generacion" ColumnName="fecha_generacion" />
+          <ScalarProperty Name="tipo_ope" ColumnName="tipo_ope" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_archivo" ColumnName="id_archivo" />
+          <ScalarProperty Name="nombre_carga" ColumnName="nombre_carga" />
+          <ScalarProperty Name="fecha_carga" ColumnName="fecha_carga" />
+          <ScalarProperty Name="cant_registros" ColumnName="cant_registros" />
+          <ScalarProperty Name="num_ruc" ColumnName="num_ruc" />
+          <ScalarProperty Name="indicador_ope" ColumnName="indicador_ope" />
+          <ScalarProperty Name="indicador_moneda" ColumnName="indicador_moneda" />
+          <ScalarProperty Name="indicador_libro" ColumnName="indicador_libro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArchivoLogDetalles">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.ArchivoLogDetalle">
+        <MappingFragment StoreEntitySet="ArchivoLogDetalle">
+          <ScalarProperty Name="id_archivo_log" ColumnName="id_archivo_log" />
+          <ScalarProperty Name="n_linea" ColumnName="n_linea" />
+          <ScalarProperty Name="trama" ColumnName="trama" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Errors">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.Error">
+        <MappingFragment StoreEntitySet="Error">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estructuras">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.Estructura">
+        <MappingFragment StoreEntitySet="Estructura">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="longitud" ColumnName="longitud" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InfoEstructuras">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.InfoEstructura">
+        <MappingFragment StoreEntitySet="InfoEstructura">
+          <ScalarProperty Name="nombre_input" ColumnName="nombre_input" />
+          <ScalarProperty Name="id_estructura" ColumnName="id_estructura" />
+          <ScalarProperty Name="tipo_dato" ColumnName="tipo_dato" />
+          <ScalarProperty Name="pos_inicial" ColumnName="pos_inicial" />
+          <ScalarProperty Name="pos_final" ColumnName="pos_final" />
+          <ScalarProperty Name="longitud_campo" ColumnName="longitud_campo" />
+          <ScalarProperty Name="valores_permitidos" ColumnName="valores_permitidos" />
+          <ScalarProperty Name="formato" ColumnName="formato" />
+          <ScalarProperty Name="obligatorio" ColumnName="obligatorio" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="num_campo" ColumnName="num_campo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ErrorInfoEstructura" TypeName="BDTramaPLEModel.ErrorInfoEstructura" StoreEntitySet="ErrorInfoEstructura">
+      <EndProperty Name="Error">
+        <ScalarProperty Name="id" ColumnName="id_error" />
+      </EndProperty>
+      <EndProperty Name="InfoEstructura">
+        <ScalarProperty Name="num_campo" ColumnName="id_campo" />
+        <ScalarProperty Name="id_estructura" ColumnName="id_estructura" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="ListarEstructura" FunctionName="BDTramaPLEModel.Store.Estructura_Listar" />
+    <FunctionImportMapping FunctionImportName="ListarInfoEstructuraxID" FunctionName="BDTramaPLEModel.Store.InfoEstructura_Listar_x_ID" />
+    <FunctionImportMapping FunctionImportName="ObtieneMaxArchivoLogxArchivo" FunctionName="BDTramaPLEModel.Store.ArchivoLog_ObtieneMaximo_x_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDTramaPLEModel.Estructura_ObtieneMaximoID_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Estructura_ObtieneMaximoID" FunctionName="BDTramaPLEModel.Store.Estructura_ObtieneMaximo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDTramaPLEModel.Estructura_ObtieneMaximoID_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ListarArchivos" FunctionName="BDTramaPLEModel.Store.Archivo_Listar" />
+    <FunctionImportMapping FunctionImportName="ArchivoGetIDxCod" FunctionName="BDTramaPLEModel.Store.Archivo_ObtieneIDxCod" />
+    <FunctionImportMapping FunctionImportName="ArchivoLog_Listar" FunctionName="BDTramaPLEModel.Store.ArchivoLog_Listar" />
+    <FunctionImportMapping FunctionImportName="RegistroVentaxCarga" FunctionName="BDTramaPLEModel.Store.RegistroVenta_ObtienexIdLog" />
+    <EntitySetMapping Name="CodigoDetalles">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.CodigoDetalle">
+        <MappingFragment StoreEntitySet="CodigoDetalle">
+          <ScalarProperty Name="campo4" ColumnName="campo4" />
+          <ScalarProperty Name="campo3" ColumnName="campo3" />
+          <ScalarProperty Name="campo2" ColumnName="campo2" />
+          <ScalarProperty Name="campo1" ColumnName="campo1" />
+          <ScalarProperty Name="etiqueta" ColumnName="etiqueta" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ListarCodigoDetalle" FunctionName="BDTramaPLEModel.Store.CodigoDetalle_Listar" />
+    <FunctionImportMapping FunctionImportName="GetVentas_x_Periodo" FunctionName="BDTramaPLEModel.Store.ObtieneExportArchivoVentas_x_Periodo" />
+    <FunctionImportMapping FunctionImportName="ObtieneInfoEstructuraxCodArchivo" FunctionName="BDTramaPLEModel.Store.InfoEstructura_Buscar_x_IdArchivo" />
+    <EntitySetMapping Name="ErrorLineaDetalles">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.ErrorLineaDetalle">
+        <MappingFragment StoreEntitySet="ErrorLineaDetalle">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre_campo" ColumnName="nombre_campo" />
+          <ScalarProperty Name="id_error" ColumnName="id_error" />
+          <ScalarProperty Name="n_linea" ColumnName="n_linea" />
+          <ScalarProperty Name="id_archivo_log" ColumnName="id_archivo_log" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ObtieneErrorDetallexArchivoLog" FunctionName="BDTramaPLEModel.Store.ErrorLineaDetalle_Obtiene_x_ArchivoLog" />
+    <FunctionImportMapping FunctionImportName="ObtieneArchivoLogDetallexIdArchivoLog" FunctionName="BDTramaPLEModel.Store.ArchivoLogDetalle_Listar_x_ArchivoLog" />
+    <FunctionImportMapping FunctionImportName="ObtieneArchivoLogxIdxOPe" FunctionName="BDTramaPLEModel.Store.ArchivoLog_ListarxIdxTipoOpe" />
+    <EntitySetMapping Name="InputRegistroCompras">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.InputRegistroCompra">
+        <MappingFragment StoreEntitySet="InputRegistroCompra">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="total1" ColumnName="total1" />
+          <ScalarProperty Name="otros_cargos" ColumnName="otros_cargos" />
+          <ScalarProperty Name="exterior" ColumnName="exterior" />
+          <ScalarProperty Name="igv_pais" ColumnName="igv_pais" />
+          <ScalarProperty Name="compra_no_gravada" ColumnName="compra_no_gravada" />
+          <ScalarProperty Name="compra_gravada_exterior" ColumnName="compra_gravada_exterior" />
+          <ScalarProperty Name="compra_gravada_pais" ColumnName="compra_gravada_pais" />
+          <ScalarProperty Name="vb" ColumnName="vb" />
+          <ScalarProperty Name="comentario2" ColumnName="comentario2" />
+          <ScalarProperty Name="comentario1" ColumnName="comentario1" />
+          <ScalarProperty Name="recepcion" ColumnName="recepcion" />
+          <ScalarProperty Name="tipo_gasto" ColumnName="tipo_gasto" />
+          <ScalarProperty Name="igv_revision" ColumnName="igv_revision" />
+          <ScalarProperty Name="base_revision" ColumnName="base_revision" />
+          <ScalarProperty Name="revision_verificacion" ColumnName="revision_verificacion" />
+          <ScalarProperty Name="revision_tipo_cambio" ColumnName="revision_tipo_cambio" />
+          <ScalarProperty Name="revision_tasa" ColumnName="revision_tasa" />
+          <ScalarProperty Name="motivo_retencion" ColumnName="motivo_retencion" />
+          <ScalarProperty Name="importe_retencion" ColumnName="importe_retencion" />
+          <ScalarProperty Name="retencion" ColumnName="retencion" />
+          <ScalarProperty Name="importe_detraccion" ColumnName="importe_detraccion" />
+          <ScalarProperty Name="tasa_detraccion" ColumnName="tasa_detraccion" />
+          <ScalarProperty Name="detraccion" ColumnName="detraccion" />
+          <ScalarProperty Name="fecha_pago" ColumnName="fecha_pago" />
+          <ScalarProperty Name="pago" ColumnName="pago" />
+          <ScalarProperty Name="num_doc_orig" ColumnName="num_doc_orig" />
+          <ScalarProperty Name="num_serie_orig" ColumnName="num_serie_orig" />
+          <ScalarProperty Name="tipo_doc_orig" ColumnName="tipo_doc_orig" />
+          <ScalarProperty Name="fecha_original" ColumnName="fecha_original" />
+          <ScalarProperty Name="tipo_cambio" ColumnName="tipo_cambio" />
+          <ScalarProperty Name="fecha_emision_const" ColumnName="fecha_emision_const" />
+          <ScalarProperty Name="num_constancia" ColumnName="num_constancia" />
+          <ScalarProperty Name="comp_no_domic" ColumnName="comp_no_domic" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="otros_tributos" ColumnName="otros_tributos" />
+          <ScalarProperty Name="isc" ColumnName="isc" />
+          <ScalarProperty Name="adq_no_grav" ColumnName="adq_no_grav" />
+          <ScalarProperty Name="igv_no_grav" ColumnName="igv_no_grav" />
+          <ScalarProperty Name="base_imp_no_grav" ColumnName="base_imp_no_grav" />
+          <ScalarProperty Name="igv_mixto" ColumnName="igv_mixto" />
+          <ScalarProperty Name="base_imp_mixta" ColumnName="base_imp_mixta" />
+          <ScalarProperty Name="igv_gravado" ColumnName="igv_gravado" />
+          <ScalarProperty Name="base_imponible_grav" ColumnName="base_imponible_grav" />
+          <ScalarProperty Name="apell_nomb_raz_soc" ColumnName="apell_nomb_raz_soc" />
+          <ScalarProperty Name="numero_documento" ColumnName="numero_documento" />
+          <ScalarProperty Name="tipo_documento" ColumnName="tipo_documento" />
+          <ScalarProperty Name="numero_comprobante" ColumnName="numero_comprobante" />
+          <ScalarProperty Name="anio_emision_comprobante" ColumnName="anio_emision_comprobante" />
+          <ScalarProperty Name="nro_serie_comprobante" ColumnName="nro_serie_comprobante" />
+          <ScalarProperty Name="tipo_comprobante" ColumnName="tipo_comprobante" />
+          <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+          <ScalarProperty Name="fecha_emision" ColumnName="fecha_emision" />
+          <ScalarProperty Name="no_ope_rac" ColumnName="no_ope_rac" />
+          <ScalarProperty Name="id_linea" ColumnName="id_linea" />
+          <ScalarProperty Name="id_archivo_log" ColumnName="id_archivo_log" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ObtieneRegistroCompra_x_IdLog" FunctionName="BDTramaPLEModel.Store.RegistroCompra_ObtienexIdLog" />
+    <FunctionImportMapping FunctionImportName="ObtieneRegistroCompraExport" FunctionName="BDTramaPLEModel.Store.RegistroCompra_ObtienexIdLog" />
+    <EntitySetMapping Name="InputLibroDiarios">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.InputLibroDiario">
+        <MappingFragment StoreEntitySet="InputLibroDiario">
+          <ScalarProperty Name="haber" ColumnName="haber" />
+          <ScalarProperty Name="debe" ColumnName="debe" />
+          <ScalarProperty Name="descasent" ColumnName="descasent" />
+          <ScalarProperty Name="centro" ColumnName="centro" />
+          <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="codigounico" ColumnName="codigounico" />
+          <ScalarProperty Name="numcorre" ColumnName="numcorre" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_archivo_log" ColumnName="id_archivo_log" />
+          <ScalarProperty Name="num_linea" ColumnName="num_linea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="LibroDiarioxCarga" FunctionName="BDTramaPLEModel.Store.LibrioDiario_ObtienexIdLog" />
+    <EntitySetMapping Name="InputLibroMayors">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.InputLibroMayor">
+        <MappingFragment StoreEntitySet="InputLibroMayor">
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="glosa" ColumnName="glosa" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="saldo" ColumnName="saldo" />
+          <ScalarProperty Name="credito" ColumnName="credito" />
+          <ScalarProperty Name="debito" ColumnName="debito" />
+          <ScalarProperty Name="gl" ColumnName="gl" />
+          <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="fecha_ope" ColumnName="fecha_ope" />
+          <ScalarProperty Name="numdoc" ColumnName="numdoc" />
+          <ScalarProperty Name="id_archivo_log" ColumnName="id_archivo_log" />
+          <ScalarProperty Name="num_linea" ColumnName="num_linea" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="LibroMayorxCarga" FunctionName="BDTramaPLEModel.Store.LibrioMayor_ObtienexIdLog" />
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InputRegistroVentas">
+      <EntityTypeMapping TypeName="BDTramaPLEModel.InputRegistroVenta">
+        <MappingFragment StoreEntitySet="InputRegistroVenta">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="ope_no_gravada" ColumnName="ope_no_gravada" />
+          <ScalarProperty Name="num_unico_ope" ColumnName="num_unico_ope" />
+          <ScalarProperty Name="pvmod" ColumnName="pvmod" />
+          <ScalarProperty Name="igvmod" ColumnName="igvmod" />
+          <ScalarProperty Name="vvmod" ColumnName="vvmod" />
+          <ScalarProperty Name="nomod" ColumnName="nomod" />
+          <ScalarProperty Name="seriemod" ColumnName="seriemod" />
+          <ScalarProperty Name="tipomod" ColumnName="tipomod" />
+          <ScalarProperty Name="fechamod" ColumnName="fechamod" />
+          <ScalarProperty Name="pv" ColumnName="pv" />
+          <ScalarProperty Name="igv" ColumnName="igv" />
+          <ScalarProperty Name="vv" ColumnName="vv" />
+          <ScalarProperty Name="tipo_cambio" ColumnName="tipo_cambio" />
+          <ScalarProperty Name="moneda" ColumnName="moneda" />
+          <ScalarProperty Name="valor_venta_orig" ColumnName="valor_venta_orig" />
+          <ScalarProperty Name="nombre_razon_social" ColumnName="nombre_razon_social" />
+          <ScalarProperty Name="codigo_documento" ColumnName="codigo_documento" />
+          <ScalarProperty Name="num_documento" ColumnName="num_documento" />
+          <ScalarProperty Name="tipo_documento" ColumnName="tipo_documento" />
+          <ScalarProperty Name="num_comprobante" ColumnName="num_comprobante" />
+          <ScalarProperty Name="serie_comprobante" ColumnName="serie_comprobante" />
+          <ScalarProperty Name="interno_comprobante" ColumnName="interno_comprobante" />
+          <ScalarProperty Name="tipo_comprobante" ColumnName="tipo_comprobante" />
+          <ScalarProperty Name="fecha_comprobante" ColumnName="fecha_comprobante" />
+          <ScalarProperty Name="num_correlativo" ColumnName="num_correlativo" />
+          <ScalarProperty Name="id_linea" ColumnName="id_linea" />
+          <ScalarProperty Name="id_archivo_log" ColumnName="id_archivo_log" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

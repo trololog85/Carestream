@@ -2,3 +2,7 @@ C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESu
 C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\bin\Release\Carestream.AdmTramas.Model.pdb
 C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\obj\Release\Carestream.AdmTramas.Model.dll
 C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\obj\Release\Carestream.AdmTramas.Model.pdb
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\bin\Release\Carestream.AdmTramas.Model.dll
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\bin\Release\Carestream.AdmTramas.Model.pdb
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\obj\Release\Carestream.AdmTramas.Model.dll
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\obj\Release\Carestream.AdmTramas.Model.pdb

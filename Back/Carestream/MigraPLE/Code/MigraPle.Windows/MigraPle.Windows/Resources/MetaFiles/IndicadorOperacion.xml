@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Operaciones>
+  <Operacion>
+    <Codigo>1</Codigo>
+    <Descripcion>Empresa</Descripcion>
+  </Operacion>
+  <Operacion>
+    <Codigo>2</Codigo>
+    <Descripcion>Cierre del Libro</Descripcion>
+  </Operacion>
+  <Operacion>
+    <Codigo>0</Codigo>
+    <Descripcion>Cierre de Operaciones</Descripcion>
+  </Operacion>
+</Operaciones>

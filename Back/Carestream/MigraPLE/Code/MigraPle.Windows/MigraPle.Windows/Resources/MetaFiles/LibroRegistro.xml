@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Registros>
+  <Registro>
+    <Codigo>1</Codigo>
+    <Descripcion>Con información</Descripcion>
+  </Registro>
+  <Registro>
+    <Codigo>0</Codigo>
+    <Descripcion>Sin información</Descripcion>
+  </Registro>
+</Registros>

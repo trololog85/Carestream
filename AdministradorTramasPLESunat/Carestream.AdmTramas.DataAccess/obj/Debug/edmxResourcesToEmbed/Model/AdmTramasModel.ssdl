@@ -239,7 +239,7 @@
     <Property Name="NumeroComprobanteDUA" Type="varchar" MaxLength="24" Nullable="false" />
     <Property Name="IGV" Type="decimal" Precision="10" Scale="2" />
     <Property Name="Moneda" Type="char" MaxLength="3" Nullable="false" />
-    <Property Name="TipoCambio" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="TipoCambio" Type="decimal" Precision="10" Scale="3" />
     <Property Name="Pais" Type="varchar" MaxLength="4" Nullable="false" />
     <Property Name="RazonSocial" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Domicilio" Type="varchar" MaxLength="100" />
@@ -452,6 +452,10 @@
   <Function Name="LibroLog_ConsultaLogCompras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idLibroLog" Type="int" Mode="In" />
   </Function>
+  <Function Name="LibroLog_ConsultaLogCompras_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mes" Type="int" Mode="In" />
+    <Parameter Name="anio" Type="int" Mode="In" />
+  </Function>
   <Function Name="LibroLog_ConsultaLogLibroDiario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idLibroLog" Type="int" Mode="In" />
   </Function>
@@ -467,9 +471,14 @@
   <Function Name="LibroLog_ConsultaLogVentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idLibroLog" Type="int" Mode="In" />
   </Function>
+  <Function Name="LibroLog_ConsultaLogVentas_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mes" Type="int" Mode="In" />
+    <Parameter Name="anio" Type="int" Mode="In" />
+  </Function>
   <Function Name="LibroLog_ConsultaLogVentasxCUO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idLibroLog" Type="int" Mode="In" />
   </Function>
+  <Function Name="LibroLog_ListaLibroDiario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="LibroLog_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="tipolog" Type="char" Mode="In" />
   </Function>

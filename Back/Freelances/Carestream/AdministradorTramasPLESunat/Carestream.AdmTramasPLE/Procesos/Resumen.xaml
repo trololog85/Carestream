@@ -1,0 +1,36 @@
+﻿<Window x:Class="Carestream.AdmTramasPLE.Procesos.Resumen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Resumen de Errores"  Height="450" Width="670" Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel>
+            <Grid Margin="5,5,5,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="350"/>
+                </Grid.ColumnDefinitions>
+                <Label Name="LblLibro" Grid.Row="0" Grid.Column="0" Content="Archivo:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                <TextBox Name="TxtArchivo" IsReadOnly="true" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Width="295" Height="23" MaxLength="10" Margin="5,5,0,2"/>
+            </Grid>
+            <Grid Margin="5,5,5,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="385"/>
+                </Grid.ColumnDefinitions>
+                <Label Name="LblEtiqueta1" Grid.Row="0" Grid.Column="0" Content="Lineas con Error:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                <ListBox Name="LstLineas" Grid.Row="1" Grid.Column="0" Height="300" Margin="5,2,5,5" Padding="5,2,5,5" SelectionChanged="LstLineas_SelectionChanged"/>
+                <Label Name="LblEtiqueta2" Grid.Row="0" Grid.Column="1" Content="Detalle de Errores:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                <ListBox Name="LstDetalle" Grid.Row="1" Grid.Column="1" Height="300" Margin="5,2,-75,5" Padding="5,2,5,5"
+                         ItemsSource="{Binding}"
+                         SelectedValuePath="Id" DisplayMemberPath="Descripcion"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

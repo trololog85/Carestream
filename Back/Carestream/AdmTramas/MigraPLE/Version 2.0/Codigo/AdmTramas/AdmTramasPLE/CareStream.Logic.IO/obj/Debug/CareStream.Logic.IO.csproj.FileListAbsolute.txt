@@ -1,0 +1,10 @@
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.IO\bin\Debug\CareStream.Logic.IO.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.IO\bin\Debug\CareStream.Logic.IO.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.IO\bin\Debug\CareStream.Data.Access.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.IO\bin\Debug\CareStream.Utils.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.IO\bin\Debug\CareStream.Data.Access.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.IO\bin\Debug\CareStream.Utils.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.IO\bin\Debug\CareStream.Utils.xml
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.IO\obj\Debug\CareStream.Logic.IO.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.IO\obj\Debug\CareStream.Logic.IO.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.IO\obj\Debug\CareStream.Logic.IO.csprojResolveAssemblyReference.cache

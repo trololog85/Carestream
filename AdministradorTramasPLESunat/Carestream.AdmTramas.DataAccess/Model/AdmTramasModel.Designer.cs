@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\Model\AdmTramasModel.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.DataAccess\Model\AdmTramasModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -1,0 +1,14 @@
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\bin\Debug\CareStream.Logic.Facade.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\bin\Debug\CareStream.Logic.Facade.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\bin\Debug\CareStream.Data.Access.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\bin\Debug\CareStream.Logic.Excel.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\bin\Debug\CareStream.Logic.IO.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\bin\Debug\CareStream.Utils.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\bin\Debug\CareStream.Data.Access.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\bin\Debug\CareStream.Logic.Excel.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\bin\Debug\CareStream.Logic.IO.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\bin\Debug\CareStream.Utils.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\bin\Debug\CareStream.Utils.xml
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\obj\Debug\CareStream.Logic.Facade.csprojResolveAssemblyReference.cache
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\obj\Debug\CareStream.Logic.Facade.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Facade\obj\Debug\CareStream.Logic.Facade.pdb

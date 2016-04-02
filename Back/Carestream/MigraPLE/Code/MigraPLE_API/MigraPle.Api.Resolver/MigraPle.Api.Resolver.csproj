@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{823BCD54-113D-4303-BBEF-7A9DB75CDCBE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MigraPle.Api.Resolver</RootNamespace>
+    <AssemblyName>MigraPle.Api.Resolver</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="KernelResolver.cs" />
+    <Compile Include="NinjectDependencyResolver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebActivator, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivator.1.5\lib\net40\WebActivator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\MigraPle.Api.Configurations\MigraPle.Api.Configurations.csproj">
+      <Project>{A0BE640A-1A48-4934-8601-E35D5A84D6BE}</Project>
+      <Name>MigraPle.Api.Configurations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model\MigraPle.Model.Data\MigraPle.DataAccess.Sql.csproj">
+      <Project>{443CD384-2421-4B82-A400-3A17B66783DA}</Project>
+      <Name>MigraPle.DataAccess.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MigraPle.Api.Controller.Interface\MigraPle.Api.Controller.Interface.csproj">
+      <Project>{71BF101A-9E03-4CF5-8260-EF16B29C4DD4}</Project>
+      <Name>MigraPle.Api.Controller.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MigraPle.Api.Controller.Mock\MigraPle.Api.Controller.Mock.csproj">
+      <Project>{2d2a5336-63ef-45ef-9c00-5a9320474983}</Project>
+      <Name>MigraPle.Api.Controller.Mock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MigraPle.Api.Controller\MigraPle.Api.Controller.csproj">
+      <Project>{13D7DA15-D808-4EA2-AC6C-EB4CF2C49549}</Project>
+      <Name>MigraPle.Api.Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MigraPle.Api.Processor.Interface\MigraPle.Api.Processor.Interface.csproj">
+      <Project>{1204A005-0615-4E5B-A739-228AB654A2C4}</Project>
+      <Name>MigraPle.Api.Processor.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MigraPle.Api.Processor\MigraPle.Api.Processor.csproj">
+      <Project>{C272CC7B-E23F-486B-A1F4-FAB79A8E1F48}</Project>
+      <Name>MigraPle.Api.Processor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MigraPle.DataAccess.Converter\MigraPle.DataAccess.Converter.csproj">
+      <Project>{07C87BEB-1B37-4607-91FF-95B0786BEC64}</Project>
+      <Name>MigraPle.DataAccess.Converter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MigraPle.DataAccess.Repository\MigraPle.DataAccess.Repository.csproj">
+      <Project>{BC19A072-9F09-47E4-A3BE-FF04761E8A12}</Project>
+      <Name>MigraPle.DataAccess.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

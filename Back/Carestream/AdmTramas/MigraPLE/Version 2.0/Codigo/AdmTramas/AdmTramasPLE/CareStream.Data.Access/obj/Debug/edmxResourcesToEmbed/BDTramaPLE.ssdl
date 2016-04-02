@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDTramaPLEModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BDTramaPLEModelStoreContainer">
+    <EntitySet Name="Archivo" EntityType="BDTramaPLEModel.Store.Archivo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArchivoLog" EntityType="BDTramaPLEModel.Store.ArchivoLog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArchivoLogDetalle" EntityType="BDTramaPLEModel.Store.ArchivoLogDetalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CodigoDetalle" EntityType="BDTramaPLEModel.Store.CodigoDetalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Error" EntityType="BDTramaPLEModel.Store.Error" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ErrorInfoEstructura" EntityType="BDTramaPLEModel.Store.ErrorInfoEstructura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ErrorLineaDetalle" EntityType="BDTramaPLEModel.Store.ErrorLineaDetalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Estructura" EntityType="BDTramaPLEModel.Store.Estructura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InfoEstructura" EntityType="BDTramaPLEModel.Store.InfoEstructura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InputLibroDiario" EntityType="BDTramaPLEModel.Store.InputLibroDiario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InputLibroMayor" EntityType="BDTramaPLEModel.Store.InputLibroMayor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InputRegistroCompra" EntityType="BDTramaPLEModel.Store.InputRegistroCompra" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InputRegistroVenta" EntityType="BDTramaPLEModel.Store.InputRegistroVenta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="BDTramaPLEModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Archivo_Estructura" Association="BDTramaPLEModel.Store.FK_Archivo_Estructura">
+      <End Role="Estructura" EntitySet="Estructura" />
+      <End Role="Archivo" EntitySet="Archivo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ArchivoLogDetalle_ArchivoLog" Association="BDTramaPLEModel.Store.FK_ArchivoLogDetalle_ArchivoLog">
+      <End Role="ArchivoLog" EntitySet="ArchivoLog" />
+      <End Role="ArchivoLogDetalle" EntitySet="ArchivoLogDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ErrorInfoEstructura_Error" Association="BDTramaPLEModel.Store.FK_ErrorInfoEstructura_Error">
+      <End Role="Error" EntitySet="Error" />
+      <End Role="ErrorInfoEstructura" EntitySet="ErrorInfoEstructura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InfoEstructura_Estructura" Association="BDTramaPLEModel.Store.FK_InfoEstructura_Estructura">
+      <End Role="Estructura" EntitySet="Estructura" />
+      <End Role="InfoEstructura" EntitySet="InfoEstructura" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Archivo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_proceso" Type="varchar" MaxLength="50" />
+    <Property Name="id_estructura" Type="int" Nullable="false" />
+    <Property Name="codigo" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="ArchivoLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="id_archivo" Type="int" Nullable="false" />
+    <Property Name="nombre_carga" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_carga" Type="datetime" />
+    <Property Name="cant_registros" Type="int" />
+    <Property Name="num_ruc" Type="varchar" MaxLength="15" />
+    <Property Name="indicador_ope" Type="char" MaxLength="1" />
+    <Property Name="indicador_moneda" Type="char" MaxLength="3" />
+    <Property Name="indicador_libro" Type="char" MaxLength="1" />
+    <Property Name="tipo_ope" Type="char" MaxLength="1" />
+    <Property Name="fecha_generacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ArchivoLogDetalle">
+    <Key>
+      <PropertyRef Name="id_archivo_log" />
+      <PropertyRef Name="n_linea" />
+    </Key>
+    <Property Name="id_archivo_log" Type="int" Nullable="false" />
+    <Property Name="n_linea" Type="int" Nullable="false" />
+    <Property Name="trama" Type="varchar" Nullable="false" MaxLength="3000" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CodigoDetalle">
+    <Key>
+      <PropertyRef Name="tipo" />
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="tipo" Type="int" Nullable="false" />
+    <Property Name="codigo" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="1000" />
+    <Property Name="etiqueta" Type="varchar" Nullable="false" MaxLength="1000" />
+    <Property Name="campo1" Type="varchar" MaxLength="15" />
+    <Property Name="campo2" Type="varchar" MaxLength="15" />
+    <Property Name="campo3" Type="varchar" MaxLength="15" />
+    <Property Name="campo4" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Error">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="codigo" Type="char" MaxLength="3" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="ErrorInfoEstructura">
+    <Key>
+      <PropertyRef Name="id_estructura" />
+      <PropertyRef Name="id_campo" />
+      <PropertyRef Name="id_error" />
+    </Key>
+    <Property Name="id_estructura" Type="int" Nullable="false" />
+    <Property Name="id_campo" Type="int" Nullable="false" />
+    <Property Name="id_error" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ErrorLineaDetalle">
+    <Key>
+      <PropertyRef Name="id_archivo_log" />
+      <PropertyRef Name="n_linea" />
+      <PropertyRef Name="id_error" />
+    </Key>
+    <Property Name="id_archivo_log" Type="int" Nullable="false" />
+    <Property Name="n_linea" Type="int" Nullable="false" />
+    <Property Name="id_error" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_campo" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Estructura">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="varchar" MaxLength="150" />
+    <Property Name="longitud" Type="int" />
+  </EntityType>
+  <EntityType Name="InfoEstructura">
+    <Key>
+      <PropertyRef Name="num_campo" />
+      <PropertyRef Name="id_estructura" />
+    </Key>
+    <Property Name="num_campo" Type="int" Nullable="false" />
+    <Property Name="id_estructura" Type="int" Nullable="false" />
+    <Property Name="tipo_dato" Type="char" MaxLength="1" />
+    <Property Name="pos_inicial" Type="int" />
+    <Property Name="pos_final" Type="int" />
+    <Property Name="longitud_campo" Type="int" />
+    <Property Name="valores_permitidos" Type="varchar" MaxLength="500" />
+    <Property Name="formato" Type="varchar" MaxLength="20" />
+    <Property Name="obligatorio" Type="bit" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
+    <Property Name="nombre_input" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="InputLibroDiario">
+    <Key>
+      <PropertyRef Name="num_linea" />
+      <PropertyRef Name="id_archivo_log" />
+    </Key>
+    <Property Name="num_linea" Type="int" Nullable="false" />
+    <Property Name="id_archivo_log" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" />
+    <Property Name="numcorre" Type="int" />
+    <Property Name="codigounico" Type="varchar" MaxLength="25" />
+    <Property Name="referencia" Type="varchar" MaxLength="25" />
+    <Property Name="cuenta" Type="varchar" MaxLength="25" />
+    <Property Name="centro" Type="varchar" MaxLength="25" />
+    <Property Name="descasent" Type="varchar" MaxLength="250" />
+    <Property Name="debe" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="haber" Type="decimal" Precision="9" Scale="2" />
+  </EntityType>
+  <EntityType Name="InputLibroMayor">
+    <Key>
+      <PropertyRef Name="num_linea" />
+      <PropertyRef Name="id_archivo_log" />
+    </Key>
+    <Property Name="num_linea" Type="int" Nullable="false" />
+    <Property Name="id_archivo_log" Type="int" Nullable="false" />
+    <Property Name="numdoc" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_ope" Type="datetime" />
+    <Property Name="importe" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="subtotal" Type="varchar" MaxLength="10" />
+    <Property Name="cuenta" Type="varchar" MaxLength="50" />
+    <Property Name="gl" Type="varchar" MaxLength="25" />
+    <Property Name="debito" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="credito" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="saldo" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="referencia" Type="varchar" MaxLength="250" />
+    <Property Name="item" Type="bigint" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
+    <Property Name="glosa" Type="varchar" MaxLength="50" />
+    <Property Name="tipo" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="InputRegistroCompra">
+    <Key>
+      <PropertyRef Name="id_archivo_log" />
+      <PropertyRef Name="id_linea" />
+    </Key>
+    <Property Name="id_archivo_log" Type="int" Nullable="false" />
+    <Property Name="id_linea" Type="int" Nullable="false" />
+    <Property Name="no_ope_rac" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_emision" Type="datetime" />
+    <Property Name="fecha_vencimiento" Type="datetime" />
+    <Property Name="tipo_comprobante" Type="varchar" MaxLength="2" />
+    <Property Name="nro_serie_comprobante" Type="varchar" MaxLength="20" />
+    <Property Name="anio_emision_comprobante" Type="int" />
+    <Property Name="numero_comprobante" Type="varchar" MaxLength="50" />
+    <Property Name="tipo_documento" Type="varchar" MaxLength="2" />
+    <Property Name="numero_documento" Type="varchar" MaxLength="15" />
+    <Property Name="apell_nomb_raz_soc" Type="varchar" MaxLength="250" />
+    <Property Name="base_imponible_grav" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="igv_gravado" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="base_imp_mixta" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="igv_mixto" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="base_imp_no_grav" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="igv_no_grav" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="adq_no_grav" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="isc" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="otros_tributos" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="total" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="comp_no_domic" Type="varchar" MaxLength="50" />
+    <Property Name="num_constancia" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_emision_const" Type="datetime" />
+    <Property Name="tipo_cambio" Type="decimal" Precision="9" Scale="3" />
+    <Property Name="fecha_original" Type="datetime" />
+    <Property Name="tipo_doc_orig" Type="varchar" MaxLength="2" />
+    <Property Name="num_serie_orig" Type="varchar" MaxLength="20" />
+    <Property Name="num_doc_orig" Type="varchar" MaxLength="15" />
+    <Property Name="pago" Type="varchar" MaxLength="20" />
+    <Property Name="fecha_pago" Type="datetime" />
+    <Property Name="detraccion" Type="varchar" MaxLength="20" />
+    <Property Name="tasa_detraccion" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="importe_detraccion" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="retencion" Type="varchar" MaxLength="20" />
+    <Property Name="importe_retencion" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="motivo_retencion" Type="varchar" MaxLength="250" />
+    <Property Name="revision_tasa" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="revision_tipo_cambio" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="revision_verificacion" Type="varchar" MaxLength="250" />
+    <Property Name="base_revision" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="igv_revision" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="tipo_gasto" Type="varchar" MaxLength="20" />
+    <Property Name="recepcion" Type="varchar" MaxLength="20" />
+    <Property Name="comentario1" Type="varchar" MaxLength="250" />
+    <Property Name="comentario2" Type="varchar" MaxLength="250" />
+    <Property Name="vb" Type="varchar" MaxLength="20" />
+    <Property Name="compra_gravada_pais" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="compra_gravada_exterior" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="compra_no_gravada" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="igv_pais" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="exterior" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="otros_cargos" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="total1" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="estado" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="InputRegistroVenta">
+    <Key>
+      <PropertyRef Name="id_archivo_log" />
+      <PropertyRef Name="id_linea" />
+    </Key>
+    <Property Name="id_archivo_log" Type="int" Nullable="false" />
+    <Property Name="id_linea" Type="int" Nullable="false" />
+    <Property Name="num_correlativo" Type="int" />
+    <Property Name="fecha_comprobante" Type="datetime" />
+    <Property Name="tipo_comprobante" Type="int" />
+    <Property Name="interno_comprobante" Type="bigint" />
+    <Property Name="serie_comprobante" Type="varchar" MaxLength="20" />
+    <Property Name="num_comprobante" Type="varchar" MaxLength="20" />
+    <Property Name="tipo_documento" Type="char" MaxLength="1" />
+    <Property Name="num_documento" Type="varchar" MaxLength="15" />
+    <Property Name="codigo_documento" Type="varchar" MaxLength="20" />
+    <Property Name="nombre_razon_social" Type="varchar" MaxLength="60" />
+    <Property Name="valor_venta_orig" Type="decimal" Precision="9" Scale="3" />
+    <Property Name="moneda" Type="char" MaxLength="3" />
+    <Property Name="tipo_cambio" Type="decimal" Precision="9" Scale="3" />
+    <Property Name="vv" Type="decimal" Precision="9" Scale="3" />
+    <Property Name="igv" Type="decimal" Precision="9" Scale="3" />
+    <Property Name="pv" Type="decimal" Precision="9" Scale="3" />
+    <Property Name="fechamod" Type="datetime" />
+    <Property Name="tipomod" Type="varchar" MaxLength="2" />
+    <Property Name="seriemod" Type="varchar" MaxLength="20" />
+    <Property Name="nomod" Type="varchar" MaxLength="20" />
+    <Property Name="vvmod" Type="decimal" Precision="9" Scale="3" />
+    <Property Name="igvmod" Type="decimal" Precision="9" Scale="3" />
+    <Property Name="pvmod" Type="decimal" Precision="9" Scale="3" />
+    <Property Name="num_unico_ope" Type="varchar" MaxLength="15" />
+    <Property Name="ope_no_gravada" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="estado" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Archivo_Estructura">
+    <End Role="Estructura" Type="BDTramaPLEModel.Store.Estructura" Multiplicity="1" />
+    <End Role="Archivo" Type="BDTramaPLEModel.Store.Archivo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estructura">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Archivo">
+        <PropertyRef Name="id_estructura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ArchivoLogDetalle_ArchivoLog">
+    <End Role="ArchivoLog" Type="BDTramaPLEModel.Store.ArchivoLog" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ArchivoLogDetalle" Type="BDTramaPLEModel.Store.ArchivoLogDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArchivoLog">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ArchivoLogDetalle">
+        <PropertyRef Name="id_archivo_log" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ErrorInfoEstructura_Error">
+    <End Role="Error" Type="BDTramaPLEModel.Store.Error" Multiplicity="1" />
+    <End Role="ErrorInfoEstructura" Type="BDTramaPLEModel.Store.ErrorInfoEstructura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Error">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ErrorInfoEstructura">
+        <PropertyRef Name="id_error" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InfoEstructura_Estructura">
+    <End Role="Estructura" Type="BDTramaPLEModel.Store.Estructura" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="InfoEstructura" Type="BDTramaPLEModel.Store.InfoEstructura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estructura">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="InfoEstructura">
+        <PropertyRef Name="id_estructura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Archivo_Guardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Archivo_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Archivo_ObtieneIDxCod" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ArchivoLog_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo_ope" Type="char" Mode="In" />
+  </Function>
+  <Function Name="ArchivoLog_ListarxIdxTipoOpe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo_ope" Type="char" Mode="In" />
+    <Parameter Name="id_archivo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ArchivoLog_ObtieneMaximo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="ArchivoLog_ObtieneMaximo_x_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_archivo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ArchivoLogDetalle_Listar_x_ArchivoLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CodigoDetalle_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ErrorLineaDetalle_Obtiene_x_ArchivoLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Estructura_Guardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nombre" Type="varchar" Mode="In" />
+    <Parameter Name="longitud" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Estructura_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Estructura_ObtieneMaximo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="InfoEstructura_Buscar_x_IdArchivo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigo" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="InfoEstructura_Listar_x_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_estructura" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LibrioDiario_ObtienexIdLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LibrioMayor_ObtienexIdLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtieneExportArchivoCompras_x_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mes" Type="int" Mode="In" />
+    <Parameter Name="anio" Type="int" Mode="In" />
+    <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ObtieneExportArchivoVentas_x_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mes" Type="int" Mode="In" />
+    <Parameter Name="anio" Type="int" Mode="In" />
+    <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RegistroCompra_ObtienexIdLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RegistroVenta_ObtienexIdLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+  </Function>
+</Schema>

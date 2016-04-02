@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{715ABFC4-C168-41A9-AC95-1A8A55DF61CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Carestream.AdmTramas.DataAccess</RootNamespace>
+    <AssemblyName>Carestream.AdmTramas.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\AdmTramasModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdmTramasModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AdmTramasModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AdmTramasModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdmTramasModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CodigoDetalle.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CodigoDetalle_Listar_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Errores_ListarLineas_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ErrorLinea.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Estructura.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Libro.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroDiario.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroDiarioAgrupado.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroDiarioDetalle.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroDiario_ConsultarPorPeriodo_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroLog.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroLogExportDetalle.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroLog_ConsultaLogCompras_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroLog_ConsultaLogLibroDiarioDetalle_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroLog_ConsultaLogLibroDiario_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroLog_ConsultaLogLibroMayor_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroLog_ConsultaLogVentas_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroLog_ConsultaxIdLog_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroLog_Listar_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LibroMayor.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Libro_Listar1_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Libro_Listar_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Libro_Listar_Result1.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegistroCompra.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegistroNoDomiciliado.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegistroVenta.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagrams_Result.cs">
+      <DependentUpon>AdmTramasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\DACodigoDetalle.cs" />
+    <Compile Include="Repository\Versiones\Version_4_0\DAErrorDetalle.cs" />
+    <Compile Include="Repository\DAEstructura.cs" />
+    <Compile Include="Repository\DALibro.cs" />
+    <Compile Include="Repository\Interfaces\ICodigoDetalleRepository.cs" />
+    <Compile Include="Repository\Interfaces\IEstructuraRepository.cs" />
+    <Compile Include="Repository\Interfaces\ILibroLogRepository.cs" />
+    <Compile Include="Repository\Interfaces\ILibroRepository.cs" />
+    <Compile Include="Repository\Versiones\Version_3_0\DALibroLog.cs" />
+    <Compile Include="Repository\Versiones\Version_4_0\DALibroLog.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\AdmTramasModel.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model\AdmTramasModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdmTramasModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Model\AdmTramasModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AdmTramasModel.Context.cs</LastGenOutput>
+      <DependentUpon>AdmTramasModel.edmx</DependentUpon>
+    </None>
+    <None Include="Model\AdmTramasModel.edmx.diagram">
+      <DependentUpon>AdmTramasModel.edmx</DependentUpon>
+    </None>
+    <None Include="Model\AdmTramasModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AdmTramasModel.cs</LastGenOutput>
+      <DependentUpon>AdmTramasModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\Versiones\Version_3_1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Carestream.AdmTramas.Model\Carestream.AdmTramas.Model.csproj">
+      <Project>{dd6d4a0e-1677-49ac-8d11-1bafd1e3be13}</Project>
+      <Name>Carestream.AdmTramas.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Carestream.AdmTramas.Utils\Carestream.AdmTramas.Utils.csproj">
+      <Project>{51d6f410-3f97-4cf6-a82a-c15cd5752ec8}</Project>
+      <Name>Carestream.AdmTramas.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

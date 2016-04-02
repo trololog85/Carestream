@@ -1,0 +1,1124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BDTramaPLEModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BDTramaPLEModelStoreContainer">
+          <EntitySet Name="Archivo" EntityType="BDTramaPLEModel.Store.Archivo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ArchivoLog" EntityType="BDTramaPLEModel.Store.ArchivoLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ArchivoLogDetalle" EntityType="BDTramaPLEModel.Store.ArchivoLogDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CodigoDetalle" EntityType="BDTramaPLEModel.Store.CodigoDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Error" EntityType="BDTramaPLEModel.Store.Error" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ErrorInfoEstructura" EntityType="BDTramaPLEModel.Store.ErrorInfoEstructura" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ErrorLineaDetalle" EntityType="BDTramaPLEModel.Store.ErrorLineaDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Estructura" EntityType="BDTramaPLEModel.Store.Estructura" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InfoEstructura" EntityType="BDTramaPLEModel.Store.InfoEstructura" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InputLibroDiario" EntityType="BDTramaPLEModel.Store.InputLibroDiario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InputLibroMayor" EntityType="BDTramaPLEModel.Store.InputLibroMayor" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InputRegistroCompra" EntityType="BDTramaPLEModel.Store.InputRegistroCompra" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InputRegistroVenta" EntityType="BDTramaPLEModel.Store.InputRegistroVenta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="BDTramaPLEModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Archivo_Estructura" Association="BDTramaPLEModel.Store.FK_Archivo_Estructura">
+            <End Role="Estructura" EntitySet="Estructura" />
+            <End Role="Archivo" EntitySet="Archivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArchivoLogDetalle_ArchivoLog" Association="BDTramaPLEModel.Store.FK_ArchivoLogDetalle_ArchivoLog">
+            <End Role="ArchivoLog" EntitySet="ArchivoLog" />
+            <End Role="ArchivoLogDetalle" EntitySet="ArchivoLogDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ErrorInfoEstructura_Error" Association="BDTramaPLEModel.Store.FK_ErrorInfoEstructura_Error">
+            <End Role="Error" EntitySet="Error" />
+            <End Role="ErrorInfoEstructura" EntitySet="ErrorInfoEstructura" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InfoEstructura_Estructura" Association="BDTramaPLEModel.Store.FK_InfoEstructura_Estructura">
+            <End Role="Estructura" EntitySet="Estructura" />
+            <End Role="InfoEstructura" EntitySet="InfoEstructura" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Archivo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_proceso" Type="varchar" MaxLength="50" />
+          <Property Name="id_estructura" Type="int" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="ArchivoLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_archivo" Type="int" Nullable="false" />
+          <Property Name="nombre_carga" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_carga" Type="datetime" />
+          <Property Name="cant_registros" Type="int" />
+          <Property Name="num_ruc" Type="varchar" MaxLength="15" />
+          <Property Name="indicador_ope" Type="char" MaxLength="1" />
+          <Property Name="indicador_moneda" Type="char" MaxLength="3" />
+          <Property Name="indicador_libro" Type="char" MaxLength="1" />
+          <Property Name="tipo_ope" Type="char" MaxLength="1" />
+          <Property Name="fecha_generacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ArchivoLogDetalle">
+          <Key>
+            <PropertyRef Name="id_archivo_log" />
+            <PropertyRef Name="n_linea" />
+          </Key>
+          <Property Name="id_archivo_log" Type="int" Nullable="false" />
+          <Property Name="n_linea" Type="int" Nullable="false" />
+          <Property Name="trama" Type="varchar" Nullable="false" MaxLength="3000" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CodigoDetalle">
+          <Key>
+            <PropertyRef Name="tipo" />
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="tipo" Type="int" Nullable="false" />
+          <Property Name="codigo" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="etiqueta" Type="varchar" Nullable="false" MaxLength="1000" />
+          <Property Name="campo1" Type="varchar" MaxLength="15" />
+          <Property Name="campo2" Type="varchar" MaxLength="15" />
+          <Property Name="campo3" Type="varchar" MaxLength="15" />
+          <Property Name="campo4" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Error">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="codigo" Type="char" MaxLength="3" />
+          <Property Name="descripcion" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="ErrorInfoEstructura">
+          <Key>
+            <PropertyRef Name="id_estructura" />
+            <PropertyRef Name="id_campo" />
+            <PropertyRef Name="id_error" />
+          </Key>
+          <Property Name="id_estructura" Type="int" Nullable="false" />
+          <Property Name="id_campo" Type="int" Nullable="false" />
+          <Property Name="id_error" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ErrorLineaDetalle">
+          <Key>
+            <PropertyRef Name="id_archivo_log" />
+            <PropertyRef Name="n_linea" />
+            <PropertyRef Name="id_error" />
+          </Key>
+          <Property Name="id_archivo_log" Type="int" Nullable="false" />
+          <Property Name="n_linea" Type="int" Nullable="false" />
+          <Property Name="id_error" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_campo" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Estructura">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="150" />
+          <Property Name="longitud" Type="int" />
+        </EntityType>
+        <EntityType Name="InfoEstructura">
+          <Key>
+            <PropertyRef Name="num_campo" />
+            <PropertyRef Name="id_estructura" />
+          </Key>
+          <Property Name="num_campo" Type="int" Nullable="false" />
+          <Property Name="id_estructura" Type="int" Nullable="false" />
+          <Property Name="tipo_dato" Type="char" MaxLength="1" />
+          <Property Name="pos_inicial" Type="int" />
+          <Property Name="pos_final" Type="int" />
+          <Property Name="longitud_campo" Type="int" />
+          <Property Name="valores_permitidos" Type="varchar" MaxLength="500" />
+          <Property Name="formato" Type="varchar" MaxLength="20" />
+          <Property Name="obligatorio" Type="bit" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="250" />
+          <Property Name="nombre_input" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="InputLibroDiario">
+          <Key>
+            <PropertyRef Name="num_linea" />
+            <PropertyRef Name="id_archivo_log" />
+          </Key>
+          <Property Name="num_linea" Type="int" Nullable="false" />
+          <Property Name="id_archivo_log" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="numcorre" Type="int" />
+          <Property Name="codigounico" Type="varchar" MaxLength="25" />
+          <Property Name="referencia" Type="varchar" MaxLength="25" />
+          <Property Name="cuenta" Type="varchar" MaxLength="25" />
+          <Property Name="centro" Type="varchar" MaxLength="25" />
+          <Property Name="descasent" Type="varchar" MaxLength="250" />
+          <Property Name="debe" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="haber" Type="decimal" Precision="9" Scale="2" />
+        </EntityType>
+        <EntityType Name="InputLibroMayor">
+          <Key>
+            <PropertyRef Name="num_linea" />
+            <PropertyRef Name="id_archivo_log" />
+          </Key>
+          <Property Name="num_linea" Type="int" Nullable="false" />
+          <Property Name="id_archivo_log" Type="int" Nullable="false" />
+          <Property Name="numdoc" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_ope" Type="datetime" />
+          <Property Name="importe" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="subtotal" Type="varchar" MaxLength="10" />
+          <Property Name="cuenta" Type="varchar" MaxLength="50" />
+          <Property Name="gl" Type="varchar" MaxLength="25" />
+          <Property Name="debito" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="credito" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="saldo" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="referencia" Type="varchar" MaxLength="250" />
+          <Property Name="item" Type="bigint" />
+          <Property Name="descripcion" Type="varchar" MaxLength="250" />
+          <Property Name="glosa" Type="varchar" MaxLength="50" />
+          <Property Name="tipo" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="InputRegistroCompra">
+          <Key>
+            <PropertyRef Name="id_archivo_log" />
+            <PropertyRef Name="id_linea" />
+          </Key>
+          <Property Name="id_archivo_log" Type="int" Nullable="false" />
+          <Property Name="id_linea" Type="int" Nullable="false" />
+          <Property Name="no_ope_rac" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_emision" Type="datetime" />
+          <Property Name="fecha_vencimiento" Type="datetime" />
+          <Property Name="tipo_comprobante" Type="varchar" MaxLength="2" />
+          <Property Name="nro_serie_comprobante" Type="varchar" MaxLength="20" />
+          <Property Name="anio_emision_comprobante" Type="int" />
+          <Property Name="numero_comprobante" Type="varchar" MaxLength="50" />
+          <Property Name="tipo_documento" Type="varchar" MaxLength="2" />
+          <Property Name="numero_documento" Type="varchar" MaxLength="15" />
+          <Property Name="apell_nomb_raz_soc" Type="varchar" MaxLength="250" />
+          <Property Name="base_imponible_grav" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="igv_gravado" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="base_imp_mixta" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="igv_mixto" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="base_imp_no_grav" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="igv_no_grav" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="adq_no_grav" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="isc" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="otros_tributos" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="total" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="comp_no_domic" Type="varchar" MaxLength="50" />
+          <Property Name="num_constancia" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_emision_const" Type="datetime" />
+          <Property Name="tipo_cambio" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="fecha_original" Type="datetime" />
+          <Property Name="tipo_doc_orig" Type="varchar" MaxLength="2" />
+          <Property Name="num_serie_orig" Type="varchar" MaxLength="20" />
+          <Property Name="num_doc_orig" Type="varchar" MaxLength="15" />
+          <Property Name="pago" Type="varchar" MaxLength="20" />
+          <Property Name="fecha_pago" Type="datetime" />
+          <Property Name="detraccion" Type="varchar" MaxLength="20" />
+          <Property Name="tasa_detraccion" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="importe_detraccion" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="retencion" Type="varchar" MaxLength="20" />
+          <Property Name="importe_retencion" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="motivo_retencion" Type="varchar" MaxLength="250" />
+          <Property Name="revision_tasa" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="revision_tipo_cambio" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="revision_verificacion" Type="varchar" MaxLength="250" />
+          <Property Name="base_revision" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="igv_revision" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="tipo_gasto" Type="varchar" MaxLength="20" />
+          <Property Name="recepcion" Type="varchar" MaxLength="20" />
+          <Property Name="comentario1" Type="varchar" MaxLength="250" />
+          <Property Name="comentario2" Type="varchar" MaxLength="250" />
+          <Property Name="vb" Type="varchar" MaxLength="20" />
+          <Property Name="compra_gravada_pais" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="compra_gravada_exterior" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="compra_no_gravada" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="igv_pais" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="exterior" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="otros_cargos" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="total1" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="estado" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="InputRegistroVenta">
+          <Key>
+            <PropertyRef Name="id_archivo_log" />
+            <PropertyRef Name="id_linea" />
+          </Key>
+          <Property Name="id_archivo_log" Type="int" Nullable="false" />
+          <Property Name="id_linea" Type="int" Nullable="false" />
+          <Property Name="num_correlativo" Type="int" />
+          <Property Name="fecha_comprobante" Type="datetime" />
+          <Property Name="tipo_comprobante" Type="int" />
+          <Property Name="interno_comprobante" Type="bigint" />
+          <Property Name="serie_comprobante" Type="varchar" MaxLength="20" />
+          <Property Name="num_comprobante" Type="varchar" MaxLength="20" />
+          <Property Name="tipo_documento" Type="char" MaxLength="1" />
+          <Property Name="num_documento" Type="varchar" MaxLength="15" />
+          <Property Name="codigo_documento" Type="varchar" MaxLength="20" />
+          <Property Name="nombre_razon_social" Type="varchar" MaxLength="60" />
+          <Property Name="valor_venta_orig" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="moneda" Type="char" MaxLength="3" />
+          <Property Name="tipo_cambio" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="vv" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="igv" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="pv" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="fechamod" Type="datetime" />
+          <Property Name="tipomod" Type="varchar" MaxLength="2" />
+          <Property Name="seriemod" Type="varchar" MaxLength="20" />
+          <Property Name="nomod" Type="varchar" MaxLength="20" />
+          <Property Name="vvmod" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="igvmod" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="pvmod" Type="decimal" Precision="9" Scale="3" />
+          <Property Name="num_unico_ope" Type="varchar" MaxLength="15" />
+          <Property Name="ope_no_gravada" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="estado" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Archivo_Estructura">
+          <End Role="Estructura" Type="BDTramaPLEModel.Store.Estructura" Multiplicity="1" />
+          <End Role="Archivo" Type="BDTramaPLEModel.Store.Archivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructura">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Archivo">
+              <PropertyRef Name="id_estructura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArchivoLogDetalle_ArchivoLog">
+          <End Role="ArchivoLog" Type="BDTramaPLEModel.Store.ArchivoLog" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ArchivoLogDetalle" Type="BDTramaPLEModel.Store.ArchivoLogDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArchivoLog">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ArchivoLogDetalle">
+              <PropertyRef Name="id_archivo_log" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ErrorInfoEstructura_Error">
+          <End Role="Error" Type="BDTramaPLEModel.Store.Error" Multiplicity="1" />
+          <End Role="ErrorInfoEstructura" Type="BDTramaPLEModel.Store.ErrorInfoEstructura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Error">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ErrorInfoEstructura">
+              <PropertyRef Name="id_error" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InfoEstructura_Estructura">
+          <End Role="Estructura" Type="BDTramaPLEModel.Store.Estructura" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="InfoEstructura" Type="BDTramaPLEModel.Store.InfoEstructura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructura">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="InfoEstructura">
+              <PropertyRef Name="id_estructura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Archivo_Guardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Archivo_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Archivo_ObtieneIDxCod" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ArchivoLog_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tipo_ope" Type="char" Mode="In" />
+        </Function>
+        <Function Name="ArchivoLog_ListarxIdxTipoOpe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tipo_ope" Type="char" Mode="In" />
+          <Parameter Name="id_archivo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ArchivoLog_ObtieneMaximo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="ArchivoLog_ObtieneMaximo_x_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_archivo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ArchivoLogDetalle_Listar_x_ArchivoLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CodigoDetalle_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tipo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ErrorLineaDetalle_Obtiene_x_ArchivoLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Estructura_Guardar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="longitud" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Estructura_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Estructura_ObtieneMaximo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="InfoEstructura_Buscar_x_IdArchivo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InfoEstructura_Listar_x_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_estructura" Type="int" Mode="In" />
+        </Function>
+        <Function Name="LibrioDiario_ObtienexIdLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+        </Function>
+        <Function Name="LibrioMayor_ObtienexIdLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ObtieneExportArchivoCompras_x_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mes" Type="int" Mode="In" />
+          <Parameter Name="anio" Type="int" Mode="In" />
+          <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ObtieneExportArchivoVentas_x_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mes" Type="int" Mode="In" />
+          <Parameter Name="anio" Type="int" Mode="In" />
+          <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+        </Function>
+        <Function Name="RegistroCompra_ObtienexIdLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+        </Function>
+        <Function Name="RegistroVenta_ObtienexIdLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_archivo_log" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BDTramaPLEModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BDTramaPLEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Archivoes" EntityType="BDTramaPLEModel.Archivo" />
+          <EntitySet Name="ArchivoLogs" EntityType="BDTramaPLEModel.ArchivoLog" />
+          <EntitySet Name="ArchivoLogDetalles" EntityType="BDTramaPLEModel.ArchivoLogDetalle" />
+          <EntitySet Name="Errors" EntityType="BDTramaPLEModel.Error" />
+          <EntitySet Name="Estructuras" EntityType="BDTramaPLEModel.Estructura" />
+          <EntitySet Name="InfoEstructuras" EntityType="BDTramaPLEModel.InfoEstructura" />
+          <AssociationSet Name="FK_Archivo_Estructura" Association="BDTramaPLEModel.FK_Archivo_Estructura">
+            <End Role="Estructura" EntitySet="Estructuras" />
+            <End Role="Archivo" EntitySet="Archivoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArchivoLogDetalle_ArchivoLog" Association="BDTramaPLEModel.FK_ArchivoLogDetalle_ArchivoLog">
+            <End Role="ArchivoLog" EntitySet="ArchivoLogs" />
+            <End Role="ArchivoLogDetalle" EntitySet="ArchivoLogDetalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InfoEstructura_Estructura" Association="BDTramaPLEModel.FK_InfoEstructura_Estructura">
+            <End Role="Estructura" EntitySet="Estructuras" />
+            <End Role="InfoEstructura" EntitySet="InfoEstructuras" />
+          </AssociationSet>
+          <AssociationSet Name="ErrorInfoEstructura" Association="BDTramaPLEModel.ErrorInfoEstructura">
+            <End Role="Error" EntitySet="Errors" />
+            <End Role="InfoEstructura" EntitySet="InfoEstructuras" />
+          </AssociationSet>
+          <FunctionImport Name="ListarEstructura" EntitySet="Estructuras" ReturnType="Collection(BDTramaPLEModel.Estructura)" />
+          <FunctionImport Name="ListarInfoEstructuraxID" EntitySet="InfoEstructuras" ReturnType="Collection(BDTramaPLEModel.InfoEstructura)">
+          <Parameter Name="id_estructura" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ObtieneMaxArchivoLogxArchivo" ReturnType="Collection(BDTramaPLEModel.Estructura_ObtieneMaximoID_Result)">
+          <Parameter Name="id_archivo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Estructura_ObtieneMaximoID" ReturnType="Collection(BDTramaPLEModel.Estructura_ObtieneMaximoID_Result)" />
+          <FunctionImport Name="ListarArchivos" EntitySet="Archivoes" ReturnType="Collection(BDTramaPLEModel.Archivo)" />
+          <FunctionImport Name="ArchivoGetIDxCod" ReturnType="Collection(Int32)">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ArchivoLog_Listar" EntitySet="ArchivoLogs" ReturnType="Collection(BDTramaPLEModel.ArchivoLog)" >
+          <Parameter Name="tipo_ope" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RegistroVentaxCarga" EntitySet="InputRegistroVentas" ReturnType="Collection(BDTramaPLEModel.InputRegistroVenta)">
+          <Parameter Name="id_archivo_log" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ListarCodigoDetalle" EntitySet="CodigoDetalles" ReturnType="Collection(BDTramaPLEModel.CodigoDetalle)">
+          <Parameter Name="tipo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="CodigoDetalles" EntityType="BDTramaPLEModel.CodigoDetalle" />
+          <FunctionImport Name="GetVentas_x_Periodo" EntitySet="InputRegistroVentas" ReturnType="Collection(BDTramaPLEModel.InputRegistroVenta)">
+            <Parameter Name="mes" Mode="In" Type="Int32" />
+            <Parameter Name="anio" Mode="In" Type="Int32" />
+            <Parameter Name="id_archivo_log" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ObtieneInfoEstructuraxCodArchivo" EntitySet="InfoEstructuras" ReturnType="Collection(BDTramaPLEModel.InfoEstructura)">
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="ErrorLineaDetalles" EntityType="BDTramaPLEModel.ErrorLineaDetalle" />
+          <FunctionImport Name="ObtieneErrorDetallexArchivoLog" EntitySet="ErrorLineaDetalles" ReturnType="Collection(BDTramaPLEModel.ErrorLineaDetalle)">
+          <Parameter Name="id_archivo_log" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ObtieneArchivoLogDetallexIdArchivoLog" EntitySet="ArchivoLogDetalles" ReturnType="Collection(BDTramaPLEModel.ArchivoLogDetalle)">
+          <Parameter Name="id_archivo_log" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ObtieneArchivoLogxIdxOPe" EntitySet="ArchivoLogs" ReturnType="Collection(BDTramaPLEModel.ArchivoLog)">
+            <Parameter Name="tipo_ope" Mode="In" Type="String" />
+            <Parameter Name="id_archivo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="InputRegistroCompras" EntityType="BDTramaPLEModel.InputRegistroCompra" />
+          <FunctionImport Name="ObtieneRegistroCompra_x_IdLog" EntitySet="InputRegistroCompras" ReturnType="Collection(BDTramaPLEModel.InputRegistroCompra)">
+          <Parameter Name="id_archivo_log" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ObtieneRegistroCompraExport" EntitySet="InputRegistroCompras" ReturnType="Collection(BDTramaPLEModel.InputRegistroCompra)">
+          <Parameter Name="id_archivo_log" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="InputLibroDiarios" EntityType="BDTramaPLEModel.InputLibroDiario" />
+          <FunctionImport Name="LibroDiarioxCarga" EntitySet="InputLibroDiarios" ReturnType="Collection(BDTramaPLEModel.InputLibroDiario)">
+          <Parameter Name="id_archivo_log" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="InputLibroMayors" EntityType="BDTramaPLEModel.InputLibroMayor" />
+          <FunctionImport Name="LibroMayorxCarga" EntitySet="InputLibroMayors" ReturnType="Collection(BDTramaPLEModel.InputLibroMayor)">
+          <Parameter Name="id_archivo_log" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="sysdiagrams" EntityType="BDTramaPLEModel.sysdiagram" />
+          <EntitySet Name="InputRegistroVentas" EntityType="BDTramaPLEModel.InputRegistroVenta" />          
+        </EntityContainer>
+        <EntityType Name="Archivo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_proceso" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="id_estructura" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Estructura" Relationship="BDTramaPLEModel.FK_Archivo_Estructura" FromRole="Archivo" ToRole="Estructura" />
+          <Property Type="String" Name="codigo" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ArchivoLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_archivo" Type="Int32" Nullable="false" />
+          <Property Name="nombre_carga" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fecha_carga" Type="DateTime" />
+          <Property Name="cant_registros" Type="Int32" />
+          <Property Name="num_ruc" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="indicador_ope" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="indicador_moneda" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="indicador_libro" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="ArchivoLogDetalles" Relationship="BDTramaPLEModel.FK_ArchivoLogDetalle_ArchivoLog" FromRole="ArchivoLog" ToRole="ArchivoLogDetalle" />
+          <Property Type="String" Name="tipo_ope" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="fecha_generacion" />
+        </EntityType>
+        <EntityType Name="ArchivoLogDetalle">
+          <Key>
+            <PropertyRef Name="id_archivo_log" />
+            <PropertyRef Name="n_linea" />
+          </Key>
+          <Property Name="id_archivo_log" Type="Int32" Nullable="false" />
+          <Property Name="n_linea" Type="Int32" Nullable="false" />
+          <Property Name="trama" Type="String" Nullable="false" MaxLength="3000" Unicode="false" FixedLength="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ArchivoLog" Relationship="BDTramaPLEModel.FK_ArchivoLogDetalle_ArchivoLog" FromRole="ArchivoLogDetalle" ToRole="ArchivoLog" />
+        </EntityType>
+        <EntityType Name="Error">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="codigo" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="descripcion" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="InfoEstructuras" Relationship="BDTramaPLEModel.ErrorInfoEstructura" FromRole="Error" ToRole="InfoEstructura" />
+        </EntityType>
+        <EntityType Name="Estructura">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="longitud" Type="Int32" />
+          <NavigationProperty Name="Archivoes" Relationship="BDTramaPLEModel.FK_Archivo_Estructura" FromRole="Estructura" ToRole="Archivo" />
+          <NavigationProperty Name="InfoEstructuras" Relationship="BDTramaPLEModel.FK_InfoEstructura_Estructura" FromRole="Estructura" ToRole="InfoEstructura" />
+        </EntityType>
+        <EntityType Name="InfoEstructura">
+          <Key>
+            <PropertyRef Name="num_campo" />
+            <PropertyRef Name="id_estructura" />
+          </Key>          
+          <Property Name="id_estructura" Type="Int32" Nullable="false" />
+          <Property Name="tipo_dato" Type="String" MaxLength="3" Unicode="false" FixedLength="true" />
+          <Property Name="pos_inicial" Type="Int32" />
+          <Property Name="pos_final" Type="Int32" />
+          <Property Name="longitud_campo" Type="Int32" />
+          <Property Name="valores_permitidos" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="formato" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="obligatorio" Type="Boolean" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="num_campo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Estructura" Relationship="BDTramaPLEModel.FK_InfoEstructura_Estructura" FromRole="InfoEstructura" ToRole="Estructura" />
+          <NavigationProperty Name="Errors" Relationship="BDTramaPLEModel.ErrorInfoEstructura" FromRole="InfoEstructura" ToRole="Error" />
+          <Property Type="String" Name="nombre_input" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Archivo_Estructura">
+          <End Role="Estructura" Type="BDTramaPLEModel.Estructura" Multiplicity="1" />
+          <End Role="Archivo" Type="BDTramaPLEModel.Archivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estructura">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Archivo">
+              <PropertyRef Name="id_estructura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArchivoLogDetalle_ArchivoLog">
+          <End Role="ArchivoLog" Type="BDTramaPLEModel.ArchivoLog" Multiplicity="1" />
+          <End Role="ArchivoLogDetalle" Type="BDTramaPLEModel.ArchivoLogDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArchivoLog">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ArchivoLogDetalle">
+              <PropertyRef Name="id_archivo_log" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InfoEstructura_Estructura">
+          <End Role="Estructura" Type="BDTramaPLEModel.Estructura" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="InfoEstructura" Type="BDTramaPLEModel.InfoEstructura" Multiplicity="*" >
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="Estructura">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="InfoEstructura">
+              <PropertyRef Name="id_estructura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ErrorInfoEstructura">
+          <End Role="Error" Type="BDTramaPLEModel.Error" Multiplicity="*" />
+          <End Role="InfoEstructura" Type="BDTramaPLEModel.InfoEstructura" Multiplicity="*" />
+        </Association>
+        <ComplexType Name="Estructura_ObtieneMaximoID_Result">
+          <Property Type="Int32" Name="id" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="CodigoDetalle">
+          <Key>
+            <PropertyRef Name="tipo" />
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Type="Int32" Name="tipo" Nullable="false" />
+          <Property Type="String" Name="codigo" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="descripcion" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="etiqueta" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="campo1" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="campo2" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="campo3" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="campo4" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ErrorLineaDetalle">
+          <Key>
+            <PropertyRef Name="id_archivo_log" />
+            <PropertyRef Name="n_linea" />
+            <PropertyRef Name="id_error" />
+          </Key>
+          <Property Type="Int32" Name="id_archivo_log" Nullable="false" />
+          <Property Type="Int32" Name="n_linea" Nullable="false" />
+          <Property Type="Int32" Name="id_error" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="nombre_campo" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="descripcion" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="InputRegistroCompra">
+          <Key>
+            <PropertyRef Name="id_archivo_log" />
+            <PropertyRef Name="id_linea" />
+          </Key>
+          <Property Type="Int32" Name="id_archivo_log" Nullable="false" />
+          <Property Type="Int32" Name="id_linea" Nullable="false" />
+          <Property Type="String" Name="no_ope_rac" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="fecha_emision" />
+          <Property Type="DateTime" Name="fecha_vencimiento" />
+          <Property Type="String" Name="tipo_comprobante" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nro_serie_comprobante" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="anio_emision_comprobante" />
+          <Property Type="String" Name="numero_comprobante" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tipo_documento" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="numero_documento" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="apell_nomb_raz_soc" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="base_imponible_grav" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="igv_gravado" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="base_imp_mixta" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="igv_mixto" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="base_imp_no_grav" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="igv_no_grav" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="adq_no_grav" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="isc" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="otros_tributos" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="total" Precision="9" Scale="2" />
+          <Property Type="String" Name="comp_no_domic" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="num_constancia" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="fecha_emision_const" />
+          <Property Type="Decimal" Name="tipo_cambio" Precision="9" Scale="3" />
+          <Property Type="DateTime" Name="fecha_original" />
+          <Property Type="String" Name="tipo_doc_orig" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="num_serie_orig" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="num_doc_orig" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pago" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="fecha_pago" />
+          <Property Type="String" Name="detraccion" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="tasa_detraccion" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="importe_detraccion" Precision="9" Scale="2" />
+          <Property Type="String" Name="retencion" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="importe_retencion" Precision="9" Scale="2" />
+          <Property Type="String" Name="motivo_retencion" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="revision_tasa" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="revision_tipo_cambio" Precision="9" Scale="2" />
+          <Property Type="String" Name="revision_verificacion" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="base_revision" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="igv_revision" Precision="9" Scale="2" />
+          <Property Type="String" Name="tipo_gasto" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="recepcion" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="comentario1" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="comentario2" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="vb" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="compra_gravada_pais" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="compra_gravada_exterior" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="compra_no_gravada" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="igv_pais" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="exterior" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="otros_cargos" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="total1" Precision="9" Scale="2" />
+          <Property Type="String" Name="estado" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="InputLibroDiario">
+          <Key>
+            <PropertyRef Name="num_linea" />
+            <PropertyRef Name="id_archivo_log" />
+          </Key>
+          <Property Type="Int32" Name="num_linea" Nullable="false" />
+          <Property Type="Int32" Name="id_archivo_log" Nullable="false" />
+          <Property Type="DateTime" Name="fecha" />
+          <Property Type="Int32" Name="numcorre" />
+          <Property Type="String" Name="codigounico" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="referencia" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cuenta" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="centro" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="descasent" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="debe" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="haber" Precision="9" Scale="2" />
+        </EntityType>
+        <EntityType Name="InputLibroMayor">
+          <Key>
+            <PropertyRef Name="num_linea" />
+            <PropertyRef Name="id_archivo_log" />
+          </Key>
+          <Property Type="Int32" Name="num_linea" Nullable="false" />
+          <Property Type="Int32" Name="id_archivo_log" Nullable="false" />
+          <Property Type="String" Name="numdoc" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="fecha_ope" />
+          <Property Type="Decimal" Name="importe" Precision="9" Scale="2" />
+          <Property Type="String" Name="subtotal" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cuenta" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="gl" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="debito" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="credito" Precision="9" Scale="2" />
+          <Property Type="Decimal" Name="saldo" Precision="9" Scale="2" />
+          <Property Type="String" Name="referencia" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="item" Nullable="true" />
+          <Property Type="String" Name="descripcion" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="glosa" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tipo" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="InputRegistroVenta">
+          <Key>
+            <PropertyRef Name="id_archivo_log" />
+            <PropertyRef Name="id_linea" />
+          </Key>
+          <Property Type="Int32" Name="id_archivo_log" Nullable="false" />
+          <Property Type="Int32" Name="id_linea" Nullable="false" />
+          <Property Type="Int32" Name="num_correlativo" />
+          <Property Type="DateTime" Name="fecha_comprobante" />
+          <Property Type="Int32" Name="tipo_comprobante" />
+          <Property Type="Int64" Name="interno_comprobante" />
+          <Property Type="String" Name="serie_comprobante" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="num_comprobante" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tipo_documento" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="num_documento" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="codigo_documento" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nombre_razon_social" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="valor_venta_orig" Precision="9" Scale="3" />
+          <Property Type="String" Name="moneda" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="Decimal" Name="tipo_cambio" Precision="9" Scale="3" />
+          <Property Type="Decimal" Name="vv" Precision="9" Scale="3" />
+          <Property Type="Decimal" Name="igv" Precision="9" Scale="3" />
+          <Property Type="Decimal" Name="pv" Precision="9" Scale="3" />
+          <Property Type="DateTime" Name="fechamod" />
+          <Property Type="String" Name="tipomod" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="seriemod" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nomod" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="vvmod" Precision="9" Scale="3" />
+          <Property Type="Decimal" Name="igvmod" Precision="9" Scale="3" />
+          <Property Type="Decimal" Name="pvmod" Precision="9" Scale="3" />
+          <Property Type="String" Name="num_unico_ope" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ope_no_gravada" Precision="9" Scale="2" />
+          <Property Type="String" Name="estado" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BDTramaPLEModelStoreContainer" CdmEntityContainer="BDTramaPLEEntities">
+          <EntitySetMapping Name="Archivoes">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.Archivo">
+              <MappingFragment StoreEntitySet="Archivo">
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre_proceso" ColumnName="nombre_proceso" />
+                <ScalarProperty Name="id_estructura" ColumnName="id_estructura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArchivoLogs">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.ArchivoLog">
+              <MappingFragment StoreEntitySet="ArchivoLog">
+                <ScalarProperty Name="fecha_generacion" ColumnName="fecha_generacion" />
+                <ScalarProperty Name="tipo_ope" ColumnName="tipo_ope" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_archivo" ColumnName="id_archivo" />
+                <ScalarProperty Name="nombre_carga" ColumnName="nombre_carga" />
+                <ScalarProperty Name="fecha_carga" ColumnName="fecha_carga" />
+                <ScalarProperty Name="cant_registros" ColumnName="cant_registros" />
+                <ScalarProperty Name="num_ruc" ColumnName="num_ruc" />
+                <ScalarProperty Name="indicador_ope" ColumnName="indicador_ope" />
+                <ScalarProperty Name="indicador_moneda" ColumnName="indicador_moneda" />
+                <ScalarProperty Name="indicador_libro" ColumnName="indicador_libro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArchivoLogDetalles">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.ArchivoLogDetalle">
+              <MappingFragment StoreEntitySet="ArchivoLogDetalle">
+                <ScalarProperty Name="id_archivo_log" ColumnName="id_archivo_log" />
+                <ScalarProperty Name="n_linea" ColumnName="n_linea" />
+                <ScalarProperty Name="trama" ColumnName="trama" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Errors">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.Error">
+              <MappingFragment StoreEntitySet="Error">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estructuras">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.Estructura">
+              <MappingFragment StoreEntitySet="Estructura">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="longitud" ColumnName="longitud" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InfoEstructuras">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.InfoEstructura">
+              <MappingFragment StoreEntitySet="InfoEstructura">
+                <ScalarProperty Name="nombre_input" ColumnName="nombre_input" />
+                <ScalarProperty Name="id_estructura" ColumnName="id_estructura" />
+                <ScalarProperty Name="tipo_dato" ColumnName="tipo_dato" />
+                <ScalarProperty Name="pos_inicial" ColumnName="pos_inicial" />
+                <ScalarProperty Name="pos_final" ColumnName="pos_final" />
+                <ScalarProperty Name="longitud_campo" ColumnName="longitud_campo" />
+                <ScalarProperty Name="valores_permitidos" ColumnName="valores_permitidos" />
+                <ScalarProperty Name="formato" ColumnName="formato" />
+                <ScalarProperty Name="obligatorio" ColumnName="obligatorio" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="num_campo" ColumnName="num_campo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ErrorInfoEstructura" TypeName="BDTramaPLEModel.ErrorInfoEstructura" StoreEntitySet="ErrorInfoEstructura">
+            <EndProperty Name="Error">
+              <ScalarProperty Name="id" ColumnName="id_error" />
+            </EndProperty>
+            <EndProperty Name="InfoEstructura">
+              <ScalarProperty Name="num_campo" ColumnName="id_campo" />
+              <ScalarProperty Name="id_estructura" ColumnName="id_estructura" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="ListarEstructura" FunctionName="BDTramaPLEModel.Store.Estructura_Listar" />
+          <FunctionImportMapping FunctionImportName="ListarInfoEstructuraxID" FunctionName="BDTramaPLEModel.Store.InfoEstructura_Listar_x_ID" />
+          <FunctionImportMapping FunctionImportName="ObtieneMaxArchivoLogxArchivo" FunctionName="BDTramaPLEModel.Store.ArchivoLog_ObtieneMaximo_x_ID" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BDTramaPLEModel.Estructura_ObtieneMaximoID_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Estructura_ObtieneMaximoID" FunctionName="BDTramaPLEModel.Store.Estructura_ObtieneMaximo" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BDTramaPLEModel.Estructura_ObtieneMaximoID_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ListarArchivos" FunctionName="BDTramaPLEModel.Store.Archivo_Listar" />
+          <FunctionImportMapping FunctionImportName="ArchivoGetIDxCod" FunctionName="BDTramaPLEModel.Store.Archivo_ObtieneIDxCod" />
+          <FunctionImportMapping FunctionImportName="ArchivoLog_Listar" FunctionName="BDTramaPLEModel.Store.ArchivoLog_Listar" />
+          <FunctionImportMapping FunctionImportName="RegistroVentaxCarga" FunctionName="BDTramaPLEModel.Store.RegistroVenta_ObtienexIdLog" />
+          <EntitySetMapping Name="CodigoDetalles">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.CodigoDetalle">
+              <MappingFragment StoreEntitySet="CodigoDetalle">
+                <ScalarProperty Name="campo4" ColumnName="campo4" />
+                <ScalarProperty Name="campo3" ColumnName="campo3" />
+                <ScalarProperty Name="campo2" ColumnName="campo2" />
+                <ScalarProperty Name="campo1" ColumnName="campo1" />
+                <ScalarProperty Name="etiqueta" ColumnName="etiqueta" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ListarCodigoDetalle" FunctionName="BDTramaPLEModel.Store.CodigoDetalle_Listar" />
+          <FunctionImportMapping FunctionImportName="GetVentas_x_Periodo" FunctionName="BDTramaPLEModel.Store.ObtieneExportArchivoVentas_x_Periodo" />
+          <FunctionImportMapping FunctionImportName="ObtieneInfoEstructuraxCodArchivo" FunctionName="BDTramaPLEModel.Store.InfoEstructura_Buscar_x_IdArchivo" />
+          <EntitySetMapping Name="ErrorLineaDetalles">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.ErrorLineaDetalle">
+              <MappingFragment StoreEntitySet="ErrorLineaDetalle">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="nombre_campo" ColumnName="nombre_campo" />
+                <ScalarProperty Name="id_error" ColumnName="id_error" />
+                <ScalarProperty Name="n_linea" ColumnName="n_linea" />
+                <ScalarProperty Name="id_archivo_log" ColumnName="id_archivo_log" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ObtieneErrorDetallexArchivoLog" FunctionName="BDTramaPLEModel.Store.ErrorLineaDetalle_Obtiene_x_ArchivoLog" />
+          <FunctionImportMapping FunctionImportName="ObtieneArchivoLogDetallexIdArchivoLog" FunctionName="BDTramaPLEModel.Store.ArchivoLogDetalle_Listar_x_ArchivoLog" />
+          <FunctionImportMapping FunctionImportName="ObtieneArchivoLogxIdxOPe" FunctionName="BDTramaPLEModel.Store.ArchivoLog_ListarxIdxTipoOpe" />
+          <EntitySetMapping Name="InputRegistroCompras">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.InputRegistroCompra">
+              <MappingFragment StoreEntitySet="InputRegistroCompra">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="total1" ColumnName="total1" />
+                <ScalarProperty Name="otros_cargos" ColumnName="otros_cargos" />
+                <ScalarProperty Name="exterior" ColumnName="exterior" />
+                <ScalarProperty Name="igv_pais" ColumnName="igv_pais" />
+                <ScalarProperty Name="compra_no_gravada" ColumnName="compra_no_gravada" />
+                <ScalarProperty Name="compra_gravada_exterior" ColumnName="compra_gravada_exterior" />
+                <ScalarProperty Name="compra_gravada_pais" ColumnName="compra_gravada_pais" />
+                <ScalarProperty Name="vb" ColumnName="vb" />
+                <ScalarProperty Name="comentario2" ColumnName="comentario2" />
+                <ScalarProperty Name="comentario1" ColumnName="comentario1" />
+                <ScalarProperty Name="recepcion" ColumnName="recepcion" />
+                <ScalarProperty Name="tipo_gasto" ColumnName="tipo_gasto" />
+                <ScalarProperty Name="igv_revision" ColumnName="igv_revision" />
+                <ScalarProperty Name="base_revision" ColumnName="base_revision" />
+                <ScalarProperty Name="revision_verificacion" ColumnName="revision_verificacion" />
+                <ScalarProperty Name="revision_tipo_cambio" ColumnName="revision_tipo_cambio" />
+                <ScalarProperty Name="revision_tasa" ColumnName="revision_tasa" />
+                <ScalarProperty Name="motivo_retencion" ColumnName="motivo_retencion" />
+                <ScalarProperty Name="importe_retencion" ColumnName="importe_retencion" />
+                <ScalarProperty Name="retencion" ColumnName="retencion" />
+                <ScalarProperty Name="importe_detraccion" ColumnName="importe_detraccion" />
+                <ScalarProperty Name="tasa_detraccion" ColumnName="tasa_detraccion" />
+                <ScalarProperty Name="detraccion" ColumnName="detraccion" />
+                <ScalarProperty Name="fecha_pago" ColumnName="fecha_pago" />
+                <ScalarProperty Name="pago" ColumnName="pago" />
+                <ScalarProperty Name="num_doc_orig" ColumnName="num_doc_orig" />
+                <ScalarProperty Name="num_serie_orig" ColumnName="num_serie_orig" />
+                <ScalarProperty Name="tipo_doc_orig" ColumnName="tipo_doc_orig" />
+                <ScalarProperty Name="fecha_original" ColumnName="fecha_original" />
+                <ScalarProperty Name="tipo_cambio" ColumnName="tipo_cambio" />
+                <ScalarProperty Name="fecha_emision_const" ColumnName="fecha_emision_const" />
+                <ScalarProperty Name="num_constancia" ColumnName="num_constancia" />
+                <ScalarProperty Name="comp_no_domic" ColumnName="comp_no_domic" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="otros_tributos" ColumnName="otros_tributos" />
+                <ScalarProperty Name="isc" ColumnName="isc" />
+                <ScalarProperty Name="adq_no_grav" ColumnName="adq_no_grav" />
+                <ScalarProperty Name="igv_no_grav" ColumnName="igv_no_grav" />
+                <ScalarProperty Name="base_imp_no_grav" ColumnName="base_imp_no_grav" />
+                <ScalarProperty Name="igv_mixto" ColumnName="igv_mixto" />
+                <ScalarProperty Name="base_imp_mixta" ColumnName="base_imp_mixta" />
+                <ScalarProperty Name="igv_gravado" ColumnName="igv_gravado" />
+                <ScalarProperty Name="base_imponible_grav" ColumnName="base_imponible_grav" />
+                <ScalarProperty Name="apell_nomb_raz_soc" ColumnName="apell_nomb_raz_soc" />
+                <ScalarProperty Name="numero_documento" ColumnName="numero_documento" />
+                <ScalarProperty Name="tipo_documento" ColumnName="tipo_documento" />
+                <ScalarProperty Name="numero_comprobante" ColumnName="numero_comprobante" />
+                <ScalarProperty Name="anio_emision_comprobante" ColumnName="anio_emision_comprobante" />
+                <ScalarProperty Name="nro_serie_comprobante" ColumnName="nro_serie_comprobante" />
+                <ScalarProperty Name="tipo_comprobante" ColumnName="tipo_comprobante" />
+                <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+                <ScalarProperty Name="fecha_emision" ColumnName="fecha_emision" />
+                <ScalarProperty Name="no_ope_rac" ColumnName="no_ope_rac" />
+                <ScalarProperty Name="id_linea" ColumnName="id_linea" />
+                <ScalarProperty Name="id_archivo_log" ColumnName="id_archivo_log" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ObtieneRegistroCompra_x_IdLog" FunctionName="BDTramaPLEModel.Store.RegistroCompra_ObtienexIdLog" />
+          <FunctionImportMapping FunctionImportName="ObtieneRegistroCompraExport" FunctionName="BDTramaPLEModel.Store.RegistroCompra_ObtienexIdLog" />
+          <EntitySetMapping Name="InputLibroDiarios">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.InputLibroDiario">
+              <MappingFragment StoreEntitySet="InputLibroDiario">
+                <ScalarProperty Name="haber" ColumnName="haber" />
+                <ScalarProperty Name="debe" ColumnName="debe" />
+                <ScalarProperty Name="descasent" ColumnName="descasent" />
+                <ScalarProperty Name="centro" ColumnName="centro" />
+                <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+                <ScalarProperty Name="referencia" ColumnName="referencia" />
+                <ScalarProperty Name="codigounico" ColumnName="codigounico" />
+                <ScalarProperty Name="numcorre" ColumnName="numcorre" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id_archivo_log" ColumnName="id_archivo_log" />
+                <ScalarProperty Name="num_linea" ColumnName="num_linea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="LibroDiarioxCarga" FunctionName="BDTramaPLEModel.Store.LibrioDiario_ObtienexIdLog" />
+          <EntitySetMapping Name="InputLibroMayors">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.InputLibroMayor">
+              <MappingFragment StoreEntitySet="InputLibroMayor">
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="glosa" ColumnName="glosa" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="item" ColumnName="item" />
+                <ScalarProperty Name="referencia" ColumnName="referencia" />
+                <ScalarProperty Name="saldo" ColumnName="saldo" />
+                <ScalarProperty Name="credito" ColumnName="credito" />
+                <ScalarProperty Name="debito" ColumnName="debito" />
+                <ScalarProperty Name="gl" ColumnName="gl" />
+                <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="fecha_ope" ColumnName="fecha_ope" />
+                <ScalarProperty Name="numdoc" ColumnName="numdoc" />
+                <ScalarProperty Name="id_archivo_log" ColumnName="id_archivo_log" />
+                <ScalarProperty Name="num_linea" ColumnName="num_linea" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="LibroMayorxCarga" FunctionName="BDTramaPLEModel.Store.LibrioMayor_ObtienexIdLog" />
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InputRegistroVentas">
+            <EntityTypeMapping TypeName="BDTramaPLEModel.InputRegistroVenta">
+              <MappingFragment StoreEntitySet="InputRegistroVenta">
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="ope_no_gravada" ColumnName="ope_no_gravada" />
+                <ScalarProperty Name="num_unico_ope" ColumnName="num_unico_ope" />
+                <ScalarProperty Name="pvmod" ColumnName="pvmod" />
+                <ScalarProperty Name="igvmod" ColumnName="igvmod" />
+                <ScalarProperty Name="vvmod" ColumnName="vvmod" />
+                <ScalarProperty Name="nomod" ColumnName="nomod" />
+                <ScalarProperty Name="seriemod" ColumnName="seriemod" />
+                <ScalarProperty Name="tipomod" ColumnName="tipomod" />
+                <ScalarProperty Name="fechamod" ColumnName="fechamod" />
+                <ScalarProperty Name="pv" ColumnName="pv" />
+                <ScalarProperty Name="igv" ColumnName="igv" />
+                <ScalarProperty Name="vv" ColumnName="vv" />
+                <ScalarProperty Name="tipo_cambio" ColumnName="tipo_cambio" />
+                <ScalarProperty Name="moneda" ColumnName="moneda" />
+                <ScalarProperty Name="valor_venta_orig" ColumnName="valor_venta_orig" />
+                <ScalarProperty Name="nombre_razon_social" ColumnName="nombre_razon_social" />
+                <ScalarProperty Name="codigo_documento" ColumnName="codigo_documento" />
+                <ScalarProperty Name="num_documento" ColumnName="num_documento" />
+                <ScalarProperty Name="tipo_documento" ColumnName="tipo_documento" />
+                <ScalarProperty Name="num_comprobante" ColumnName="num_comprobante" />
+                <ScalarProperty Name="serie_comprobante" ColumnName="serie_comprobante" />
+                <ScalarProperty Name="interno_comprobante" ColumnName="interno_comprobante" />
+                <ScalarProperty Name="tipo_comprobante" ColumnName="tipo_comprobante" />
+                <ScalarProperty Name="fecha_comprobante" ColumnName="fecha_comprobante" />
+                <ScalarProperty Name="num_correlativo" ColumnName="num_correlativo" />
+                <ScalarProperty Name="id_linea" ColumnName="id_linea" />
+                <ScalarProperty Name="id_archivo_log" ColumnName="id_archivo_log" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="BDTramaPLE" ZoomLevel="71">
+        <EntityTypeShape EntityType="BDTramaPLEModel.Archivo" Width="1.5" PointX="3" PointY="6.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDTramaPLEModel.ArchivoLog" Width="1.5" PointX="5.25" PointY="5.625" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDTramaPLEModel.ArchivoLogDetalle" Width="1.5" PointX="7.5" PointY="5.5" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDTramaPLEModel.Error" Width="1.5" PointX="0.75" PointY="2.5" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDTramaPLEModel.Estructura" Width="1.5" PointX="0.75" PointY="6.375" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDTramaPLEModel.InfoEstructura" Width="1.5" PointX="3.75" PointY="1.375" Height="3.3263964843749996" IsExpanded="true" />
+        <AssociationConnector Association="BDTramaPLEModel.FK_Archivo_Estructura" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.3362939453125" />
+          <ConnectorPoint PointX="3" PointY="7.3362939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="BDTramaPLEModel.FK_ArchivoLogDetalle_ArchivoLog" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="6.6487939453125" />
+          <ConnectorPoint PointX="7.5" PointY="6.6487939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="BDTramaPLEModel.FK_InfoEstructura_Estructura" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.375" />
+          <ConnectorPoint PointX="2.625" PointY="6" />
+          <ConnectorPoint PointX="2.625" PointY="3.0381982421875" />
+          <ConnectorPoint PointX="3.75" PointY="3.0381982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="BDTramaPLEModel.ErrorInfoEstructura" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.7255916341145827" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="3.7255916341145823" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="3.7255916341145827" />
+          <ConnectorPoint PointX="3.75" PointY="3.7255916341145827" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="BDTramaPLEModel.CodigoDetalle" Width="1.5" PointX="6.125" PointY="2" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="BDTramaPLEModel.ErrorLineaDetalle" Width="1.5" PointX="12.25" PointY="0.875" Height="1.9802864583333317" />
+        <EntityTypeShape EntityType="BDTramaPLEModel.InputRegistroCompra" Width="2.375" PointX="0.75" PointY="9.75" Height="11.787659505208332" />
+        <EntityTypeShape EntityType="BDTramaPLEModel.InputLibroDiario" Width="1.5" PointX="3.375" PointY="9.75" Height="3.1340950520833317" />
+        <EntityTypeShape EntityType="BDTramaPLEModel.InputLibroMayor" Width="1.5" PointX="5.375" PointY="9.75" Height="4.0956022135416674" />
+        <EntityTypeShape EntityType="BDTramaPLEModel.sysdiagram" Width="1.5" PointX="7.375" PointY="9.75" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="BDTramaPLEModel.InputRegistroVenta" Width="1.5" PointX="9.375" PointY="8.75" Height="6.4032194010416674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

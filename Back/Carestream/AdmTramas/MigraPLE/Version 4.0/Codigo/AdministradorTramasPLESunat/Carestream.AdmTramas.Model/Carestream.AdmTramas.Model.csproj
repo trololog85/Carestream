@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD6D4A0E-1677-49AC-8D11-1BAFD1E3BE13}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Carestream.AdmTramas.Model</RootNamespace>
+    <AssemblyName>Carestream.AdmTramas.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Campos\Compras.cs" />
+    <Compile Include="Campos\LibroDiarioDetalle.cs" />
+    <Compile Include="Campos\LibroDiario.cs" />
+    <Compile Include="Campos\LibroMayor.cs" />
+    <Compile Include="Campos\Ventas.cs" />
+    <Compile Include="Entities\CodigoDetalles.cs" />
+    <Compile Include="Entities\Error.cs" />
+    <Compile Include="Entities\ErrorDetalle.cs" />
+    <Compile Include="Entities\ErrorLinea.cs" />
+    <Compile Include="Entities\Export.cs" />
+    <Compile Include="Entities\Import.cs" />
+    <Compile Include="Entities\Libro.cs" />
+    <Compile Include="Entities\LibroDiario.cs" />
+    <Compile Include="Entities\LibroDiarioDetalle.cs" />
+    <Compile Include="Entities\LibroLog.cs" />
+    <Compile Include="Entities\LibroMayor.cs" />
+    <Compile Include="Entities\NombreLibro.cs" />
+    <Compile Include="Entities\RegistroCompra.cs" />
+    <Compile Include="Entities\RegistroVenta.cs" />
+    <Compile Include="Entities\ExportResult.cs" />
+    <Compile Include="Entities\RutaArchivo.cs" />
+    <Compile Include="Entities\ValidacionResponse.cs" />
+    <Compile Include="Tipos\TipoAsiento.cs" />
+    <Compile Include="Tipos\TipoContribuyente.cs" />
+    <Compile Include="Tipos\TipoDocumento.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tipos\TipoLibro.cs" />
+    <Compile Include="Tipos\Version.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -452,6 +452,10 @@
   <Function Name="LibroLog_ConsultaLogCompras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idLibroLog" Type="int" Mode="In" />
   </Function>
+  <Function Name="LibroLog_ConsultaLogCompras_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mes" Type="int" Mode="In" />
+    <Parameter Name="anio" Type="int" Mode="In" />
+  </Function>
   <Function Name="LibroLog_ConsultaLogLibroDiario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idLibroLog" Type="int" Mode="In" />
   </Function>
@@ -467,9 +471,14 @@
   <Function Name="LibroLog_ConsultaLogVentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idLibroLog" Type="int" Mode="In" />
   </Function>
+  <Function Name="LibroLog_ConsultaLogVentas_Periodo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="mes" Type="int" Mode="In" />
+    <Parameter Name="anio" Type="int" Mode="In" />
+  </Function>
   <Function Name="LibroLog_ConsultaLogVentasxCUO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idLibroLog" Type="int" Mode="In" />
   </Function>
+  <Function Name="LibroLog_ListaLibroDiario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="LibroLog_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="tipolog" Type="char" Mode="In" />
   </Function>

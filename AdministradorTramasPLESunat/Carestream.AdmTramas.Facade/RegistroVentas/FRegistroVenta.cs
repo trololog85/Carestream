@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Carestream.AdmTramas.DataAccess.Model;
 using Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0;
 

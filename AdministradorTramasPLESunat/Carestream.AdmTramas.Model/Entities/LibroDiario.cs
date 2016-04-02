@@ -21,5 +21,14 @@ namespace Carestream.AdmTramas.Model.Entities
         public int NumeroLinea { get; set; }
         public long IdLibroLog { get; set; }
         public short Correlativo { get; set; }
+        public string Moneda { get; set; }
+        public string TipoDocumentoEmisor { get; set; }
+        public string NumeroDocumentoEmisor { get; set; }
+        public string TipoComprobante { get; set; }
+        public string NumeroSerieComprobante { get; set; }
+        public string NumeroComprobante { get; set; }
+        public DateTime FechaContable { get; set; }
+        public DateTime FechaVencimiento { get; set; }
+        public string CodigoLibro { get; set; }
     }
 }

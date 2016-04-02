@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="25ee05d5bd244ea3909dab5a47723ced" Name="Diagram1">
+        <EntityTypeShape EntityType="BD_MigraPLEModel.Archivo" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MigraPLEModel.MetaArchivo" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MigraPLEModel.MetaArchivoRegla" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MigraPLEModel.Operacion" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MigraPLEModel.OperacionDetalle" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MigraPLEModel.Regla" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MigraPLEModel.TipoOperacion" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MigraPLEModel.TipoRegla" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_MigraPLEModel.Usuarios" Width="1.5" PointX="5.75" PointY="8.625" IsExpanded="true" />
+        <AssociationConnector Association="BD_MigraPLEModel.FK_MetaArchivo_Archivo" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MigraPLEModel.FK_Operacion_Archivo" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MigraPLEModel.FK_MetaArchivoRegla_MetaArchivo1" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MigraPLEModel.FK_MetaArchivoRegla_Regla1" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MigraPLEModel.FK_Operacion_TipoOperacion" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MigraPLEModel.FK_OperacionDetalle_Operacion" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_MigraPLEModel.FK_Regla_TipoRegla1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

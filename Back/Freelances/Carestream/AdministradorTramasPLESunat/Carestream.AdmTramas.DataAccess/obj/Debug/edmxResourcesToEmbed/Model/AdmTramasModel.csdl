@@ -1,0 +1,833 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Database" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="AdmTramasContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Libros" EntityType="Database.Libro" />
+    <EntitySet Name="LibroLogs" EntityType="Database.LibroLog" />
+    <EntitySet Name="LibroLogExportDetalles" EntityType="Database.LibroLogExportDetalle" />
+    <EntitySet Name="ErrorLineas" EntityType="Database.ErrorLinea" />
+    <EntitySet Name="CodigoDetalles" EntityType="Database.CodigoDetalle" />
+    <EntitySet Name="LibroDiarios" EntityType="Database.LibroDiario" />
+    <AssociationSet Name="LibroLibroLog" Association="Database.LibroLibroLog">
+      <End Role="Libro" EntitySet="Libros" />
+      <End Role="LibroLog" EntitySet="LibroLogs" />
+    </AssociationSet>
+    <AssociationSet Name="LibroLogLibroLogExportDetalle" Association="Database.LibroLogLibroLogExportDetalle">
+      <End Role="LibroLog" EntitySet="LibroLogs" />
+      <End Role="LibroLogExportDetalle" EntitySet="LibroLogExportDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="LibroLogExportDetalleErrorLinea" Association="Database.LibroLogExportDetalleErrorLinea">
+      <End Role="LibroLogExportDetalle" EntitySet="LibroLogExportDetalles" />
+      <End Role="ErrorLinea" EntitySet="ErrorLineas" />
+    </AssociationSet>
+    <AssociationSet Name="LibroLogLibroDiario" Association="Database.LibroLogLibroDiario">
+      <End Role="LibroLog" EntitySet="LibroLogs" />
+      <End Role="LibroDiario" EntitySet="LibroDiarios" />
+    </AssociationSet>
+    <EntitySet Name="RegistroVentas" EntityType="Database.RegistroVenta" />
+    <AssociationSet Name="LibroLogRegistroVenta" Association="Database.LibroLogRegistroVenta">
+      <End Role="LibroLog" EntitySet="LibroLogs" />
+      <End Role="RegistroVenta" EntitySet="RegistroVentas" />
+    </AssociationSet>
+    <EntitySet Name="RegistroCompras" EntityType="Database.RegistroCompra" />
+    <AssociationSet Name="LibroLogRegistroCompra" Association="Database.LibroLogRegistroCompra">
+      <End Role="LibroLog" EntitySet="LibroLogs" />
+      <End Role="RegistroCompra" EntitySet="RegistroCompras" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Database.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Database.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Estructuras" EntityType="Database.Estructura" />
+    <AssociationSet Name="FK_LibroEstructura" Association="Database.FK_LibroEstructura">
+      <End Role="Libro" EntitySet="Libros" />
+      <End Role="Estructura" EntitySet="Estructuras" />
+    </AssociationSet>
+    <FunctionImport Name="ListarLibros" EntitySet="Libros" ReturnType="Collection(Database.Libro)" />
+    <FunctionImport Name="ListarLibroLog" EntitySet="LibroLogs" ReturnType="Collection(Database.LibroLog)">
+      <Parameter Name="tipolog" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ObtieneMaximoLibroLog" ReturnType="Collection(Int32)">
+      <Parameter Name="idLibro" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <EntitySet Name="LibroMayors" EntityType="Database.LibroMayor" />
+    <AssociationSet Name="LibroLogLibroMayor" Association="Database.LibroLogLibroMayor">
+      <End Role="LibroLog" EntitySet="LibroLogs" />
+      <End Role="LibroMayor" EntitySet="LibroMayors" />
+    </AssociationSet>
+    <FunctionImport Name="LibroLog_ConsultaxIdLog" ReturnType="Collection(Database.LibroLog_ConsultaxIdLog_Result)">
+      <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ConsultaImportVentas" EntitySet="RegistroVentas" ReturnType="Collection(Database.RegistroVenta)">
+      <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ListarCodigoDetalle" EntitySet="CodigoDetalles" ReturnType="Collection(Database.CodigoDetalle)">
+      <Parameter Name="tipo" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="ConsultaLibroDiarioPorPeriodo" EntitySet="LibroDiarios" ReturnType="Collection(Database.LibroDiario)">
+      <Parameter Name="mes" Mode="In" Type="Int32" />
+      <Parameter Name="anio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="LibroDiarioAgrupados" EntityType="Database.LibroDiarioAgrupado" />
+    <AssociationSet Name="FK_LibroDiarioDetalles_LibroLogs1" Association="Database.FK_LibroDiarioDetalles_LibroLogs1">
+      <End Role="LibroLog" EntitySet="LibroLogs" />
+      <End Role="LibroDiarioAgrupado" EntitySet="LibroDiarioAgrupados" />
+    </AssociationSet>
+    <FunctionImport Name="ConsultaLogLibroDiario" EntitySet="LibroDiarios" ReturnType="Collection(Database.LibroDiario)">
+      <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="LibroDiarioDetalles" EntityType="Database.LibroDiarioDetalle" />
+    <AssociationSet Name="FK_LibroDiarioDetalles_LibroLogs11" Association="Database.FK_LibroDiarioDetalles_LibroLogs11">
+      <End Role="LibroLog" EntitySet="LibroLogs" />
+      <End Role="LibroDiarioDetalle" EntitySet="LibroDiarioDetalles" />
+    </AssociationSet>
+    <FunctionImport Name="LibroLog_ConsultaLogCompras" ReturnType="Collection(Database.LibroLog_ConsultaLogCompras_Result)">
+      <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LibroLog_ConsultaLogLibroDiarioDetalle" ReturnType="Collection(Database.LibroLog_ConsultaLogLibroDiarioDetalle_Result)">
+      <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LibroLog_ConsultaLogLibroMayor" ReturnType="Collection(Database.LibroLog_ConsultaLogLibroMayor_Result)">
+      <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ConsultaImportCompras" EntitySet="RegistroCompras" ReturnType="Collection(Database.RegistroCompra)">
+      <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ConsultaLibroMayor" EntitySet="LibroMayors" ReturnType="Collection(Database.LibroMayor)">
+      <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ConsultaLibroDiarioDetalle" EntitySet="LibroDiarioDetalles" ReturnType="Collection(Database.LibroDiarioDetalle)">
+      <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Error_ActualizarLog">
+      <Parameter Name="idLibroLogImport" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ActualizaLogErrores">
+      <Parameter Name="idLibroLogImport" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Errores_ListarLineas" ReturnType="Collection(Database.Errores_ListarLineas_Result)">
+      <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ConsultaErroresPorLog" EntitySet="ErrorLineas" ReturnType="Collection(Database.ErrorLinea)">
+      <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="RegistroNoDomiciliadoes" EntityType="Database.RegistroNoDomiciliado" />
+    <AssociationSet Name="FK_RegistroNoDomiciliado_Libros" Association="Database.FK_RegistroNoDomiciliado_Libros">
+      <End Role="Libro" EntitySet="Libros" />
+      <End Role="RegistroNoDomiciliado" EntitySet="RegistroNoDomiciliadoes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Libro">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Codigo" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="LibroLogs" Relationship="Database.LibroLibroLog" FromRole="Libro" ToRole="LibroLog" />
+    <NavigationProperty Name="Estructuras" Relationship="Database.FK_LibroEstructura" FromRole="Libro" ToRole="Estructura" />
+    <NavigationProperty Name="RegistroNoDomiciliadoes" Relationship="Database.FK_RegistroNoDomiciliado_Libros" FromRole="Libro" ToRole="RegistroNoDomiciliado" />
+  </EntityType>
+  <EntityType Name="LibroLog">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdLibro" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdLibro" Type="Int16" Nullable="false" />
+    <Property Name="NombreLibro" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="FechaCarga" Type="DateTime" Precision="3" />
+    <Property Name="FechaGeneracion" Type="DateTime" Precision="3" />
+    <Property Name="Registros" Type="Int32" Nullable="false" />
+    <Property Name="RUC" Type="String" Nullable="false" MaxLength="11" Unicode="true" FixedLength="false" />
+    <Property Name="IndicadorOperacion" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+    <Property Name="IndicadorMoneda" Type="String" MaxLength="3" Unicode="true" FixedLength="false" />
+    <Property Name="IndicadorLibro" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
+    <Property Name="TipoLog" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Libro" Relationship="Database.LibroLibroLog" FromRole="LibroLog" ToRole="Libro" />
+    <NavigationProperty Name="LibroLogExportDetalles" Relationship="Database.LibroLogLibroLogExportDetalle" FromRole="LibroLog" ToRole="LibroLogExportDetalle" />
+    <NavigationProperty Name="LibroDiarios" Relationship="Database.LibroLogLibroDiario" FromRole="LibroLog" ToRole="LibroDiario" />
+    <NavigationProperty Name="RegistroVentas" Relationship="Database.LibroLogRegistroVenta" FromRole="LibroLog" ToRole="RegistroVenta" />
+    <NavigationProperty Name="RegistroCompras" Relationship="Database.LibroLogRegistroCompra" FromRole="LibroLog" ToRole="RegistroCompra" />
+    <NavigationProperty Name="LibroMayors" Relationship="Database.LibroLogLibroMayor" FromRole="LibroLog" ToRole="LibroMayor" />
+    <NavigationProperty Name="LibroDiarioAgrupados" Relationship="Database.FK_LibroDiarioDetalles_LibroLogs1" FromRole="LibroLog" ToRole="LibroDiarioAgrupado" />
+    <NavigationProperty Name="LibroDiarioDetalles" Relationship="Database.FK_LibroDiarioDetalles_LibroLogs11" FromRole="LibroLog" ToRole="LibroDiarioDetalle" />
+    <Property Name="Errores" Type="Int32" />
+    <Property Name="FechaPeriodo" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="LibroLogExportDetalle">
+    <Key>
+      <PropertyRef Name="IdLibroLog" />
+      <PropertyRef Name="Linea" />
+    </Key>
+    <Property Name="IdLibroLog" Type="Int32" Nullable="false" />
+    <Property Name="Linea" Type="Int32" Nullable="false" />
+    <Property Name="IdLibro" Type="Int16" Nullable="false" />
+    <Property Name="Trama" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Estado" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="LibroLog" Relationship="Database.LibroLogLibroLogExportDetalle" FromRole="LibroLogExportDetalle" ToRole="LibroLog" />
+    <NavigationProperty Name="ErrorLineas" Relationship="Database.LibroLogExportDetalleErrorLinea" FromRole="LibroLogExportDetalle" ToRole="ErrorLinea" />
+  </EntityType>
+  <EntityType Name="ErrorLinea">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdLibroLog" Type="Int32" Nullable="false" />
+    <Property Name="Linea" Type="Int32" Nullable="false" />
+    <Property Name="Campo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="LibroLogExportDetalle" Relationship="Database.LibroLogExportDetalleErrorLinea" FromRole="ErrorLinea" ToRole="LibroLogExportDetalle" />
+  </EntityType>
+  <EntityType Name="CodigoDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Etiqueta" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Campo1" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="Campo2" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="Campo3" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="Campo4" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="Tipo" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LibroDiario">
+    <Key>
+      <PropertyRef Name="IdLibroLog" />
+      <PropertyRef Name="Linea" />
+    </Key>
+    <Property Name="Linea" Type="Int32" Nullable="false" />
+    <Property Name="IdLibroLog" Type="Int32" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NumeroCorrelativo" Type="Int32" Nullable="false" />
+    <Property Name="CodigoUnico" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="Referencia" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="Cuenta" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="Centro" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="DescripcionAsiento" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Debe" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Haber" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="IdLibro" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="LibroLog" Relationship="Database.LibroLogLibroDiario" FromRole="LibroDiario" ToRole="LibroLog" />
+    <Property Name="Correlativo" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <Association Name="LibroLibroLog">
+    <End Type="Database.Libro" Role="Libro" Multiplicity="1" />
+    <End Type="Database.LibroLog" Role="LibroLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Libro">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LibroLog">
+        <PropertyRef Name="IdLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LibroLogLibroLogExportDetalle">
+    <End Type="Database.LibroLog" Role="LibroLog" Multiplicity="1" />
+    <End Type="Database.LibroLogExportDetalle" Role="LibroLogExportDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LibroLog">
+        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdLibro" />
+      </Principal>
+      <Dependent Role="LibroLogExportDetalle">
+        <PropertyRef Name="IdLibroLog" />
+        <PropertyRef Name="IdLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LibroLogExportDetalleErrorLinea">
+    <End Type="Database.LibroLogExportDetalle" Role="LibroLogExportDetalle" Multiplicity="1" />
+    <End Type="Database.ErrorLinea" Role="ErrorLinea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LibroLogExportDetalle">
+        <PropertyRef Name="IdLibroLog" />
+        <PropertyRef Name="Linea" />
+      </Principal>
+      <Dependent Role="ErrorLinea">
+        <PropertyRef Name="IdLibroLog" />
+        <PropertyRef Name="Linea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LibroLogLibroDiario">
+    <End Type="Database.LibroLog" Role="LibroLog" Multiplicity="1" />
+    <End Type="Database.LibroDiario" Role="LibroDiario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LibroLog">
+        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdLibro" />
+      </Principal>
+      <Dependent Role="LibroDiario">
+        <PropertyRef Name="IdLibroLog" />
+        <PropertyRef Name="IdLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RegistroVenta">
+    <Key>
+      <PropertyRef Name="Linea" />
+      <PropertyRef Name="IdLibroLog" />
+    </Key>
+    <Property Name="IdLibroLog" Type="Int32" Nullable="false" />
+    <Property Name="Linea" Type="Int32" Nullable="false" />
+    <Property Name="IdLibro" Type="Int16" Nullable="false" />
+    <Property Name="FechaComprobante" Type="DateTime" Precision="7" />
+    <Property Name="TipoComprobante" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="SerieComprobante" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="NumeroComprobante" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="TipoDocumento" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+    <Property Name="NumeroDocumento" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="CodigoDocumento" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="NombreRazonSocial" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="false" />
+    <Property Name="ValorVentaOriginal" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Moneda" Type="String" Nullable="false" MaxLength="3" Unicode="true" FixedLength="false" />
+    <Property Name="TipoCambio" Type="Decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="VV" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="IGV" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="PV" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="FechaModificada" Type="DateTime" Precision="7" />
+    <Property Name="TipoComprobanteModificado" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="NumeroSerieModificado" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="NumeroComprobanteModificado" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="VVModificado" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="IGVModificado" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="PVModificado" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="NumeroUnicoOperacion" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+    <Property Name="OperacionNoGravada" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <NavigationProperty Name="LibroLog" Relationship="Database.LibroLogRegistroVenta" FromRole="RegistroVenta" ToRole="LibroLog" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FechaVencimiento" Type="DateTime" Precision="7" />
+    <Property Name="ValorEmbarcadoExportacion" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="OperacionGravada" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="Numero" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="NumeroCorrelativo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="LibroLogRegistroVenta">
+    <End Type="Database.LibroLog" Role="LibroLog" Multiplicity="1" />
+    <End Type="Database.RegistroVenta" Role="RegistroVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LibroLog">
+        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdLibro" />
+      </Principal>
+      <Dependent Role="RegistroVenta">
+        <PropertyRef Name="IdLibroLog" />
+        <PropertyRef Name="IdLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RegistroCompra">
+    <Key>
+      <PropertyRef Name="Linea" />
+      <PropertyRef Name="IdLibroLog" />
+    </Key>
+    <Property Name="IdLibroLog" Type="Int32" Nullable="false" />
+    <Property Name="Linea" Type="Int32" Nullable="false" />
+    <Property Name="IdLibro" Type="Int16" Nullable="false" />
+    <Property Name="NumeroOperacion" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FechaEmision" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaVencimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TipoComprobante" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="NumeroSerieComprobante" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="AnioEmisionComprobante" Type="String" MaxLength="4" Unicode="true" FixedLength="false" />
+    <Property Name="NumeroComprobante" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="TipoDocumento" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="NumeroDocumento" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="NombreRazonSocial" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="BaseImponibleGravada" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IGVGravado" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="BaseImponibleMixta" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IGVMixto" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="BaseImponibleNoGravada" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IGVNoGravado" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdquisicionNoGravada" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ISC" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtrosTributos" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ComprobanteNoDomiciliado" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NumeroConstancia" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FechaEmisionConstancia" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TipoCambio" Type="Decimal" Precision="18" Scale="3" Nullable="false" />
+    <Property Name="FechaOriginal" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TipoDocumentoOriginal" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="NumeroSerieOriginal" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="NumeroDocumentoOriginal" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="Pago" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="FechaPago" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Detraccion" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="TasaDetraccion" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ImporteDetraccion" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Retencion" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="ImporteRetencion" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MotivoRetencion" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="RevisionTasa" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="RevisionTipoCambio" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="RevisionVerificacion" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="BaseRevision" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IGVRevision" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TipoGasto" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Recepcion" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Comentario1" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Comentario2" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="VB" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="CompraGravadaPais" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CompraGravadaExterior" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CompraNoGravada" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IGVPais" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Exterior" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtrosCargos" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="LibroLog" Relationship="Database.LibroLogRegistroCompra" FromRole="RegistroCompra" ToRole="LibroLog" />
+    <Property Name="codigounicooperacion" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="numerocorrelativo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DUA" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="ClasificacionBien" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <Association Name="LibroLogRegistroCompra">
+    <End Type="Database.LibroLog" Role="LibroLog" Multiplicity="1" />
+    <End Type="Database.RegistroCompra" Role="RegistroCompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LibroLog">
+        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdLibro" />
+      </Principal>
+      <Dependent Role="RegistroCompra">
+        <PropertyRef Name="IdLibroLog" />
+        <PropertyRef Name="IdLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Libro_Listar_Result">
+    <Property Type="Int16" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="codigo" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <EntityType Name="Estructura">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="NumCampo" />
+    </Key>
+    <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumCampo" Type="Int16" Nullable="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TipoDato" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="PosicionInicial" Type="Int32" Nullable="false" />
+    <Property Name="PosicionFinal" Type="Int32" Nullable="false" />
+    <Property Name="Longitud" Type="Int16" Nullable="false" />
+    <Property Name="Obligatorio" Type="Byte" Nullable="false" />
+    <Property Name="IdLibro" Type="Int16" Nullable="false" />
+    <Property Name="Version" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NombreCampo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Libro" Relationship="Database.FK_LibroEstructura" FromRole="Estructura" ToRole="Libro" />
+  </EntityType>
+  <Association Name="FK_LibroEstructura">
+    <End Type="Database.Libro" Role="Libro" Multiplicity="1" />
+    <End Type="Database.Estructura" Role="Estructura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Libro">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Estructura">
+        <PropertyRef Name="IdLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="Libro_Listar1_Result">
+    <Property Type="Int16" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="codigo" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <EntityType Name="LibroMayor">
+    <Key>
+      <PropertyRef Name="Linea" />
+      <PropertyRef Name="IdLibroLog" />
+    </Key>
+    <Property Name="IdLibroLog" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Name="Linea" Type="Int32" Nullable="false" />
+    <Property Name="IdLibro" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="LibroLog" Relationship="Database.LibroLogLibroMayor" FromRole="LibroMayor" ToRole="LibroLog" />
+    <Property Name="FechaOperacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Glosa" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="codunicooperacion" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="NumeroCorrelativo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Debe" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Haber" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Periodo" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoPlanCuenta" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="CodigoCuentaContable" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="CuoVentas" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="CuoCompras" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="CuoConsignaciones" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="LibroLogLibroMayor">
+    <End Type="Database.LibroLog" Role="LibroLog" Multiplicity="1" />
+    <End Type="Database.LibroMayor" Role="LibroMayor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LibroLog">
+        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdLibro" />
+      </Principal>
+      <Dependent Role="LibroMayor">
+        <PropertyRef Name="IdLibroLog" />
+        <PropertyRef Name="IdLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="Libro_Listar_Result1">
+    <Property Type="Int16" Name="id" Nullable="false" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="codigo" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="LibroLog_ConsultaxIdLog_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int16" Name="IdLibro" Nullable="false" />
+    <Property Type="String" Name="NombreLibro" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="FechaCarga" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FechaGeneracion" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Registros" Nullable="false" />
+    <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="IndicadorOperacion" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="IndicadorMoneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="IndicadorLibro" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="LibroLog_Listar_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int16" Name="idlibro" Nullable="false" />
+    <Property Type="String" Name="nombrelibro" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="fechacarga" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="fechageneracion" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="registros" Nullable="false" />
+    <Property Type="String" Name="ruc" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="indicadoroperacion" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="indicadormoneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="indicadorlibro" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="tipolog" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="LibroLog_ConsultaLogVentas_Result">
+    <Property Type="Int32" Name="Linea" Nullable="false" />
+    <Property Type="Int32" Name="NumeroCorrelativo" Nullable="false" />
+    <Property Type="DateTime" Name="FechaComprobante" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="TipoComprobante" Nullable="false" />
+    <Property Type="String" Name="InternoComprobante" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="SerieComprobante" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="NumeroComprobante" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="NumeroDocumento" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="CodigoDocumento" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="NombreRazonSocial" Nullable="false" MaxLength="60" />
+    <Property Type="Decimal" Name="ValorVentaOriginal" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="Moneda" Nullable="false" MaxLength="3" />
+    <Property Type="Decimal" Name="TipoCambio" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="VV" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="IGV" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="PV" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="FechaModificada" Nullable="false" Precision="23" />
+    <Property Type="String" Name="TipoComprobanteModificado" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="NumeroSerieModificado" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="NumeroComprobanteModificado" Nullable="false" MaxLength="20" />
+    <Property Type="Decimal" Name="VVModificado" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="IGVModificado" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="PVModificado" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="NumeroUnicoOperacion" Nullable="false" MaxLength="15" />
+    <Property Type="Decimal" Name="OperacionNoGravada" Nullable="false" Precision="18" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="CodigoDetalle_Listar_Result">
+    <Property Type="String" Name="codigo" Nullable="true" MaxLength="25" />
+    <Property Type="Int16" Name="tipo" Nullable="false" />
+    <Property Type="String" Name="descripcion" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="etiqueta" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="campo1" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="campo2" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="campo3" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="campo4" Nullable="true" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="LibroDiario_ConsultarPorPeriodo_Result">
+    <Property Type="Int32" Name="Linea" Nullable="false" />
+    <Property Type="Int32" Name="IdLibroLog" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="NumeroCorrelativo" Nullable="false" />
+    <Property Type="String" Name="CodigoUnico" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Referencia" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Cuenta" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Centro" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="DescripcionAsiento" Nullable="false" MaxLength="250" />
+    <Property Type="Decimal" Name="Debe" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Haber" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Int16" Name="IdLibro" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="LibroLog_ConsultaLogLibroDiario_Result">
+    <Property Type="Int32" Name="Linea" Nullable="false" />
+    <Property Type="Int32" Name="IdLibroLog" Nullable="false" />
+    <Property Type="DateTime" Name="Fecha" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="NumeroCorrelativo" Nullable="false" />
+    <Property Type="String" Name="CodigoUnico" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Referencia" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Cuenta" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Centro" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="DescripcionAsiento" Nullable="false" MaxLength="250" />
+    <Property Type="Decimal" Name="Debe" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Haber" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Int16" Name="IdLibro" Nullable="false" />
+    <Property Type="String" Name="Correlativo" Nullable="false" MaxLength="6" />
+  </ComplexType>
+  <EntityType Name="LibroDiarioAgrupado">
+    <Key>
+      <PropertyRef Name="Linea" />
+      <PropertyRef Name="IdLibroLog" />
+    </Key>
+    <Property Name="Linea" Type="Int32" Nullable="false" />
+    <Property Name="IdLibroLog" Type="Int32" Nullable="false" />
+    <Property Name="IdLibro" Type="Int16" />
+    <Property Name="CodigoUnico" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Correlativo" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LibroLog" Relationship="Database.FK_LibroDiarioDetalles_LibroLogs1" FromRole="LibroDiarioAgrupado" ToRole="LibroLog" />
+  </EntityType>
+  <Association Name="FK_LibroDiarioDetalles_LibroLogs1">
+    <End Type="Database.LibroLog" Role="LibroLog" Multiplicity="0..1" />
+    <End Type="Database.LibroDiarioAgrupado" Role="LibroDiarioAgrupado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LibroLog">
+        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdLibro" />
+      </Principal>
+      <Dependent Role="LibroDiarioAgrupado">
+        <PropertyRef Name="IdLibroLog" />
+        <PropertyRef Name="IdLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LibroDiarioDetalle">
+    <Key>
+      <PropertyRef Name="Linea" />
+      <PropertyRef Name="IdLibroLog" />
+    </Key>
+    <Property Name="Linea" Type="Int32" Nullable="false" />
+    <Property Name="IdLibroLog" Type="Int32" Nullable="false" />
+    <Property Name="Periodo" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CuentaContable" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="true" />
+    <Property Name="DescripcionCuenta" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CodigoPlanCuenta" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+    <Property Name="DescripcionPlanCuenta" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="IdLibro" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="LibroLog" Relationship="Database.FK_LibroDiarioDetalles_LibroLogs11" FromRole="LibroDiarioDetalle" ToRole="LibroLog" />
+  </EntityType>
+  <Association Name="FK_LibroDiarioDetalles_LibroLogs11">
+    <End Type="Database.LibroLog" Role="LibroLog" Multiplicity="1" />
+    <End Type="Database.LibroDiarioDetalle" Role="LibroDiarioDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LibroLog">
+        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdLibro" />
+      </Principal>
+      <Dependent Role="LibroDiarioDetalle">
+        <PropertyRef Name="IdLibroLog" />
+        <PropertyRef Name="IdLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="LibroLog_ConsultaLogCompras_Result">
+    <Property Type="Int32" Name="IdLibroLog" Nullable="false" />
+    <Property Type="Int32" Name="Linea" Nullable="false" />
+    <Property Type="Int16" Name="IdLibro" Nullable="false" />
+    <Property Type="String" Name="NumeroOperacion" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaEmision" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="FechaVencimiento" Nullable="false" Precision="23" />
+    <Property Type="String" Name="TipoComprobante" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="NumeroSerieComprobante" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="AnioEmisionComprobante" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="NumeroComprobante" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="NumeroDocumento" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="NombreRazonSocial" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="BaseImponibleGravada" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="IGVGravado" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="BaseImponibleMixta" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="IGVMixto" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="BaseImponibleNoGravada" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="IGVNoGravado" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="AdquisicionNoGravada" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ISC" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="OtrosTributos" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Total" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="ComprobanteNoDomiciliado" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NumeroConstancia" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaEmisionConstancia" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="TipoCambio" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="FechaOriginal" Nullable="false" Precision="23" />
+    <Property Type="String" Name="TipoDocumentoOriginal" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="NumeroSerieOriginal" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="NumeroDocumentoOriginal" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Pago" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaPago" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Detraccion" Nullable="false" MaxLength="20" />
+    <Property Type="Decimal" Name="TasaDetraccion" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ImporteDetraccion" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="Retencion" Nullable="false" MaxLength="20" />
+    <Property Type="Decimal" Name="ImporteRetencion" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="MotivoRetencion" Nullable="false" MaxLength="250" />
+    <Property Type="Decimal" Name="RevisionTasa" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="RevisionTipoCambio" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="RevisionVerificacion" Nullable="false" MaxLength="250" />
+    <Property Type="Decimal" Name="BaseRevision" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="IGVRevision" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="TipoGasto" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Recepcion" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Comentario1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Comentario2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="VB" Nullable="false" MaxLength="20" />
+    <Property Type="Decimal" Name="CompraGravadaPais" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="CompraGravadaExterior" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="CompraNoGravada" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="IGVPais" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Exterior" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="OtrosCargos" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Total1" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="codigounicooperacion" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="numerocorrelativo" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DUA" Nullable="false" MaxLength="3" />
+  </ComplexType>
+  <ComplexType Name="LibroLog_ConsultaLogLibroDiarioDetalle_Result">
+    <Property Type="Int32" Name="Linea" Nullable="false" />
+    <Property Type="Int32" Name="IdLibroLog" Nullable="false" />
+    <Property Type="DateTime" Name="Periodo" Nullable="false" Precision="23" />
+    <Property Type="String" Name="CuentaContable" Nullable="false" MaxLength="24" />
+    <Property Type="String" Name="DescripcionCuenta" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CodigoPlanCuenta" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="DescripcionPlanCuenta" Nullable="false" MaxLength="60" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+    <Property Type="Int16" Name="IdLibro" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="LibroLog_ConsultaLogLibroMayor_Result">
+    <Property Type="Int32" Name="IdLibroLog" Nullable="false" />
+    <Property Type="Int32" Name="Linea" Nullable="false" />
+    <Property Type="Int16" Name="IdLibro" Nullable="false" />
+    <Property Type="String" Name="NumeroDocumento" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaOperacion" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="Importe" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="SubTotal" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="Cuenta" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="GL" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Debito" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Credito" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Saldo" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="Referencia" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Item" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Glosa" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Tipo" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="codunicooperacion" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="NumeroCorrelativo" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="Errores_ListarLineas_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="IdLibroLog" Nullable="false" />
+    <Property Type="Int32" Name="Linea" Nullable="false" />
+    <Property Type="String" Name="Campo" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="RegistroNoDomiciliado">
+    <Key>
+      <PropertyRef Name="IdLibroLog" />
+      <PropertyRef Name="Linea" />
+    </Key>
+    <Property Name="IdLibroLog" Type="Int32" Nullable="false" />
+    <Property Name="Linea" Type="Int32" Nullable="false" />
+    <Property Name="IdLibro" Type="Int16" Nullable="false" />
+    <Property Name="Periodo" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="true" />
+    <Property Name="CUO" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroCorrelativo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FechaEmision" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TipoComprobante" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSerieComprobante" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroComprobante" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+    <Property Name="ValorAdquisicion" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="OtrosConceptos" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="ImporteTotalAdquisicion" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="TipoComprobanteFiscal" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroSerieComprobanteFiscal" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AnioEmisionDUA" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="NumeroComprobanteDUA" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+    <Property Name="IGV" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Moneda" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="TipoCambio" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Pais" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="RazonSocial" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Domicilio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroIdentificacionSujeto" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroIdentificacionFiscal" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="RazonSocialBeneficiario" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PaisBeneficiario" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Vinculo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="RentaBruta" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Deduccion" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="RentaNeta" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="TasaRetencion" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="ImpuestoRetenido" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Convenio" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ExoneracionAplicada" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TipoRenta" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="ServicioPrestado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Campo35" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Libro" Relationship="Database.FK_RegistroNoDomiciliado_Libros" FromRole="RegistroNoDomiciliado" ToRole="Libro" />
+  </EntityType>
+  <Association Name="FK_RegistroNoDomiciliado_Libros">
+    <End Type="Database.Libro" Role="Libro" Multiplicity="1" />
+    <End Type="Database.RegistroNoDomiciliado" Role="RegistroNoDomiciliado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Libro">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RegistroNoDomiciliado">
+        <PropertyRef Name="IdLibro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

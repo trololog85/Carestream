@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Carestream.AdmTramas.Converter;
-using Carestream.AdmTramas.Converter.Compras;
 using Carestream.AdmTramas.Converter.Ventas;
 using Carestream.AdmTramas.DataAccess.Model;
 using Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0;
@@ -70,6 +69,25 @@ namespace Carestream.AdmTramas.Facade.Log
                 string message = ex.Message;
             }
             return RegistroVentaConverter.ConvertList(registroVenta);
+        }
+
+        public List<LibroLog> ListarLibrosDiarios()
+        {
+            var libros = new List<LibroLog>();
+
+            try
+            {
+                var dalibroLog = new DALibroLog(new AdmTramasContainer());
+                var lst = dalibroLog.ListarLibroDiarios();
+
+                libros = lst.Select(LibroLogConverter.ConvertOut).ToList();
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+            }
+
+            return libros;
         }
     }
 }

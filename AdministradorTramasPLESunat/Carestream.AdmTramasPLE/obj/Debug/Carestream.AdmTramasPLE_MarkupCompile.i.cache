@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\obj\Debug\
 Carestream.AdmTramasPLE
 none
 false
 DEBUG;TRACE
-C:\Users\Diego\Desktop\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\App.xaml
-7-1620998011
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramasPLE\App.xaml
+8818973138
 
-16-763234637
-18758312836
-MainWindow.xaml;Mantenimientos\Estructuras.xaml;Mantenimientos\Libros.xaml;Procesos\Export.xaml;Procesos\Import.xaml;Procesos\Resumen.xaml;Procesos\UpdateCUO.xaml;
+17-1270910096
+18-1077622510
+MainWindow.xaml;Mantenimientos\Estructuras.xaml;Mantenimientos\Libros.xaml;Procesos\Export.xaml;Procesos\Import.xaml;Procesos\ProcesarDiario.xaml;Procesos\Resumen.xaml;Procesos\UpdateCUO.xaml;
 
 False
 

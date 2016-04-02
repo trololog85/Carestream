@@ -56,7 +56,7 @@ namespace Carestream.AdmTramas.Generator.Import.Version_4_0
 
                                     objReg.Fecha = oleDbdr.GetDateTime(i1);
 
-                                    objReg.NumeroCorrelativo = Convert.ToInt32(oleDbdr.GetString(i2));
+                                    objReg.NumeroCorrelativo = Convert.ToInt32(oleDbdr.GetDouble(i2));
 
                                     objReg.CodigoUnico = oleDbdr.GetString(i3);
 
@@ -114,7 +114,7 @@ namespace Carestream.AdmTramas.Generator.Import.Version_4_0
             {
                 foreach (var registro in grupo)
                 {
-                    registro.Correlativo = Formato.GeneraCorrelativo(contador);
+                    registro.Correlativo = Formato.GeneraCorrelativo(contador,registro.Correlativo);
                     contador++;
                     final.Add(registro);
                 }
@@ -133,6 +133,8 @@ namespace Carestream.AdmTramas.Generator.Import.Version_4_0
             var cuentas70Debe = cuentas70.Where(x => x.Haber == 0);
             var cuentas70Haber = cuentas70.Where(x => x.Debe == 0);
 
+            var cuos = cuentas70.GroupBy(c => c.CodigoUnico).Select(x => x.Key);
+
             var sumarizadoDebe = (from grupo in cuentas70Debe
                               group grupo by new
                               {
@@ -142,7 +144,8 @@ namespace Carestream.AdmTramas.Generator.Import.Version_4_0
                                   grupo.Centro,
                                   grupo.Referencia,
                                   grupo.DescripcionAsiento,
-                                  grupo.estado
+                                  grupo.estado,
+                                  grupo.Correlativo
                               }
                                   into g
                                   select new LibroDiario()
@@ -155,7 +158,8 @@ namespace Carestream.AdmTramas.Generator.Import.Version_4_0
                                       DescripcionAsiento = g.Key.DescripcionAsiento,
                                       Referencia = g.Key.Referencia,
                                       Fecha = g.Key.Fecha,
-                                      estado = g.Key.estado
+                                      estado = g.Key.estado,
+                                      Correlativo = g.Key.Correlativo
                                   }).ToList();
 
             var sumarizadoHaber = (from grupo in cuentas70Haber
@@ -167,7 +171,8 @@ namespace Carestream.AdmTramas.Generator.Import.Version_4_0
                                       grupo.Centro,
                                       grupo.Referencia,
                                       grupo.DescripcionAsiento,
-                                      grupo.estado
+                                      grupo.estado,
+                                      grupo.Correlativo
                                   }
                                       into g
                                       select new LibroDiario()
@@ -180,11 +185,43 @@ namespace Carestream.AdmTramas.Generator.Import.Version_4_0
                                           DescripcionAsiento = g.Key.DescripcionAsiento,
                                           Referencia = g.Key.Referencia,
                                           Fecha = g.Key.Fecha,
-                                          estado = g.Key.estado
+                                          estado = g.Key.estado,
+                                          Correlativo = g.Key.Correlativo
                                       }).ToList();
 
-            result.AddRange(sumarizadoDebe);
-            result.AddRange(sumarizadoHaber);            
+            decimal diferencia = 0;
+
+            foreach (var registro in cuos)
+            {
+                var debe = sumarizadoDebe.FirstOrDefault(r => r.CodigoUnico == registro);
+                var haber = sumarizadoHaber.FirstOrDefault(r => r.CodigoUnico == registro);
+
+                if (debe != null && haber != null)
+                {
+                    diferencia = debe.Debe - haber.Haber;
+
+                    if (diferencia > 0)
+                    {
+                        debe.Debe = diferencia;
+                        debe.Haber = 0;
+                        result.Add(debe);
+                    }
+                    else
+                    {
+                        haber.Haber = diferencia*-1;
+                        haber.Debe = 0;
+                        result.Add(haber);
+                    }
+                }
+                else
+                {
+                    if(debe!=null)
+                        result.Add(debe);
+
+                    if(haber!=null)
+                        result.Add(haber);
+                }
+            }
 
             return result;
         }

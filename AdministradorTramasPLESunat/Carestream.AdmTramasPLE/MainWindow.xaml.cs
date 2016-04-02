@@ -107,5 +107,13 @@ namespace Carestream.AdmTramasPLE
             window.Show();
             window.ShowActivated = true;
         }
+
+        private void ProcesarDiario_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ProcesarDiario(new FLibroLog());
+
+            window.Show();
+            window.ShowActivated = true;
+        }
     }
 }

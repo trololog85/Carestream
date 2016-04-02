@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C0207E7F-1362-4782-BA71-FDE60C788235}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AdmTramasPLE</RootNamespace>
+    <AssemblyName>AdmTramasPLE</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CareStream.Data.Access">
+      <HintPath>..\CareStream.Data.Access\bin\Debug\CareStream.Data.Access.dll</HintPath>
+    </Reference>
+    <Reference Include="CareStream.Logic.Facade">
+      <HintPath>..\CareStream.Logic.Facade\bin\Debug\CareStream.Logic.Facade.dll</HintPath>
+    </Reference>
+    <Reference Include="CareStream.Logic.IO">
+      <HintPath>..\CareStream.Logic.IO\bin\Debug\CareStream.Logic.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="CareStream.Utils">
+      <HintPath>..\CareStream.Utils\bin\Debug\CareStream.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acerca\frmInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acerca\frmInfo.Designer.cs">
+      <DependentUpon>frmInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\frmDetailCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archivos\frmDetailCompra.Designer.cs">
+      <DependentUpon>frmDetailCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\frmDetailVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archivos\frmDetailVenta.Designer.cs">
+      <DependentUpon>frmDetailVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\frmGenerador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archivos\frmGenerador.Designer.cs">
+      <DependentUpon>frmGenerador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\frmLibroDiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archivos\frmLibroDiario.Designer.cs">
+      <DependentUpon>frmLibroDiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\frmArchivosMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archivos\frmArchivosMain.Designer.cs">
+      <DependentUpon>frmArchivosMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\frmRegCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archivos\frmRegCompras.Designer.cs">
+      <DependentUpon>frmRegCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Archivos\frmRegVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archivos\frmRegVentas.Designer.cs">
+      <DependentUpon>frmRegVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base\frmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\frmBase.Designer.cs">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmArchivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmArchivo.Designer.cs">
+      <DependentUpon>frmArchivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEstructura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmEstructura.Designer.cs">
+      <DependentUpon>frmEstructura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmParametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmParametros.Designer.cs">
+      <DependentUpon>frmParametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Acerca\frmInfo.resx">
+      <DependentUpon>frmInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Archivos\frmDetailCompra.resx">
+      <DependentUpon>frmDetailCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Archivos\frmDetailVenta.resx">
+      <DependentUpon>frmDetailVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Archivos\frmArchivosMain.resx">
+      <DependentUpon>frmArchivosMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Archivos\frmRegCompras.resx">
+      <DependentUpon>frmRegCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Archivos\frmRegVentas.resx">
+      <DependentUpon>frmRegVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base\frmBase.resx">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmArchivo.resx">
+      <DependentUpon>frmArchivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmEstructura.resx">
+      <DependentUpon>frmEstructura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmParametros.resx">
+      <DependentUpon>frmParametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carestream-health-logo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_white_get.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifier_zoom_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system_search %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

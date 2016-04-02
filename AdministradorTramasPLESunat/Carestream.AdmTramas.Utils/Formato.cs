@@ -296,6 +296,18 @@ namespace Carestream.AdmTramas.Utils
             return true;
         }
 
+        public static string GeneraCorrelativo(short numero,string correlativo)
+        {
+            var cadena = numero.ToString(CultureInfo.InvariantCulture);
+
+            for (var i = 0; cadena.Length < 5; i++)
+            {
+                cadena = "0" + cadena;
+            }
+
+            return correlativo + cadena;
+        }
+
         public static string GeneraCorrelativo(short numero)
         {
             var cadena = numero.ToString(CultureInfo.InvariantCulture);

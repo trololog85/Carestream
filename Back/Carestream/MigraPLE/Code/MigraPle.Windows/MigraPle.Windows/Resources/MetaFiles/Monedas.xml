@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Monedas>
+  <Moneda>
+    <Codigo>PEN</Codigo>
+    <Descripcion>Nuevos Soles</Descripcion>
+  </Moneda>
+  <Moneda>
+    <Codigo>USD</Codigo>
+    <Descripcion>US Dólares</Descripcion>
+  </Moneda>
+</Monedas>

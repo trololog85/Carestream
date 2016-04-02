@@ -1,0 +1,9 @@
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Excel\bin\Debug\CareStream.Logic.Excel.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Excel\bin\Debug\CareStream.Logic.Excel.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Excel\bin\Debug\CareStream.Data.Access.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Excel\bin\Debug\CareStream.Utils.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Excel\bin\Debug\CareStream.Data.Access.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Excel\bin\Debug\CareStream.Utils.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Excel\bin\Debug\CareStream.Utils.xml
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Excel\obj\Debug\CareStream.Logic.Excel.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Logic.Excel\obj\Debug\CareStream.Logic.Excel.pdb

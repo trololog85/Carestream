@@ -1,0 +1,11 @@
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Data.Access\bin\Debug\CareStream.Data.Access.dll.config
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Data.Access\bin\Debug\CareStream.Data.Access.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Data.Access\bin\Debug\CareStream.Data.Access.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Data.Access\obj\Debug\CareStream.Data.Access.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Data.Access\obj\Debug\CareStream.Data.Access.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Data.Access\bin\Debug\CareStream.Utils.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Data.Access\bin\Debug\CareStream.Utils.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Data.Access\bin\Debug\CareStream.Utils.xml
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Data.Access\bin\Debug\CareStream.Logic.Excel.dll
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Data.Access\bin\Debug\CareStream.Logic.Excel.pdb
+D:\Proyectos\Carestream\AdmTramas\AdmTramasPLE\CareStream.Data.Access\obj\Debug\CareStream.Data.Access.csprojResolveAssemblyReference.cache

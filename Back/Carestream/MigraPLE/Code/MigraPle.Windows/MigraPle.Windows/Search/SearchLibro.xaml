@@ -1,0 +1,31 @@
+﻿<Window x:Class="MigraPle.Windows.Search.SearchLibro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MigraPle.Windows.Search"
+        mc:Ignorable="d"
+        Title="Buscar Libro" Height="308.411" Width="310.28" Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel>
+            <GroupBox Header="Busqueda" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="282">
+                <TextBox Name="txtNombreLibro" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Width="260" Height="23" MaxLength="10" Margin="5,5,-2,2" KeyDown="txtNombreLibro_KeyDown" KeyUp="txtNombreLibro_KeyUp"/>
+            </GroupBox>
+            <GroupBox Header="Libros" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="282">
+                <Grid>
+                    <DataGrid AutoGenerateColumns="false" Name="GridLibro" Margin="5,5,5,5" 
+                              CanUserAddRows="false" 
+                              CanUserResizeColumns="false"
+                              SelectionMode="Extended"
+                              IsReadOnly="True"
+                              Width="auto" VerticalScrollBarVisibility="Visible" Height="160" MouseDoubleClick="GridLibro_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=id}" Visibility="Hidden"/>
+                            <DataGridTextColumn Header="Nombre" Width="230" Binding="{Binding Path=Nombre}" Visibility="Visible"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>

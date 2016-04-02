@@ -175,6 +175,23 @@
     <FunctionImport Name="ConsultaLogRegistroNoDomiciliado" EntitySet="RegistroNoDomiciliadoes" ReturnType="Collection(Database.RegistroNoDomiciliado)">
       <Parameter Name="idLibroLog" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="LibroLog_ListaLibroDiario" EntitySet="LibroLogs" ReturnType="Collection(Database.LibroLog)" />
+    <FunctionImport Name="LibroLog_ConsultaLogCompras_Periodo" ReturnType="Collection(Database.LibroLog_ConsultaLogCompras_Periodo_Result)">
+      <Parameter Name="mes" Mode="In" Type="Int32" />
+      <Parameter Name="anio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LibroLog_ConsultaLogVentas_Periodo" ReturnType="Collection(Database.LibroLog_ConsultaLogVentas_Periodo_Result)">
+      <Parameter Name="mes" Mode="In" Type="Int32" />
+      <Parameter Name="anio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ConsultaRegistroVentaPeriodo" EntitySet="RegistroVentas" ReturnType="Collection(Database.RegistroVenta)">
+      <Parameter Name="mes" Mode="In" Type="Int32" />
+      <Parameter Name="anio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ConsultaRegistroCompraPeriodo" EntitySet="RegistroCompras" ReturnType="Collection(Database.RegistroCompra)">
+      <Parameter Name="mes" Mode="In" Type="Int32" />
+      <Parameter Name="anio" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Libro">
     <Key>
@@ -1000,5 +1017,117 @@
     <Property Type="String" Name="ServicioPrestado" Nullable="true" MaxLength="1" />
     <Property Type="String" Name="Campo35" Nullable="true" MaxLength="1" />
     <Property Type="String" Name="Estado" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="LibroLog_ListaLibroDiario_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int16" Name="IdLibro" Nullable="false" />
+    <Property Type="String" Name="NombreLibro" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="FechaCarga" Nullable="true" />
+    <Property Type="DateTime" Name="FechaGeneracion" Nullable="true" />
+    <Property Type="Int32" Name="Registros" Nullable="false" />
+    <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="IndicadorOperacion" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="IndicadorMoneda" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="IndicadorLibro" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="TipoLog" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="Errores" Nullable="true" />
+    <Property Type="DateTime" Name="FechaPeriodo" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="LibroLog_ConsultaLogCompras_Periodo_Result">
+    <Property Type="Int32" Name="IdLibroLog" Nullable="false" />
+    <Property Type="Int32" Name="Linea" Nullable="false" />
+    <Property Type="Int16" Name="IdLibro" Nullable="false" />
+    <Property Type="String" Name="NumeroOperacion" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaEmision" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="FechaVencimiento" Nullable="false" Precision="23" />
+    <Property Type="String" Name="TipoComprobante" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="NumeroSerieComprobante" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="AnioEmisionComprobante" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="NumeroComprobante" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="NumeroDocumento" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="NombreRazonSocial" Nullable="true" MaxLength="250" />
+    <Property Type="Decimal" Name="BaseImponibleGravada" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="IGVGravado" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BaseImponibleMixta" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="IGVMixto" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="BaseImponibleNoGravada" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="IGVNoGravado" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="AdquisicionNoGravada" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="ISC" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="OtrosTributos" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Total" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="ComprobanteNoDomiciliado" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NumeroConstancia" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="FechaEmisionConstancia" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="TipoCambio" Nullable="false" Precision="18" Scale="3" />
+    <Property Type="DateTime" Name="FechaOriginal" Nullable="false" Precision="23" />
+    <Property Type="String" Name="TipoDocumentoOriginal" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="NumeroSerieOriginal" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="NumeroDocumentoOriginal" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Pago" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="FechaPago" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Detraccion" Nullable="false" MaxLength="20" />
+    <Property Type="Decimal" Name="TasaDetraccion" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="ImporteDetraccion" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Retencion" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="ImporteRetencion" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="MotivoRetencion" Nullable="true" MaxLength="250" />
+    <Property Type="Decimal" Name="RevisionTasa" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="RevisionTipoCambio" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="RevisionVerificacion" Nullable="true" MaxLength="250" />
+    <Property Type="Decimal" Name="BaseRevision" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="IGVRevision" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="TipoGasto" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Recepcion" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Comentario1" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="Comentario2" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="VB" Nullable="false" MaxLength="20" />
+    <Property Type="Decimal" Name="CompraGravadaPais" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CompraGravadaExterior" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="CompraNoGravada" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="IGVPais" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Exterior" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="OtrosCargos" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Total1" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="String" Name="Estado" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="codigounicooperacion" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="numerocorrelativo" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DUA" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="ClasificacionBien1" Nullable="true" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="LibroLog_ConsultaLogVentas_Periodo_Result">
+    <Property Type="Int32" Name="Linea" Nullable="false" />
+    <Property Type="Int32" Name="IdLibroLog" Nullable="false" />
+    <Property Type="Int16" Name="IdLibro" Nullable="false" />
+    <Property Type="String" Name="Numero" Nullable="true" MaxLength="40" />
+    <Property Type="DateTime" Name="FechaComprobante" Nullable="false" Precision="23" />
+    <Property Type="String" Name="TipoComprobante" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="SerieComprobante" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="NumeroComprobante" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="TipoDocumento" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="NumeroDocumento" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="CodigoDocumento" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="NombreRazonSocial" Nullable="false" MaxLength="60" />
+    <Property Type="Decimal" Name="ValorVentaOriginal" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="String" Name="Moneda" Nullable="false" MaxLength="3" />
+    <Property Type="Decimal" Name="TipoCambio" Nullable="false" Precision="10" Scale="3" />
+    <Property Type="Decimal" Name="VV" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="IGV" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="PV" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="DateTime" Name="FechaModificada" Nullable="true" Precision="23" />
+    <Property Type="String" Name="TipoComprobanteModificado" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="NumeroSerieModificado" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="NumeroComprobanteModificado" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="VVModificado" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="IGVModificado" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="PVModificado" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="String" Name="NumeroUnicoOperacion" Nullable="false" MaxLength="40" />
+    <Property Type="Decimal" Name="OperacionNoGravada" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="String" Name="estado" Nullable="false" MaxLength="1" />
+    <Property Type="DateTime" Name="FechaVencimiento" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="ValorEmbarcadoExportacion" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="operaciongravada" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="String" Name="numerocorrelativo" Nullable="true" MaxLength="10" />
   </ComplexType>
 </Schema>

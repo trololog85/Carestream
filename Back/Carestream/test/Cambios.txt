@@ -1,0 +1,16 @@
+Compras:
+
+1. Validar regla del campo 3.
+2. Validar archivo contra PLE
+3. MOntos no figuran (Corregido).
+4. Omision de los 2 ultimos registros. (No considerar 10-140)
+5. 
+
+Ventas:
+
+1. Si es anulado y no tiene numero de RUC considerar tipo de documento 0.
+2. En caso general si no contiene numero de RUC considerar tipo de documento 0 (Otros).
+
+Libro Diario:
+
+1. Considerar 1 en el campo 9

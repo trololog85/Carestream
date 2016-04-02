@@ -1,0 +1,1 @@
+var migraPLEApp = angular.module('migraPLEApp',[]);

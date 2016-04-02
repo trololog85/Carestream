@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="73ee7e7c697f4824b2fb8528649d4fb2" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="MigraPLEModel.Archivo" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MigraPLEModel.MetaArchivo" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MigraPLEModel.Operacion" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MigraPLEModel.Regla" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MigraPLEModel.MetaArchivoRegla" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MigraPLEModel.FK_Archivo_MetaArchivo" ManuallyRouted="false" />
+        <AssociationConnector Association="MigraPLEModel.FK_Operacion_Archivo" ManuallyRouted="false" />
+        <AssociationConnector Association="MigraPLEModel.FK_MetaArchivoRegla_MetaArchivo" ManuallyRouted="false" />
+        <AssociationConnector Association="MigraPLEModel.FK_MetaArchivoRegla_Regla" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

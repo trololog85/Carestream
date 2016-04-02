@@ -1,0 +1,10 @@
+﻿<Window x:Class="MigraPle.Windows.Search.CalendarPeriodo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Calendario" Height="220" Width="220" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel>
+            <Calendar x:Name="clPeriodo" Grid.Row="0" Grid.Column="0" DisplayMode="Year" SelectedDatesChanged="clPeriodo_SelectedDatesChanged"></Calendar>
+        </StackPanel>
+    </Grid>
+</Window>

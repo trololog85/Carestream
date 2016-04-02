@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CareStream.Utils</name>
+    </assembly>
+    <members>
+        <member name="M:CareStream.Utils.Mensaje.MostrarMensaje(System.String,System.Int16)">
+            <summary>
+            Muestra un mensaje
+            </summary>
+            <param name="mensaje">Texto a mostrar</param>
+            <param name="tipo">Tipo de mensaje: 1=Informacion, 2=Error</param>
+        </member>
+    </members>
+</doc>

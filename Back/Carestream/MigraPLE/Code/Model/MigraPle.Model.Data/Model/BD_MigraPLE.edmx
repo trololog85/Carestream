@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BD_MigraPLEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Archivo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MetaArchivo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="campo" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="indice" Type="int" Nullable="false" />
+          <Property Name="campoImport" Type="varchar" MaxLength="200" />
+          <Property Name="esFijo" Type="bit" Nullable="false" />
+          <Property Name="valorFijo" Type="varchar" MaxLength="200" />
+          <Property Name="idArchivo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MetaArchivoRegla">
+          <Key>
+            <PropertyRef Name="idRegla" />
+            <PropertyRef Name="idMetaArchivo" />
+          </Key>
+          <Property Name="idRegla" Type="int" Nullable="false" />
+          <Property Name="idMetaArchivo" Type="int" Nullable="false" />
+          <Property Name="activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Operacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idArchivo" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="fechaOperacion" Type="datetime" Nullable="false" />
+          <Property Name="idTipoOperacion" Type="int" Nullable="false" />
+          <Property Name="periodo" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OperacionDetalle">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idOperacion" Type="int" Nullable="false" />
+          <Property Name="registro" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Regla">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idTipoRegla" Type="int" Nullable="false" />
+          <Property Name="valor" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TipoOperacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoRegla">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="clave" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="nombres" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="apellidos" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="ultimaSesion" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_MetaArchivo_Archivo">
+          <End Role="Archivo" Type="Self.Archivo" Multiplicity="1" />
+          <End Role="MetaArchivo" Type="Self.MetaArchivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Archivo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MetaArchivo">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MetaArchivoRegla_MetaArchivo1">
+          <End Role="MetaArchivo" Type="Self.MetaArchivo" Multiplicity="1" />
+          <End Role="MetaArchivoRegla" Type="Self.MetaArchivoRegla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MetaArchivo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MetaArchivoRegla">
+              <PropertyRef Name="idMetaArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MetaArchivoRegla_Regla1">
+          <End Role="Regla" Type="Self.Regla" Multiplicity="1" />
+          <End Role="MetaArchivoRegla" Type="Self.MetaArchivoRegla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regla">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MetaArchivoRegla">
+              <PropertyRef Name="idRegla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operacion_Archivo">
+          <End Role="Archivo" Type="Self.Archivo" Multiplicity="1" />
+          <End Role="Operacion" Type="Self.Operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Archivo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Operacion">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operacion_TipoOperacion">
+          <End Role="TipoOperacion" Type="Self.TipoOperacion" Multiplicity="1" />
+          <End Role="Operacion" Type="Self.Operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoOperacion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Operacion">
+              <PropertyRef Name="idTipoOperacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OperacionDetalle_Operacion">
+          <End Role="Operacion" Type="Self.Operacion" Multiplicity="1" />
+          <End Role="OperacionDetalle" Type="Self.OperacionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operacion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="OperacionDetalle">
+              <PropertyRef Name="idOperacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Regla_TipoRegla1">
+          <End Role="TipoRegla" Type="Self.TipoRegla" Multiplicity="1" />
+          <End Role="Regla" Type="Self.Regla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoRegla">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Regla">
+              <PropertyRef Name="idTipoRegla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BD_MigraPLEModelStoreContainer">
+          <EntitySet Name="Archivo" EntityType="Self.Archivo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MetaArchivo" EntityType="Self.MetaArchivo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MetaArchivoRegla" EntityType="Self.MetaArchivoRegla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Operacion" EntityType="Self.Operacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OperacionDetalle" EntityType="Self.OperacionDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Regla" EntityType="Self.Regla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoOperacion" EntityType="Self.TipoOperacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoRegla" EntityType="Self.TipoRegla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_MetaArchivo_Archivo" Association="Self.FK_MetaArchivo_Archivo">
+            <End Role="Archivo" EntitySet="Archivo" />
+            <End Role="MetaArchivo" EntitySet="MetaArchivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MetaArchivoRegla_MetaArchivo1" Association="Self.FK_MetaArchivoRegla_MetaArchivo1">
+            <End Role="MetaArchivo" EntitySet="MetaArchivo" />
+            <End Role="MetaArchivoRegla" EntitySet="MetaArchivoRegla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MetaArchivoRegla_Regla1" Association="Self.FK_MetaArchivoRegla_Regla1">
+            <End Role="Regla" EntitySet="Regla" />
+            <End Role="MetaArchivoRegla" EntitySet="MetaArchivoRegla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operacion_Archivo" Association="Self.FK_Operacion_Archivo">
+            <End Role="Archivo" EntitySet="Archivo" />
+            <End Role="Operacion" EntitySet="Operacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operacion_TipoOperacion" Association="Self.FK_Operacion_TipoOperacion">
+            <End Role="TipoOperacion" EntitySet="TipoOperacion" />
+            <End Role="Operacion" EntitySet="Operacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OperacionDetalle_Operacion" Association="Self.FK_OperacionDetalle_Operacion">
+            <End Role="Operacion" EntitySet="Operacion" />
+            <End Role="OperacionDetalle" EntitySet="OperacionDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Regla_TipoRegla1" Association="Self.FK_Regla_TipoRegla1">
+            <End Role="TipoRegla" EntitySet="TipoRegla" />
+            <End Role="Regla" EntitySet="Regla" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BD_MigraPLEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Archivo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MetaArchivo" Relationship="Self.FK_MetaArchivo_Archivo" FromRole="Archivo" ToRole="MetaArchivo" />
+          <NavigationProperty Name="Operacion" Relationship="Self.FK_Operacion_Archivo" FromRole="Archivo" ToRole="Operacion" />
+        </EntityType>
+        <EntityType Name="MetaArchivo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="campo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="indice" Type="Int32" Nullable="false" />
+          <Property Name="campoImport" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="esFijo" Type="Boolean" Nullable="false" />
+          <Property Name="valorFijo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="idArchivo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Archivo" Relationship="Self.FK_MetaArchivo_Archivo" FromRole="MetaArchivo" ToRole="Archivo" />
+          <NavigationProperty Name="MetaArchivoRegla" Relationship="Self.FK_MetaArchivoRegla_MetaArchivo1" FromRole="MetaArchivo" ToRole="MetaArchivoRegla" />
+        </EntityType>
+        <EntityType Name="MetaArchivoRegla">
+          <Key>
+            <PropertyRef Name="idRegla" />
+            <PropertyRef Name="idMetaArchivo" />
+          </Key>
+          <Property Name="idRegla" Type="Int32" Nullable="false" />
+          <Property Name="idMetaArchivo" Type="Int32" Nullable="false" />
+          <Property Name="activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="MetaArchivo" Relationship="Self.FK_MetaArchivoRegla_MetaArchivo1" FromRole="MetaArchivoRegla" ToRole="MetaArchivo" />
+          <NavigationProperty Name="Regla" Relationship="Self.FK_MetaArchivoRegla_Regla1" FromRole="MetaArchivoRegla" ToRole="Regla" />
+        </EntityType>
+        <EntityType Name="Operacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idArchivo" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fechaOperacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="idTipoOperacion" Type="Int32" Nullable="false" />
+          <Property Name="periodo" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Archivo" Relationship="Self.FK_Operacion_Archivo" FromRole="Operacion" ToRole="Archivo" />
+          <NavigationProperty Name="TipoOperacion" Relationship="Self.FK_Operacion_TipoOperacion" FromRole="Operacion" ToRole="TipoOperacion" />
+          <NavigationProperty Name="OperacionDetalle" Relationship="Self.FK_OperacionDetalle_Operacion" FromRole="Operacion" ToRole="OperacionDetalle" />
+        </EntityType>
+        <EntityType Name="OperacionDetalle">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idOperacion" Type="Int32" Nullable="false" />
+          <Property Name="registro" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Operacion" Relationship="Self.FK_OperacionDetalle_Operacion" FromRole="OperacionDetalle" ToRole="Operacion" />
+        </EntityType>
+        <EntityType Name="Regla">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idTipoRegla" Type="Int32" Nullable="false" />
+          <Property Name="valor" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MetaArchivoRegla" Relationship="Self.FK_MetaArchivoRegla_Regla1" FromRole="Regla" ToRole="MetaArchivoRegla" />
+          <NavigationProperty Name="TipoRegla" Relationship="Self.FK_Regla_TipoRegla1" FromRole="Regla" ToRole="TipoRegla" />
+        </EntityType>
+        <EntityType Name="TipoOperacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Operacion" Relationship="Self.FK_Operacion_TipoOperacion" FromRole="TipoOperacion" ToRole="Operacion" />
+        </EntityType>
+        <EntityType Name="TipoRegla">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Regla" Relationship="Self.FK_Regla_TipoRegla1" FromRole="TipoRegla" ToRole="Regla" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="clave" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nombres" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidos" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ultimaSesion" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_MetaArchivo_Archivo">
+          <End Role="Archivo" Type="Self.Archivo" Multiplicity="1" />
+          <End Role="MetaArchivo" Type="Self.MetaArchivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Archivo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MetaArchivo">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operacion_Archivo">
+          <End Role="Archivo" Type="Self.Archivo" Multiplicity="1" />
+          <End Role="Operacion" Type="Self.Operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Archivo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Operacion">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MetaArchivoRegla_MetaArchivo1">
+          <End Role="MetaArchivo" Type="Self.MetaArchivo" Multiplicity="1" />
+          <End Role="MetaArchivoRegla" Type="Self.MetaArchivoRegla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MetaArchivo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MetaArchivoRegla">
+              <PropertyRef Name="idMetaArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MetaArchivoRegla_Regla1">
+          <End Role="Regla" Type="Self.Regla" Multiplicity="1" />
+          <End Role="MetaArchivoRegla" Type="Self.MetaArchivoRegla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regla">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MetaArchivoRegla">
+              <PropertyRef Name="idRegla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Operacion_TipoOperacion">
+          <End Role="TipoOperacion" Type="Self.TipoOperacion" Multiplicity="1" />
+          <End Role="Operacion" Type="Self.Operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoOperacion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Operacion">
+              <PropertyRef Name="idTipoOperacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OperacionDetalle_Operacion">
+          <End Role="Operacion" Type="Self.Operacion" Multiplicity="1" />
+          <End Role="OperacionDetalle" Type="Self.OperacionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operacion">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="OperacionDetalle">
+              <PropertyRef Name="idOperacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Regla_TipoRegla1">
+          <End Role="TipoRegla" Type="Self.TipoRegla" Multiplicity="1" />
+          <End Role="Regla" Type="Self.Regla" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoRegla">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Regla">
+              <PropertyRef Name="idTipoRegla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MigraPLE_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Archivo" EntityType="Self.Archivo" />
+          <EntitySet Name="MetaArchivo" EntityType="Self.MetaArchivo" />
+          <EntitySet Name="MetaArchivoRegla" EntityType="Self.MetaArchivoRegla" />
+          <EntitySet Name="Operacion" EntityType="Self.Operacion" />
+          <EntitySet Name="OperacionDetalle" EntityType="Self.OperacionDetalle" />
+          <EntitySet Name="Regla" EntityType="Self.Regla" />
+          <EntitySet Name="TipoOperacion" EntityType="Self.TipoOperacion" />
+          <EntitySet Name="TipoRegla" EntityType="Self.TipoRegla" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <AssociationSet Name="FK_MetaArchivo_Archivo" Association="Self.FK_MetaArchivo_Archivo">
+            <End Role="Archivo" EntitySet="Archivo" />
+            <End Role="MetaArchivo" EntitySet="MetaArchivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operacion_Archivo" Association="Self.FK_Operacion_Archivo">
+            <End Role="Archivo" EntitySet="Archivo" />
+            <End Role="Operacion" EntitySet="Operacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MetaArchivoRegla_MetaArchivo1" Association="Self.FK_MetaArchivoRegla_MetaArchivo1">
+            <End Role="MetaArchivo" EntitySet="MetaArchivo" />
+            <End Role="MetaArchivoRegla" EntitySet="MetaArchivoRegla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MetaArchivoRegla_Regla1" Association="Self.FK_MetaArchivoRegla_Regla1">
+            <End Role="Regla" EntitySet="Regla" />
+            <End Role="MetaArchivoRegla" EntitySet="MetaArchivoRegla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Operacion_TipoOperacion" Association="Self.FK_Operacion_TipoOperacion">
+            <End Role="TipoOperacion" EntitySet="TipoOperacion" />
+            <End Role="Operacion" EntitySet="Operacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OperacionDetalle_Operacion" Association="Self.FK_OperacionDetalle_Operacion">
+            <End Role="Operacion" EntitySet="Operacion" />
+            <End Role="OperacionDetalle" EntitySet="OperacionDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Regla_TipoRegla1" Association="Self.FK_Regla_TipoRegla1">
+            <End Role="TipoRegla" EntitySet="TipoRegla" />
+            <End Role="Regla" EntitySet="Regla" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BD_MigraPLEModelStoreContainer" CdmEntityContainer="MigraPLE_Entities">
+          <EntitySetMapping Name="Archivo">
+            <EntityTypeMapping TypeName="BD_MigraPLEModel.Archivo">
+              <MappingFragment StoreEntitySet="Archivo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MetaArchivo">
+            <EntityTypeMapping TypeName="BD_MigraPLEModel.MetaArchivo">
+              <MappingFragment StoreEntitySet="MetaArchivo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="campo" ColumnName="campo" />
+                <ScalarProperty Name="indice" ColumnName="indice" />
+                <ScalarProperty Name="campoImport" ColumnName="campoImport" />
+                <ScalarProperty Name="esFijo" ColumnName="esFijo" />
+                <ScalarProperty Name="valorFijo" ColumnName="valorFijo" />
+                <ScalarProperty Name="idArchivo" ColumnName="idArchivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MetaArchivoRegla">
+            <EntityTypeMapping TypeName="BD_MigraPLEModel.MetaArchivoRegla">
+              <MappingFragment StoreEntitySet="MetaArchivoRegla">
+                <ScalarProperty Name="idRegla" ColumnName="idRegla" />
+                <ScalarProperty Name="idMetaArchivo" ColumnName="idMetaArchivo" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operacion">
+            <EntityTypeMapping TypeName="BD_MigraPLEModel.Operacion">
+              <MappingFragment StoreEntitySet="Operacion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idArchivo" ColumnName="idArchivo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="fechaOperacion" ColumnName="fechaOperacion" />
+                <ScalarProperty Name="idTipoOperacion" ColumnName="idTipoOperacion" />
+                <ScalarProperty Name="periodo" ColumnName="periodo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OperacionDetalle">
+            <EntityTypeMapping TypeName="BD_MigraPLEModel.OperacionDetalle">
+              <MappingFragment StoreEntitySet="OperacionDetalle">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idOperacion" ColumnName="idOperacion" />
+                <ScalarProperty Name="registro" ColumnName="registro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regla">
+            <EntityTypeMapping TypeName="BD_MigraPLEModel.Regla">
+              <MappingFragment StoreEntitySet="Regla">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idTipoRegla" ColumnName="idTipoRegla" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoOperacion">
+            <EntityTypeMapping TypeName="BD_MigraPLEModel.TipoOperacion">
+              <MappingFragment StoreEntitySet="TipoOperacion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoRegla">
+            <EntityTypeMapping TypeName="BD_MigraPLEModel.TipoRegla">
+              <MappingFragment StoreEntitySet="TipoRegla">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="BD_MigraPLEModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="ultimaSesion" ColumnName="ultimaSesion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

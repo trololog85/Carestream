@@ -522,5 +522,93 @@ namespace Carestream.AdmTramas.DataAccess.Model
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RegistroNoDomiciliado>("ConsultaLogRegistroNoDomiciliado", mergeOption, idLibroLogParameter);
         }
+    
+        public virtual ObjectResult<LibroLog> LibroLog_ListaLibroDiario()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LibroLog>("LibroLog_ListaLibroDiario");
+        }
+    
+        public virtual ObjectResult<LibroLog> LibroLog_ListaLibroDiario(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LibroLog>("LibroLog_ListaLibroDiario", mergeOption);
+        }
+    
+        public virtual ObjectResult<LibroLog_ConsultaLogCompras_Periodo_Result> LibroLog_ConsultaLogCompras_Periodo(Nullable<int> mes, Nullable<int> anio)
+        {
+            var mesParameter = mes.HasValue ?
+                new ObjectParameter("mes", mes) :
+                new ObjectParameter("mes", typeof(int));
+    
+            var anioParameter = anio.HasValue ?
+                new ObjectParameter("anio", anio) :
+                new ObjectParameter("anio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LibroLog_ConsultaLogCompras_Periodo_Result>("LibroLog_ConsultaLogCompras_Periodo", mesParameter, anioParameter);
+        }
+    
+        public virtual ObjectResult<LibroLog_ConsultaLogVentas_Periodo_Result> LibroLog_ConsultaLogVentas_Periodo(Nullable<int> mes, Nullable<int> anio)
+        {
+            var mesParameter = mes.HasValue ?
+                new ObjectParameter("mes", mes) :
+                new ObjectParameter("mes", typeof(int));
+    
+            var anioParameter = anio.HasValue ?
+                new ObjectParameter("anio", anio) :
+                new ObjectParameter("anio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LibroLog_ConsultaLogVentas_Periodo_Result>("LibroLog_ConsultaLogVentas_Periodo", mesParameter, anioParameter);
+        }
+    
+        public virtual ObjectResult<RegistroVenta> ConsultaRegistroVentaPeriodo(Nullable<int> mes, Nullable<int> anio)
+        {
+            var mesParameter = mes.HasValue ?
+                new ObjectParameter("mes", mes) :
+                new ObjectParameter("mes", typeof(int));
+    
+            var anioParameter = anio.HasValue ?
+                new ObjectParameter("anio", anio) :
+                new ObjectParameter("anio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RegistroVenta>("ConsultaRegistroVentaPeriodo", mesParameter, anioParameter);
+        }
+    
+        public virtual ObjectResult<RegistroVenta> ConsultaRegistroVentaPeriodo(Nullable<int> mes, Nullable<int> anio, MergeOption mergeOption)
+        {
+            var mesParameter = mes.HasValue ?
+                new ObjectParameter("mes", mes) :
+                new ObjectParameter("mes", typeof(int));
+    
+            var anioParameter = anio.HasValue ?
+                new ObjectParameter("anio", anio) :
+                new ObjectParameter("anio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RegistroVenta>("ConsultaRegistroVentaPeriodo", mergeOption, mesParameter, anioParameter);
+        }
+    
+        public virtual ObjectResult<RegistroCompra> ConsultaRegistroCompraPeriodo(Nullable<int> mes, Nullable<int> anio)
+        {
+            var mesParameter = mes.HasValue ?
+                new ObjectParameter("mes", mes) :
+                new ObjectParameter("mes", typeof(int));
+    
+            var anioParameter = anio.HasValue ?
+                new ObjectParameter("anio", anio) :
+                new ObjectParameter("anio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RegistroCompra>("ConsultaRegistroCompraPeriodo", mesParameter, anioParameter);
+        }
+    
+        public virtual ObjectResult<RegistroCompra> ConsultaRegistroCompraPeriodo(Nullable<int> mes, Nullable<int> anio, MergeOption mergeOption)
+        {
+            var mesParameter = mes.HasValue ?
+                new ObjectParameter("mes", mes) :
+                new ObjectParameter("mes", typeof(int));
+    
+            var anioParameter = anio.HasValue ?
+                new ObjectParameter("anio", anio) :
+                new ObjectParameter("anio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<RegistroCompra>("ConsultaRegistroCompraPeriodo", mergeOption, mesParameter, anioParameter);
+        }
     }
 }

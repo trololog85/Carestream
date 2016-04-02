@@ -32,7 +32,7 @@ namespace Carestream.AdmTramas.Facade.Generator.Export
 {
     public class FGeneraLibro:IFGeneraLibro
     {
-        private readonly ILibroLogRepository _libroLogRepository = new DALibroLog(new AdmTramasContainer());
+        private ILibroLogRepository _libroLogRepository = new DALibroLog(new AdmTramasContainer());
 
         public async Task<ExportResult> ExportaArchivo(Model.Entities.Export export)
         {
@@ -480,11 +480,26 @@ namespace Carestream.AdmTramas.Facade.Generator.Export
                     result = model2.Cast<T>().ToList();
                     break;
                 case TipoLibro.LibroMayor:
-                    var model3 = LibroMayorConverter.ConvertList(lstData.Cast<DataAccess.Model.LibroMayor>());
+                    var mayor = lstData.Cast<DataAccess.Model.LibroMayor>().First();
+                    var periodoMayor = mayor.FechaOperacion;
+                    _libroLogRepository = new DALibroLog(new AdmTramasContainer());
+                    var ventasMayor = RegistroVentaConverter.ConvertList(_libroLogRepository.ConsultaVentaPeriodo(periodoMayor));
+                    _libroLogRepository = new DALibroLog(new AdmTramasContainer());
+                    var comprasMayor = RegistroComprasConverter.ConvertList(_libroLogRepository.ConsultaCompraPeriodo(periodoMayor));
+
+                    var model3 = LibroMayorConverter.ConvertList(lstData.Cast<DataAccess.Model.LibroMayor>(), ventasMayor, comprasMayor);
                     result = model3.Cast<T>().ToList();
                     break;
                 case TipoLibro.LibroDiario:
-                    var model4 = LibroDiarioConverter.ConvertList(lstData.Cast<DataAccess.Model.LibroDiario>());
+                    var diario = lstData.Cast<DataAccess.Model.LibroDiario>().First();
+                    var periodo = diario.Fecha;
+                    _libroLogRepository = new DALibroLog(new AdmTramasContainer());
+                    var ventas = RegistroVentaConverter.ConvertList(_libroLogRepository.ConsultaVentaPeriodo(periodo));
+                    _libroLogRepository = new DALibroLog(new AdmTramasContainer());
+                    var compras = RegistroComprasConverter.ConvertList(_libroLogRepository.ConsultaCompraPeriodo(periodo));
+
+                    var model4 = LibroDiarioConverter.ConvertList(lstData.Cast<DataAccess.Model.LibroDiario>(), ventas, compras);
+
                     result = model4.Cast<T>().ToList();
                     break;
                 case TipoLibro.LibroDiarioDetalle:

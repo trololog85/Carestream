@@ -129,6 +129,7 @@ C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLE
 C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\obj\Debug\Carestream.AdmTramas.Mocks.csprojResolveAssemblyReference.cache
 C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\obj\Debug\Carestream.AdmTramas.Mocks.dll
 C:\Users\Diego\Documents\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\obj\Debug\Carestream.AdmTramas.Mocks.pdb
+E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\bin\Debug\EntityFramework.xml
 E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\bin\Debug\Carestream.AdmTramas.Mocks.dll.config
 E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\bin\Debug\Carestream.AdmTramas.Mocks.dll
 E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\bin\Debug\Carestream.AdmTramas.Mocks.pdb
@@ -146,7 +147,6 @@ E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTr
 E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\bin\Debug\Carestream.AdmTramas.Facade.pdb
 E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\bin\Debug\Carestream.AdmTramas.Generator.pdb
 E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\bin\Debug\Carestream.AdmTramas.Model.pdb
-E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\bin\Debug\EntityFramework.xml
 E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\bin\Debug\EntityFramework.SqlServer.xml
 E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\bin\Debug\nunit.framework.xml
 E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Mocks\bin\Debug\Carestream.AdmTramas.Utils.pdb

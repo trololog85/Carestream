@@ -95,11 +95,11 @@
                       ">
                 <Grid>
                     <DataGrid AutoGenerateColumns="false" Name="GridLibroLog" Margin="5,5,5,5" 
-                              CanUserAddRows="false" 
-                              CanUserResizeColumns="false"
-                              SelectionMode="Single"
-                              IsReadOnly="True"
-                              Width="auto" SelectionChanged="GridLibroLog_SelectionChanged" MouseDoubleClick="GridLibroLog_MouseDoubleClick" VerticalScrollBarVisibility="Visible" Height="160">
+                                  CanUserAddRows="false" 
+                                  CanUserResizeColumns="false"
+                                  SelectionMode="Single"
+                                  IsReadOnly="True"
+                                  Width="auto" SelectionChanged="GridLibroLog_SelectionChanged" MouseDoubleClick="GridLibroLog_MouseDoubleClick" VerticalScrollBarVisibility="Visible" Height="160">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Path=id}" Visibility="Hidden"/>
                             <DataGridTextColumn Binding="{Binding Path=idLibro}" Visibility="Hidden"/>

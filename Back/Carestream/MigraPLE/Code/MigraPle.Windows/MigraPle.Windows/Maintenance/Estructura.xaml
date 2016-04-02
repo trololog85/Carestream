@@ -1,0 +1,125 @@
+﻿<Window x:Class="MigraPle.Windows.Maintenance.Estructura"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MigraPle.Windows.Maintenance"
+        mc:Ignorable="d"
+        Title="Configuracion de Archivos" Height="545.012" Width="620">
+    <Grid>
+        <StackPanel>
+            <ToolBarPanel>
+                <ToolBar>
+                    <Button Name="BtnGuardar" Width="40" Height ="32" Margin="5,5,5,5" HorizontalAlignment="Left">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Resources/Images/1446809664_save.png" Width="25px" Height="25"></Image>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </ToolBar>
+            </ToolBarPanel>
+            <GroupBox Header="Archivos" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="590">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width ="auto"/>
+                        <ColumnDefinition Width ="auto"/>
+                        <ColumnDefinition Width ="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Name="lblNameLibro" Grid.Row="0" Grid.Column="0" Content="Libro:" Margin="5,2,5,5" Padding="5,2,5,5"></Label>
+                    <Image x:Name="imgSearch" Grid.Column="1" Source="/MigraPle.Windows;component/Resources/Images/1443606021_search.png" Width="20" Height="20"></Image>
+                    <Label Name="lblNombreArchivo" Grid.Row="0" Grid.Column="2" Content="" Margin="5,2,5,5" Padding="5,2,5,5" Width="200px" Height="30"  BorderThickness="1" BorderBrush="Black">
+                        <Label.Background>
+                            <RadialGradientBrush>
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#334785F0"/>
+                            </RadialGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <Label Name="lblPeriodo" Grid.Row="0" Grid.Column="3" Content="Periodo:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                    <Label Name="lblCalendario" Grid.Row="0" Grid.Column="4" Content="" Margin="5,2,5,5" Padding="5,2,5,5" Width="120px" Height="30" BorderThickness="1" BorderBrush="Black">
+                        <Label.Background>
+                            <RadialGradientBrush>
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#334785F0"/>
+                            </RadialGradientBrush>
+                        </Label.Background>
+                    </Label>
+                    <Button Name="btnCalendar" Grid.Row="0" Grid.Column="5"
+                        Width="40" Height ="30" Margin="5,5,5,5" HorizontalAlignment="Left">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Resources/Images/1445226930_calendar.png"></Image>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Estructura del Archivo" HorizontalAlignment="left" Margin="10,10,0,0" VerticalAlignment="top" Height="auto" Width="590">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Name="LblNroRuc" Grid.Row="0" Grid.Column="0" Content="Campos:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                    <ListBox Name="lbCampos"  Grid.Row="1" Grid.Column="0" Width="200px" Height="300px" Padding="5,2,5,5" Margin="5,9,5,5"/>
+                    <Label Name="lblTitleConf" Grid.Row="0" Grid.Column="1" Content="Configuración:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                    <GroupBox Grid.Row="1" Grid.Column="1" Margin="5,0,5,5" Header="Detalles" Width="360px">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Name="lblNombre" Grid.Row="0" Grid.Column="0" Content="Nombre:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                            <TextBox Name="txtNombre" Grid.Column="1" Grid.Row="0" Height="23" Margin="11,6,-95,6"/>
+                            <Label Name="lblDescripcion" Grid.Row="1" Grid.Column="0" Content="Descripcion:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                            <TextBox Name="txtDescripcion" Grid.Column="1" Grid.Row="1" Height="23" Margin="11,6,-95,6"/>
+                            <Label Name="lblIndice" Grid.Row="2" Grid.Column="0" Content="Indice:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                            <TextBox Name="txtIndice" Grid.Column="1" Grid.Row="2" Width="120" Height="23" Margin="5,5,5,5"/>
+                            <Label Name="lblImport" Grid.Row="3" Grid.Column="0" Content="Campo Import:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                            <TextBox Name="txtImport" Grid.Column="1" Grid.Row="3" Width="120" Height="23" Margin="5,5,5,5"/>
+                            <Label Name="lblEsFijo" Grid.Row="4" Grid.Column="0" Content="Es Fijo:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                            <CheckBox Name="chkFijo" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" Width="131" VerticalAlignment="Center" Margin="10px 0px 0px 0px"/>
+                            <Label Name="lblValorFijo" Grid.Row="5" Grid.Column="0" Content="Valor Fijo:" Margin="5,2,5,5" Padding="5,2,5,5"/>
+                            <TextBox Name="txtValorFijo" Grid.Column="1" Grid.Row="5" Width="120" Height="23" Margin="5,5,5,5"/>
+                            <Button Name="BtnAdd" Width="40" Height ="32" Margin="5,5,5,5" HorizontalAlignment="Left" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">
+                                <Button.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Resources/Images/1446810299_plus.png" Width="30px" Height="30"></Image>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                            <Button Name="BtnDel" Width="40" Height ="32" Margin="51,6,0,6" HorizontalAlignment="Left" Grid.Row="6" Grid.Column="0">
+                                <Button.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Resources/Images/1446810628_cancel.png" Width="30px" Height="30px"/>
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -29,4 +29,3 @@ E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTr
 E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\bin\Debug\Carestream.AdmTramas.Model.pdb
 E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\obj\Debug\Carestream.AdmTramas.Model.dll
 E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\obj\Debug\Carestream.AdmTramas.Model.pdb
-E:\Repository\Freelances\Carestream\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\obj\Debug\Carestream.AdmTramas.Model.csprojResolveAssemblyReference.cache

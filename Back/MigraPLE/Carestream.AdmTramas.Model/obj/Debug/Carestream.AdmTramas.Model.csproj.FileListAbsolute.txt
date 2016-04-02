@@ -1,0 +1,12 @@
+C:\Diego\MyWork\Administrador%20de%20Tramas%20PLE%20-%20Sunat\Carestream.AdmTramas.Model\bin\Debug\Carestream.AdmTramas.Model.dll
+C:\Diego\MyWork\Administrador%20de%20Tramas%20PLE%20-%20Sunat\Carestream.AdmTramas.Model\bin\Debug\Carestream.AdmTramas.Model.pdb
+C:\Diego\MyWork\Administrador%20de%20Tramas%20PLE%20-%20Sunat\Carestream.AdmTramas.Model\obj\Debug\Carestream.AdmTramas.Model.dll
+C:\Diego\MyWork\Administrador%20de%20Tramas%20PLE%20-%20Sunat\Carestream.AdmTramas.Model\obj\Debug\Carestream.AdmTramas.Model.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\bin\Debug\Carestream.AdmTramas.Model.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\bin\Debug\Carestream.AdmTramas.Model.pdb
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\obj\Debug\Carestream.AdmTramas.Model.dll
+C:\Diego\MyWork\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\obj\Debug\Carestream.AdmTramas.Model.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\bin\Debug\Carestream.AdmTramas.Model.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\bin\Debug\Carestream.AdmTramas.Model.pdb
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\obj\Debug\Carestream.AdmTramas.Model.dll
+C:\Users\diego\MyFreelance\AdministradorTramasPLESunat\Carestream.AdmTramas.Model\obj\Debug\Carestream.AdmTramas.Model.pdb

@@ -122,6 +122,26 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0
             }
         }
 
+        public List<RegistroVenta> ConsultaVentaPeriodo(DateTime periodo)
+        {
+            var lst = new List<RegistroVenta>();
+
+            using (context)
+            {
+                return context.ConsultaRegistroVentaPeriodo(periodo.Month, periodo.Year).ToList();
+            }
+        }
+
+        public List<RegistroCompra> ConsultaCompraPeriodo(DateTime periodo)
+        {
+            var lst = new List<RegistroCompra>();
+
+            using (context)
+            {
+                return context.ConsultaRegistroCompraPeriodo(periodo.Month, periodo.Year).ToList();
+            }
+        }
+
         public int Guardar(LibroLog libroLog)
         {
             var id = 0;
@@ -1509,6 +1529,16 @@ namespace Carestream.AdmTramas.DataAccess.Repository.Versiones.Version_4_0
 
                     sqlBlk.WriteToServer(dt);
                 }
+            }
+        }
+
+        public List<LibroLog> ListarLibroDiarios()
+        {
+            var lst = new List<RegistroVenta>();
+
+            using (context)
+            {
+                return context.LibroLog_ListaLibroDiario().ToList();
             }
         }
 
